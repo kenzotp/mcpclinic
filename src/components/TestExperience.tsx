@@ -91,6 +91,9 @@ export default function TestExperience({ lang }: { lang: "de" | "en" }) {
         setState({ phase: "error", message: data.code === "rate_limited" ? t.rateLimited : data.message || t.fail });
       } else {
         setState({ phase: "result", data });
+        // funnel event: no URL, no PII — only outcome shape
+        const w = window as any;
+        w.umami?.track?.("live-test-run", { score: data.score, grade: data.grade, kind: data.kind });
       }
     } catch {
       setState({ phase: "error", message: t.fail });

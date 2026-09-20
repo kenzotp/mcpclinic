@@ -36,6 +36,15 @@ export default function Datenschutz() {
             übertragen.
           </p>
           <p>
+            <strong className="text-[var(--ink)]">Reichweitenmessung:</strong> Diese Seite nutzt
+            die selbst gehostete, cookielose Analyse-Software Umami (stats.kills.dog), um
+            Seitenaufrufe und die Nutzung des Live-Tests in Aggregate zu zählen (z. B. Anzahl
+            der Testläufe). Dabei werden keine Cookies gesetzt, IP-Adressen nicht im Klartext
+            gespeichert und keine Daten an Dritte weitergegeben. Rechtsgrundlage ist Art. 6
+            Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Reichweitenmessung des eigenen
+            Angebots).
+          </p>
+          <p>
             <strong className="text-[var(--ink)]">Speicherung:</strong> Prüfergebnisse werden
             anonymisiert (ohne Personenbezug und ohne Verbindung zu Ihrer IP-Adresse) gespeichert,
             um aggregierte Auswertungen im Deutscher MCP-Report zu pflegen. IP-Adressen zur
