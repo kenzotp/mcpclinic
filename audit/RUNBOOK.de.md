@@ -15,14 +15,14 @@ Schreibaktionen unsicher? (3) Welche DSGVO-Pflichten entstehen durch Agentenverk
 - [ ] Auftragsbestätigung + Rechnung 2.400 € (50 % vorab bei Neukunden ohne Bonitätshistorie)
 - [ ] Kickoff-Formular vom Kunden einsammeln: API-Host, Test-Zugang (read-only), ggf. Staging-URL, OpenAPI-Datei falls intern, Einschränkungen (Rate Limits, Wartungsfenster), Ansprechpartner für technische Rückfragen
 - [ ] Kunden-Zugang nur als **read-only-Rolle** akzeptieren; Schreibtests NUR auf Staging oder mit Wegwerf-Entitäten, die das Kickoff-Formular freigibt
-- [ ] Probe-Clients vorbereiten: Claude (API), GPT (API), Groq-Modell (open) — Systemprompt: „Du bist ein geschäftlicher Anwender von <Produkt>. Nutze die bereitgestellten Tools, um die Aufgabe zu erledigen.“
+- [ ] Probe-Clients vorbereiten: Claude (API), GPT (API), drittes Modell je nach Ziel-DSGVO-Profil — GLM (Z.ai) oder OpenRouter-Modell. **Groq ist nicht erlaubt (Mika, verbindlich).** — Systemprompt: „Du bist ein geschäftlicher Anwender von <Produkt>. Nutze die bereitgestellten Tools, um die Aufgabe zu erledigen.“
 - [ ] DSGVO-Checkliste (siehe Tag 2) an Juravorlage koppeln; AVV-Status des Kunden erfragen
 
 ## Tag 1 — Live-Agententests + Auth & Schreibsicherheit
 
 ### 1. Live-Agententests (~4 h)
 
-10 Standardaufgaben je Modell (Claude + GPT + Groq), jedes Protokoll wird geloggt
+10 Standardaufgaben je Modell (Claude + GPT + GLM oder OpenRouter-Modell), jedes Protokoll wird geloggt
 (Tabelle in `findings/day1-flows.csv`: Modell, Aufgabe, gewähltes Tool, Schritte,
 Fehler, Erholung, Zeit, Ergebnis korrekt?):
 

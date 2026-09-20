@@ -1,4 +1,4 @@
-// CLI: npm run harness -- --endpoint URL --token TOK --models groq:model[,claude:model] [--tasks T01,T04] [--out findings/]
+// CLI: npm run harness -- --endpoint URL --token TOK --models openai:gpt-5,claude:... [--out findings/]
 
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
@@ -15,7 +15,7 @@ function arg(name: string, fallback?: string): string | undefined {
 async function main() {
   const endpoint = arg("endpoint");
   const token = arg("token") ?? process.env.HARNESS_TOKEN;
-  const modelsSpec = arg("models") ?? "groq:qwen/qwen3-32b";
+  const modelsSpec = arg("models") ?? "openai:gpt-5,claude:claude-sonnet-4-5";
   const outDir = arg("out") ?? "findings";
   const only = arg("tasks")?.split(",").map((s) => s.trim());
   const fixturePath = arg("fixtures");
@@ -23,7 +23,7 @@ async function main() {
 
   if (!endpoint || !token) {
     console.error(`usage: npm run harness -- --endpoint <url> --token <bearer> \\
-  [--models groq:MODEL,claude:MODEL,openai:MODEL] [--tasks T01,...] [--fixtures fixtures.json] [--out dir] [--system "..."]`);
+  [--models openai:MODEL,claude:MODEL,glm:MODEL,openrouter:VENDOR/MODEL] [--tasks T01,...] [--fixtures fixtures.json] [--out dir] [--system "..."]`);
     process.exit(1);
   }
 

@@ -1,6 +1,7 @@
 // Model clients for the audit harness. Two wire formats cover every provider we
-// use in audits: OpenAI-compatible chat/completions (GPT, Groq, most open models)
-// and the Anthropic messages API (Claude). Keys come from env only — never files.
+// are allowed to use (Mika ruling 2026-09-20: OpenAI, Claude, GLM, OpenRouter —
+// Groq OFF LIMITS): OpenAI-compatible chat/completions and the Anthropic
+// messages API. Keys come from env only — never files.
 
 export interface ToolSpec {
   name: string;
@@ -52,10 +53,10 @@ async function postJson(url: string, apiKey: string, body: unknown, extraHeaders
   return res.json();
 }
 
-/** OpenAI-compatible /chat/completions with function tools (GPT, Groq, vLLM, …). */
+/** OpenAI-compatible /chat/completions with function tools (OpenAI, OpenRouter, vLLM, …). */
 export function openAiCompatible(opts: {
   id: string;
-  baseUrl: string; // e.g. https://api.groq.com/openai/v1 (no trailing slash)
+  baseUrl: string; // e.g. https://api.openai.com/v1 (no trailing slash)
   apiKeyEnv: string;
   model: string;
 }): ModelClient {
@@ -113,8 +114,15 @@ function safeJson(s: string): Record<string, unknown> {
   }
 }
 
-/** Anthropic messages API (Claude). */
-export function anthropic(opts: { id: string; apiKeyEnv: string; model: string; version?: string }): ModelClient {
+/** Anthropic messages API (Claude — and GLM via Z.ai's Anthropic-compatible endpoint). */
+export function anthropic(opts: {
+  id: string;
+  apiKeyEnv: string;
+  model: string;
+  version?: string;
+  baseUrl?: string;
+}): ModelClient {
+  const base = opts.baseUrl ?? "https://api.anthropic.com";
   return {
     id: opts.id,
     async chat(system, wire, tools) {
@@ -134,7 +142,7 @@ export function anthropic(opts: { id: string; apiKeyEnv: string; model: string; 
         }
       }
       const data = await postJson(
-        "https://api.anthropic.com/v1/messages",
+        `${base}/v1/messages`,
         apiKey,
         {
           model: opts.model,
@@ -158,18 +166,22 @@ export function anthropic(opts: { id: string; apiKeyEnv: string; model: string; 
   };
 }
 
-/** Registry from a --models string like "groq:qwen/qwen3-32b,claude:claude-sonnet-4-5". */
+/** Registry from a --models string like "claude:claude-sonnet-4-5,openai:gpt-5,glm:glm-5.3,openrouter:vendor/model".
+ *  Allowed providers (Mika ruling 2026-09-20): OpenAI, Claude, GLM, OpenRouter. Groq is OFF LIMITS. */
 export function buildClients(spec: string): ModelClient[] {
   const clients: ModelClient[] = [];
   for (const part of spec.split(",").map((s) => s.trim()).filter(Boolean)) {
     const [kind, model] = part.split(":");
-    if (kind === "groq")
-      clients.push(openAiCompatible({ id: `groq/${model}`, baseUrl: "https://api.groq.com/openai/v1", apiKeyEnv: "GROQ_API_KEY", model }));
-    else if (kind === "openai")
+    if (kind === "openai")
       clients.push(openAiCompatible({ id: `openai/${model}`, baseUrl: "https://api.openai.com/v1", apiKeyEnv: "OPENAI_API_KEY", model }));
+    else if (kind === "openrouter")
+      clients.push(openAiCompatible({ id: `openrouter/${model}`, baseUrl: "https://openrouter.ai/api/v1", apiKeyEnv: "OPENROUTER_API_KEY", model }));
     else if (kind === "claude")
-      clients.push(anthropic({ id: `claude/${model}`, model }));
-    else throw new Error(`unknown model kind '${kind}' (use groq:MODEL, openai:MODEL, claude:MODEL)`);
+      clients.push(anthropic({ id: `claude/${model}`, apiKeyEnv: "ANTHROPIC_API_KEY", model }));
+    else if (kind === "glm")
+      // Z.ai's Anthropic-compatible endpoint; thinking defaults ON server-side.
+      clients.push(anthropic({ id: `glm/${model}`, apiKeyEnv: "GLM_API_KEY", model, baseUrl: "https://api.z.ai/api/anthropic" }));
+    else throw new Error(`unknown model kind '${kind}' (allowed: openai:MODEL, claude:MODEL, glm:MODEL, openrouter:MODEL)`);
   }
   return clients;
 }

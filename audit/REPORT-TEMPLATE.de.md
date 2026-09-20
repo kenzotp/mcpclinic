@@ -27,7 +27,7 @@
 
 ## 2. Methodik in Kürze
 
-Live-Agententests (Claude, GPT, {{GROQ_MODEL}} — 10 Standardaufgaben), automatisierte
+Live-Agententests (Claude, GPT, {{MODEL_3}} — 10 Standardaufgaben), automatisierte
 Oberflächenprüfung (MCP-Handshake, OAuth-Discovery RFC 9728/8414, OpenAPI,
 Agent-Crawler-Politik, Server Card), Code-/Docs-Review von Auth, Scopes und
 Schreibaktionen, DSGVO-Beurteilung der Datenflüsse in Modellprovider.
@@ -49,7 +49,7 @@ Vollständige Protokolle der Agententests liegen als Anhang A bei.
 
 ## 4. Die Agententests im Einzelnen
 
-| # | Aufgabe | Claude | GPT | {{GROQ_MODEL}} | Muster |
+| # | Aufgabe | Claude | GPT | {{MODEL_3}} | Muster |
 |---|---|---|---|---|---|
 | 1 | {{AUFGABE_1}} | {{ERG}} | {{ERG}} | {{ERG}} | {{MUSTER}} |
 {{TABELLE_WEITERE}}

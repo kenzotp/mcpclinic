@@ -1,7 +1,7 @@
 # Audit-Harness — Agent-Flow-Tests mit echten Modell-Clients
 
 Das ist die Maschine hinter Tag 1 des [Audit-Runbooks](../audit/RUNBOOK.de.md):
-Die 10 Standardaufgaben werden mit echten Modellen (Claude / GPT / Groq-kompatibel)
+Die 10 Standardaufgaben werden mit echten Modellen (OpenAI / Claude / GLM / OpenRouter)
 gegen einen MCP-Endpunkt gefahren. Jede Runde wird protokolliert: welches Tool
 gewählt, mit welchen Argumenten, Fehler, Antwort — das Protokoll IST die
 Audit-Evidenz (Anhang A des Kundenberichts).
@@ -12,10 +12,10 @@ Audit-Evidenz (Anhang A des Kundenberichts).
 cd harness && npm install
 
 # Read-only-Standardlauf (7 Aufgaben ohne Schreibwirkung):
-GROQ_API_KEY=gsk_... npm run harness -- \
+OPENAI_API_KEY=sk-... ANTHROPIC_API_KEY=sk-ant-... npm run harness -- \
   --endpoint https://kunde.example/mcp \
   --token "$TEST_TOKEN" \
-  --models groq:qwen/qwen3-32b,claude:claude-sonnet-4-5,openai:gpt-5 \
+  --models openai:gpt-5,claude:claude-sonnet-4-5,glm:glm-5.3 \
   --fixtures fixtures/demo.json \
   --out findings/kunde-2026-10-01
 
@@ -30,12 +30,14 @@ Ergebnisse: `findings/<lauf>/traces.json` (voll), `summary.csv` (Auswertung),
 
 | Kürzel | API | Env-Key |
 |---|---|---|
-| `groq:MODEL` | OpenAI-kompatibel | `GROQ_API_KEY` |
-| `openai:MODEL` | OpenAI | `OPENAI_API_KEY` |
-| `claude:MODEL` | Anthropic | `ANTHROPIC_API_KEY` |
+| `openai:MODEL` | OpenAI `/chat/completions` | `OPENAI_API_KEY` |
+| `claude:MODEL` | Anthropic Messages | `ANTHROPIC_API_KEY` |
+| `glm:MODEL` | Z.ai Anthropic-kompatibler Endpunkt | `GLM_API_KEY` |
+| `openrouter:VENDOR/MODEL` | OpenRouter (OpenAI-kompatibel) | `OPENROUTER_API_KEY` |
 
-Groq-kompatibel heißt: jeder Anbieter mit `/chat/completions` + Function-Calling
-funktioniert über denselben Client (ein Eintrag in `models.ts` genügt).
+**Nicht erlaubt (Mika, verbindlich): Groq.** Erlaubt sind OpenAI, Claude, GLM,
+OpenRouter. Hinweis DSGVO: für Kundendaten in Audits vorab die AVV-Frage je
+Provider klären; bei sensiblen Zielen EU-Routing bevorzugen.
 
 ## Aufgaben (fixtures steuern die Beispieldaten)
 

@@ -2,7 +2,7 @@
   "name": "mcpclinic-harness",
   "version": "0.1.0",
   "private": true,
-  "description": "Audit harness: run standard business tasks against an MCP endpoint with real model clients (Claude/GPT/Groq-compatible), log every tool pick, argument and error.",
+  "description": "Audit harness: run standard business tasks against an MCP endpoint with real model clients (OpenAI, Claude, GLM, OpenRouter — no Groq), log every tool pick, argument and error.",
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
