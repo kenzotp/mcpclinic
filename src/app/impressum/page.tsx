@@ -17,9 +17,9 @@ export default function Impressum() {
         <div className="mt-8 flex flex-col gap-5 text-[var(--ink-2)]">
           <p>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz). Diensteanbieter:</p>
           <p className="text-[var(--ink)]">
-            Einzelunternehmen, geführt unter der Geschäftsbezeichnung „MCP Clinic“
+            Mika Niedbala
             <br />
-            Inhaber: Mika Niedbala
+            Einzelunternehmen, geführt unter der Geschäftsbezeichnung „Zuuna“
             <br />
             c/o Online-Impressum
             <br />
@@ -28,6 +28,10 @@ export default function Impressum() {
             53757 Sankt Augustin
             <br />
             Deutschland
+          </p>
+          <p>
+            „MCP Clinic“ ist ein Produktangebot dieses Unternehmens und keine eigenständige
+            Gesellschaft.
           </p>
           <p>
             Kontakt: <a className="underline decoration-[var(--hairline)] underline-offset-4 transition-colors hover:text-[var(--ink)]" href="mailto:info@zuuna.de">info@zuuna.de</a>
@@ -40,7 +44,7 @@ export default function Impressum() {
           </p>
           <p className="text-[var(--ink-3)]">
             Hinweis: Bei einem Einzelunternehmen ist der bürgerliche Name des Inhabers anzugeben;
-            „MCP Clinic“ ist die Geschäftsbezeichnung und ersetzt den Namen nicht.
+            die Geschäftsbezeichnung ersetzt den Namen nicht.
           </p>
         </div>
       </main>

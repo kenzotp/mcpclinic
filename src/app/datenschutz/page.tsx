@@ -18,8 +18,9 @@ export default function Datenschutz() {
         <div className="mt-8 flex flex-col gap-5 text-[var(--ink-2)]">
           <p>
             <strong className="text-[var(--ink)]">Verantwortlicher:</strong> Mika Niedbala
-            (Einzelunternehmen, Geschäftsbezeichnung „MCP Clinic“), c/o Online-Impressum,
-            Europaring 90, 53757 Sankt Augustin, E-Mail: info@zuuna.de
+            (Einzelunternehmen, Geschäftsbezeichnung „Zuuna“), c/o Online-Impressum,
+            Europaring 90, 53757 Sankt Augustin, E-Mail: info@zuuna.de. „MCP Clinic“ ist ein
+            Produktangebot dieses Unternehmens.
           </p>
           <p>
             <strong className="text-[var(--ink)]">MCP-Live-Test:</strong> Wenn Sie den
