@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ————————————————————————————————————————————————————————————————
+   MCP Clinic design tokens — monochrome, layered dark, paper light.
+   No accent color. Semantic dots live only inside test results.
+   ———————————————————————————————————————————————————————————————— */
+
+:root,
+:root[data-theme="dark"] {
+  --bg-0: #060607;
+  --bg-1: #0b0b0d;
+  --bg-2: #121215;
+  --ink: #f4f4f3;
+  --ink-2: #a3a3ab;
+  --ink-3: #5b5b64;
+  --hairline: rgba(255, 255, 255, 0.09);
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-bg-strong: rgba(255, 255, 255, 0.07);
+  --field-packet: 255, 255, 255;
+  --field-edge: 255, 255, 255;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --bad: #f87171;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg-0: #f7f7f4;
+  --bg-1: #efefec;
+  --bg-2: #e7e7e3;
+  --ink: #101012;
+  --ink-2: #55555c;
+  --ink-3: #9b9ba1;
+  --hairline: rgba(16, 16, 18, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.75);
+  --field-packet: 16, 16, 18;
+  --field-edge: 16, 16, 18;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.hairline-t { border-top: 1px solid var(--hairline); }
+.hairline-b { border-bottom: 1px solid var(--hairline); }
+
+/* scroll reveal — one easing everywhere */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.22);
+}
+:root[data-theme="light"] ::selection {
+  background: rgba(16, 16, 18, 0.16);
+}

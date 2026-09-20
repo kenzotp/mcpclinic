@@ -59,11 +59,11 @@ export async function probeMcpEndpoint(endpoint: string): Promise<McpProbeResult
   }).catch(() => null);
   reachable = initRes !== null; // any HTTP response proves liveness; DNS/timeout → unreachable
 
-  if (initRes.status === 401 || initRes.status === 403) {
+  if (initRes && (initRes.status === 401 || initRes.status === 403)) {
     auth.authRequired = true;
     auth.wwwAuthenticate = initRes.headers.get("www-authenticate") ?? undefined;
     await discoverAuth(endpoint, auth);
-  } else if (initRes.ok) {
+  } else if (initRes && initRes.ok) {
     const resp = firstResponse(initRes);
     if (resp?.result) {
       transport = "streamable-http";

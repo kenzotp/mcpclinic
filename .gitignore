@@ -5,3 +5,5 @@ report/out/*.tmp
 .DS_Store
 .mimosa/
 repro.mts
+.next/
+next-env.d.ts
