@@ -1,25 +1,24 @@
-# Additiver Block für ~/caddy/Caddyfile auf dem Hub (NICHT aktiviert).
-# Vorgehen laut Hub-Üblichkeit: Block ans Ende anhängen, `caddy validate` im Container,
-# danach ein einziger Reload. Erst einschalten, wenn die Site steht.
+# Der Live-Caddy-Block auf dem Hub (seit 2026-09-20, Platzhalter-Phase).
+# Original: ~/caddy/Caddyfile (Backup: ~/caddy/Caddyfile.bak-pre-mcpclinic-20260920).
+# Beim Launch: `respond`-Zeile durch reverse_proxy zur Site ersetzen und
+# `import noindex` ENTFERNEN (dies wird eine indexierbare Produktseite).
 
-# mcpclinic.dev {
-# 	encode gzip
-# 	handle /-/health {
-# 		respond "ok" 200
-# 	}
-# 	handle {
-# 		reverse_proxy 127.0.0.1:8092   # -> mcpclinic_site (Port-Mapping im Compose final anpassen)
-# 	}
-# }
-#
-# www.mcpclinic.dev {
-# 	redir https://mcpclinic.dev{uri} permanent
-# }
-#
-# mcpclinic.de {
-# 	redir https://mcpclinic.dev{uri} permanent
-# }
-#
-# www.mcpclinic.de {
-# 	redir https://mcpclinic.dev{uri} permanent
-# }
+mcpclinic.dev {
+	import noindex
+	respond "MCP Clinic — coming soon." 200
+}
+
+www.mcpclinic.dev {
+	import noindex
+	redir https://mcpclinic.dev{uri} permanent
+}
+
+mcpclinic.de {
+	import noindex
+	redir https://mcpclinic.dev{uri} permanent
+}
+
+www.mcpclinic.de {
+	import noindex
+	redir https://mcpclinic.dev{uri} permanent
+}
