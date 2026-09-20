@@ -1,0 +1,212 @@
+// mcp-basis: MCP Clinic's production template for MCP servers in front of a
+// client's REST API. One API, up to ~20 tools. Per-client work is: upstream.ts
+// config, tool set, scope names, token source. The safety skeleton stays.
+//
+// Demo mode (default env) talks to demo/upstream-demo.mjs — a fake CRM REST API
+// with per-tenant data — so the template runs end-to-end out of the box.
+
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { z } from "zod";
+import http from "node:http";
+import { parseTokens, authenticate, requireScope, AuthError, type Principal } from "./auth.ts";
+import { AuditLog } from "./audit.ts";
+import { IdempotencyStore } from "./idempotency.ts";
+import { Upstream } from "./upstream.ts";
+
+const PORT = Number(process.env.PORT ?? 8090);
+const UPSTREAM_BASE_URL = process.env.UPSTREAM_BASE_URL ?? "http://127.0.0.1:8091";
+const UPSTREAM_TOKEN = process.env.UPSTREAM_TOKEN ?? "demo-upstream-token";
+// { "token1": { "tenant": "acme", "scopes": ["contacts.read", "contacts.write"] }, ... }
+const TOKENS_JSON = process.env.MCP_BASIS_TOKENS ?? JSON.stringify({
+  demo_read: { tenant: "acme", scopes: ["contacts.read"] },
+  demo_write: { tenant: "acme", scopes: ["contacts.read", "contacts.write"] },
+  demo_other: { tenant: "globex", scopes: ["contacts.read", "contacts.write"] },
+});
+
+const audit = new AuditLog();
+const idempotency = new IdempotencyStore();
+
+/** Build an McpServer exposing only the tools this principal's scopes allow. */
+function buildServer(principal: Principal): McpServer {
+  const server = new McpServer(
+    { name: "mcp-basis", version: "0.1.0" },
+    { instructions: "CRM contacts tools. Read tools are safe; write tools require the contacts.write scope; delete requires explicit confirm=true." },
+  );
+  const upstream = new Upstream(UPSTREAM_BASE_URL, UPSTREAM_TOKEN);
+  const base = `/tenants/${encodeURIComponent(principal.tenant)}`; // tenant isolation by construction
+  const can = (scope: string) => principal.scopes.includes(scope);
+
+  const track = (tool: string) =>
+    async <T>(args: T, fn: () => Promise<unknown>): Promise<unknown> => {
+      try {
+        const result = await fn();
+        await audit.write({ ts: new Date().toISOString(), tenant: principal.tenant, tool, ok: true, argsSummary: Object.keys((args as object) ?? {}).join(",") });
+        return result;
+      } catch (err: any) {
+        await audit.write({ ts: new Date().toISOString(), tenant: principal.tenant, tool, ok: false, argsSummary: Object.keys((args as object) ?? {}).join(","), error: String(err?.message ?? err).slice(0, 300) });
+        throw err;
+      }
+    };
+
+  if (can("contacts.read")) {
+    server.registerTool(
+      "contacts_list",
+      {
+        title: "List contacts",
+        description:
+          "Lists contacts of the authenticated tenant. Pass an optional 'query' to filter by name or email substring (case-insensitive) and 'limit' (1-100, default 20). Returns { contacts: [{ id, name, email, company }], total } ordered by creation, oldest first.",
+        inputSchema: {
+          query: z.string().optional().describe("filter substring matched against name and email"),
+          limit: z.number().int().min(1).max(100).optional().describe("page size, default 20"),
+        },
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+      },
+      async (args) => track("contacts_list")(args, async () => {
+        const params = new URLSearchParams();
+        if (args.query) params.set("query", args.query);
+        if (args.limit) params.set("limit", String(args.limit));
+        const qs = params.toString();
+        return upstream.request("GET", `${base}/contacts${qs ? `?${qs}` : ""}`);
+      }),
+    );
+
+    server.registerTool(
+      "contacts_get",
+      {
+        title: "Get contact",
+        description:
+          "Fetches one contact by id. Pass 'id' (string, as returned by contacts_list). Returns { id, name, email, company } or a clear error if the contact does not exist in this tenant.",
+        inputSchema: { id: z.string().min(1).describe("contact id, e.g. 'c_42'") },
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+      },
+      async (args) => track("contacts_get")(args, async () => {
+        const data: any = await upstream.request("GET", `${base}/contacts/${encodeURIComponent(args.id)}`);
+        return data;
+      }),
+    );
+  }
+
+  if (can("contacts.write")) {
+    server.registerTool(
+      "contacts_create",
+      {
+        title: "Create contact",
+        description:
+          "Creates a contact. Required: 'name' (string), 'email' (string). Optional: 'company' (string), 'idempotencyKey' (string, 1-128 chars). Repeating a call with the same idempotencyKey and payload returns the original result without creating a duplicate; the same key with a different payload is rejected. Returns the created { id, name, email, company }.",
+        inputSchema: {
+          name: z.string().min(1).describe("full name"),
+          email: z.string().email().describe("primary email"),
+          company: z.string().optional().describe("company name"),
+          idempotencyKey: z.string().min(1).max(128).optional().describe("unique key per intended creation, e.g. from your workflow run id"),
+        },
+        annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
+      },
+      async (args) => track("contacts_create")(args, async () => {
+        if (args.idempotencyKey) {
+          const stored = idempotency.check(args.idempotencyKey, args);
+          if (stored) return { ...stored, replayed: true };
+        }
+        const created = await upstream.request("POST", `${base}/contacts`, { name: args.name, email: args.email, company: args.company });
+        if (args.idempotencyKey) idempotency.save(args.idempotencyKey, args, created);
+        return created;
+      }),
+    );
+
+    server.registerTool(
+      "contacts_update",
+      {
+        title: "Update contact",
+        description:
+          "Updates one contact. Required: 'id' (string). Optional fields (at least one): 'name', 'email', 'company'. Unknown ids fail with a clear error; nothing is created implicitly. Returns the updated contact object.",
+        inputSchema: {
+          id: z.string().min(1).describe("contact id, e.g. 'c_42'"),
+          name: z.string().min(1).optional().describe("new full name"),
+          email: z.string().email().optional().describe("new primary email"),
+          company: z.string().optional().describe("new company name"),
+        },
+        annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+      },
+      async (args) => track("contacts_update")(args, async () => {
+        const { id, ...patch } = args;
+        return upstream.request("PATCH", `${base}/contacts/${encodeURIComponent(id)}`, patch);
+      }),
+    );
+
+    server.registerTool(
+      "contacts_delete",
+      {
+        title: "Delete contact (destructive)",
+        description:
+          "Permanently deletes one contact. Requires BOTH 'id' (string) and 'confirm' set to true — confirm exists so a user must explicitly approve the destructive action in the client UI. Cannot be undone. Returns { deleted: true, id }.",
+        inputSchema: {
+          id: z.string().min(1).describe("contact id to delete"),
+          confirm: z.boolean().describe("must be true; the calling user must have approved deletion"),
+        },
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: false },
+      },
+      async (args) => track("contacts_delete")(args, async () => {
+        if (args.confirm !== true) {
+          throw new Error("destructive action refused: pass confirm=true after explicit user approval");
+        }
+        await upstream.request("DELETE", `${base}/contacts/${encodeURIComponent(args.id)}`);
+        return { deleted: true, id: args.id };
+      }),
+    );
+  }
+
+  return server;
+}
+
+/** Protected-resource metadata per RFC 9728 — our own probe flags servers without it. */
+const PROTECTED_RESOURCE = {
+  resource: `https://REPLACE-ME.example/mcp`,
+  authorization_servers: ["https://REPLACE-ME-IdP.example"],
+  scopes_supported: ["contacts.read", "contacts.write"],
+  bearer_methods_supported: ["header"],
+  resource_name: "mcp-basis demo",
+};
+
+const httpServer = http.createServer(async (req, res) => {
+  try {
+    if (req.method === "GET" && req.url === "/.well-known/oauth-protected-resource/mcp") {
+      res.writeHead(200, { "content-type": "application/json" });
+      res.end(JSON.stringify(PROTECTED_RESOURCE));
+      return;
+    }
+    if (req.url !== "/mcp") {
+      res.writeHead(404).end();
+      return;
+    }
+    const principal = authenticate(TOKENS_MAP, req.headers.authorization); // throws AuthError → 401
+    const transport = new StreamableHTTPServerTransport({
+      sessionIdGenerator: undefined, // stateless, per-request
+      enableJsonResponse: true,
+    });
+    res.on("close", () => transport.close());
+    const server = buildServer(principal);
+    await server.connect(transport);
+    await transport.handleRequest(req, res);
+  } catch (err) {
+    if (err instanceof AuthError) {
+      res.writeHead(401, {
+        "content-type": "application/json",
+        "www-authenticate": `Bearer realm="mcp-basis", resource_metadata="/.well-known/oauth-protected-resource/mcp"`,
+      });
+      res.end(JSON.stringify({ error: err.message }));
+      return;
+    }
+    res.writeHead(500, { "content-type": "application/json" });
+    res.end(JSON.stringify({ error: "internal error" }));
+  }
+});
+
+const TOKENS_MAP = parseTokens(TOKENS_JSON);
+
+if (process.env.MCP_BASIS_NO_LISTEN !== "1") {
+  httpServer.listen(PORT, () => {
+    process.stderr.write(`mcp-basis listening on http://127.0.0.1:${PORT}/mcp\n`);
+  });
+}
+
+export { buildServer, httpServer, TOKENS_MAP };

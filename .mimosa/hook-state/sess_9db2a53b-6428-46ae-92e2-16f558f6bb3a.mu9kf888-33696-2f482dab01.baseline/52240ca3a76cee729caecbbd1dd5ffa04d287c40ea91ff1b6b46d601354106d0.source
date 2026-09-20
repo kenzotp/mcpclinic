@@ -1,0 +1,89 @@
+// German markdown report generation: ranking + per-company details + methodology.
+
+import type { CompanyReport } from "./types.ts";
+import { scoreCompany, gradeOf } from "./score.ts";
+
+export function renderRankingTable(companies: CompanyReport[]): string {
+  const rows = companies
+    .map((c) => {
+      const s = scoreCompany(c);
+      const mcpFlag = c.mcp?.reachable && c.mcp.toolCount > 0 ? "✅" : "—";
+      const openapi = c.surface.openapi.url ? "✅" : "—";
+      const blocked = c.surface.robots.agents.some((a) => a.policy === "blocked") ? "🚫" : "";
+      return `| ${c.name} | ${s.total}/100 (${gradeOf(s.total)}) | ${mcpFlag} | ${openapi} | ${blocked} |`;
+    })
+    .join("\n");
+  return [
+    "| Unternehmen | Score | MCP | OpenAPI | blockiert Agenten |",
+    "|---|---|---|---|---|",
+    rows,
+  ].join("\n");
+}
+
+export function renderCompanySection(c: CompanyReport): string {
+  const s = scoreCompany(c);
+  const lines: string[] = [];
+  lines.push(`### ${c.name} — ${s.total}/100 (Note ${gradeOf(s.total)})`);
+  if (c.researchNote) lines.push(`\n**Recherche:** ${c.researchNote}`);
+  if (c.officialMcp !== undefined) lines.push(`\n**Eigenes MCP-Angebot:** ${c.officialMcp}`);
+
+  lines.push("\n**Dokumentations-Oberfläche:**\n");
+  for (const check of c.surface.checks) {
+    const icon = check.status === "pass" ? "✅" : check.status === "warn" ? "⚠️" : check.status === "fail" ? "❌" : "ℹ️";
+    lines.push(`- ${icon} **${check.label}:** ${check.detail}`);
+  }
+
+  if (c.mcp) {
+    lines.push("\n**MCP-Endpunkt** (" + c.mcp.url + "):\n");
+    for (const check of c.mcp.checks) {
+      const icon = check.status === "pass" ? "✅" : check.status === "warn" ? "⚠️" : check.status === "fail" ? "❌" : "ℹ️";
+      lines.push(`- ${icon} **${check.label}:** ${check.detail}`);
+    }
+  }
+  return lines.join("\n");
+}
+
+export function renderReport(opts: {
+  title: string;
+  intro: string;
+  companies: CompanyReport[];
+  methodology: string;
+  cta: string;
+  generatedAt: string;
+}): string {
+  const ranked = [...opts.companies].sort(
+    (a, b) => scoreCompany(b).total - scoreCompany(a).total,
+  );
+  const best = scoreCompany(ranked[0]).total;
+  const withMcp = opts.companies.filter((c) => c.mcp?.reachable && c.mcp.toolCount > 0).length;
+  const withOpenApi = opts.companies.filter((c) => c.surface.openapi.url).length;
+
+  return `# ${opts.title}
+
+*Stand: ${opts.generatedAt} · Automatisiert getestet mit dem MCP-Live-Test von [mcpclinic.dev](https://mcpclinic.dev)*
+
+${opts.intro}
+
+## Kernbefunde
+
+- **${withMcp} von ${opts.companies.length}** geprüften Unternehmen bieten einen MCP-Endpunkt an. Der Rest ist für KI-Agenten nicht oder nur selbstgebastelt erreichbar.
+- **${withOpenApi} von ${opts.companies.length}** stellen eine maschinenlesbare OpenAPI-Beschreibung bereit — die Grundlage für jede Agenten-Integration.
+- Der beste Score liegt bei **${best}/100**. Selbst der Spitzenreiter erreicht die 40 Punkte für ein echtes MCP-Angebot nicht.
+
+## Ranking
+
+${renderRankingTable(ranked)}
+
+## Einzelergebnisse
+
+${ranked.map(renderCompanySection).join("\n\n")}
+
+## Methodik
+
+${opts.methodology}
+
+---
+
+${opts.cta}
+`;
+}

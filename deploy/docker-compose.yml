@@ -1,0 +1,22 @@
+# MCP Clinic — deploy scaffolding. NICHT aktiviert: Hosts noch nicht aufgeschaltet (DNS siehe DNS-SETUP.md).
+services:
+  probe:
+    build: ..
+    image: mcpclinic-probe:latest
+    container_name: mcpclinic_probe
+    restart: unless-stopped
+    environment:
+      - PORT=8092
+    networks: [internal]
+    # kein Port nach außen — die Probe wird über die Site eingebunden; bei Bedarf:
+    # ports: ["127.0.0.1:8092:8092"]
+
+  site:
+    image: mcpclinic-site:latest   # wird erst mit der Website-Gestaltung gebaut (Next.js)
+    container_name: mcpclinic_site
+    restart: unless-stopped
+    expose: ["3000"]
+    networks: [internal]
+
+networks:
+  internal:
