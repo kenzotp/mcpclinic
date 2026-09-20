@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Footer({ lang }: { lang: "de" | "en" }) {
   const t =
@@ -17,7 +18,10 @@ export default function Footer({ lang }: { lang: "de" | "en" }) {
     <footer className="hairline-t relative z-10 mt-28">
       <div className="mx-auto grid max-w-5xl gap-10 px-6 py-14 text-sm md:grid-cols-[1fr_auto_auto]">
         <div>
-          <div className="font-display text-base font-semibold">MCP Clinic</div>
+          <div className="font-display flex items-center gap-2 text-base font-semibold">
+            <Logo size={16} />
+            MCP Clinic
+          </div>
           <p className="mt-2 max-w-xs text-[var(--ink-3)]">{t.claim}</p>
         </div>
         <div className="flex flex-col gap-2 text-[var(--ink-2)]">

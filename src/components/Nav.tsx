@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Moon, Sun, GlobeSimple } from "@phosphor-icons/react/dist/ssr";
+import Logo from "@/components/Logo";
 
 function ThemeToggle() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -49,7 +50,8 @@ export default function Nav({ lang }: { lang: "de" | "en" }) {
   return (
     <nav className="fixed inset-x-0 top-4 z-40 flex justify-center px-4">
       <div className="glass flex items-center gap-1 rounded-full px-2 py-1.5 text-[13px]">
-        <Link href={lang === "de" ? "/" : "/en"} className="font-display px-3 py-1 font-semibold tracking-tight">
+        <Link href={lang === "de" ? "/" : "/en"} className="font-display flex items-center gap-2 px-3 py-1 font-semibold tracking-tight">
+          <Logo size={17} />
           MCP&nbsp;Clinic
         </Link>
         <span className="h-4 w-px bg-[var(--hairline)]" />
