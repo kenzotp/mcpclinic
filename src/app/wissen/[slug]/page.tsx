@@ -35,7 +35,7 @@ function fieldHeader(slug: string): string {
     return seed / 4294967296;
   };
   const W = 1000, H = 190;
-  const nodes = [];
+  const nodes: { x: number; y: number }[] = [];
   let guard = 0;
   while (nodes.length < 16 && guard++ < 400) {
     const x = 30 + rnd() * (W - 60);
