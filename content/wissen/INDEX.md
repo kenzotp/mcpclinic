@@ -13,14 +13,25 @@
 
 *(6 statt 5 — der JTL-Winkel war zu gut, um liegen zu lassen.)*
 
-## Batch 2 (nächste Runde, mit Faktenbasis aus dem Report)
+## Fertig (Batch 2, 6 Posts — Kalender W2–W4 komplett vorlauf)
 
-1. **awork-MCP** — der Benchmark-Teardown: Was der offizielle Endpunkt richtig macht (OAuth 2.1 + PKCE + DCR, echte Server Card) — das Muster für alle anderen. Positionierung: anerkennend, Wettbewerber der Kunden, nicht Feind.
-2. **seven.io-MCP** — zweiter offizieller Anbieter; gehosteter Endpunkt + npm-Paket, 40+ Tools; Vergleich zweier successful Ansätze.
-3. **Personio-llms.txt** — „Hersteller liefern Lesefutter, aber keinen Zugang": llms.txt-Diskurs ohne zu verkaufen (Google-Studie 6/2026 erwähnen — Kosmetik).
-4. **Xentral-API-Specs** — public GitHub specs, PAT-Auth ohne OAuth = Delegationslücke.
-5. **propstack-MCP** — 5 persönliche Community-Repos = Nachfragesignal, das der Hersteller nicht bedient.
-6. **„Warum kostenlose Agent-Scanner nicht reichen"** — direkter Wettbewerbs-Artikel gegen isitagentready & Co. („Was isitagentready.com nicht prüft" als Keyword-Variante).
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `awork-mcp.md` | awork MCP (Benchmark-Teardown, anerkennend) | Live-Test → Audit |
+| `seven-io-mcp.md` | seven.io MCP (offizieller Anbieter #2) | Live-Test |
+| `personio-mcp.md` | Personio MCP / llms.txt vs. Zugang | Audit → Build |
+| `xentral-mcp.md` | Xentral MCP / public specs, PAT-Lücke | Live-Test → Build |
+| `propstack-mcp.md` | propstack MCP (5 Community-Repos = Nachfrage) | Live-Test → Build |
+| `agent-scanner-limits.md` | isitagentready / Scanner vs. Audit (Differenzierung) | Live-Test → Audit |
+
+**Gesamtstand: 12 Posts fertig (Batch 1 + 2). Veröffentlichungstakt 2/Woche ≈ 6 Wochen Vorsprung.**
+
+## Batch 3 (optional, wenn Veröffentlichung läuft)
+
+1. **Collmex-MCP** — CSV-Satz-Protokoll als Anti-Muster: Wenn die API selbst das Problem ist.
+2. **Lexware-MCP-Teardown** — der 31★-Community-Server mit OAuth-Schicht (ausführlicher als in Batch 1 angedeutet).
+3. **„MCP-Server selbst betreiben vs. Drittanbieter-Gateway"** — Datenfluss-/DSGVO-Vergleich, führt zum Build.
+4. **„XRechnung und Agenten"** — Brücke zum geparkten E-Rechnung-Produkt (wenn es reaktiviert wird).
 
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
