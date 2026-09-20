@@ -38,6 +38,7 @@ export default function Field() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let w = 0, h = 0, dpr = 1;
+    let lastW = 0, lastH = 0;
     let nodes: Node[] = [];
     let edges: Edge[] = [];
     let packets: Packet[] = [];
@@ -69,14 +70,23 @@ export default function Field() {
 
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 1.75);
-      w = window.innerWidth;
-      h = window.innerHeight;
+      const nw = window.innerWidth;
+      const nh = window.innerHeight;
+      const widthChanged = Math.abs(nw - lastW) > 1;
+      const heightJump = Math.abs(nh - lastH) > 160;
+      // Mobile scroll collapses/expands the address bar → tiny height changes
+      // fire resize constantly. Rebuilding the scene there teleports every
+      // packet mid-flight; small height-only deltas keep the scene untouched.
+      if (lastW > 0 && !widthChanged && !heightJump) return;
+      lastW = nw; lastH = nh;
+      w = nw;
+      h = nh;
       canvas.width = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
       canvas.style.width = `${w}px`;
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      buildScene();
+      if (widthChanged || heightJump || nodes.length === 0) buildScene();
     }
 
     function buildScene() {
