@@ -3,3 +3,5 @@ node_modules/
 test/audit.log
 report/out/*.tmp
 .DS_Store
+.mimosa/
+repro.mts

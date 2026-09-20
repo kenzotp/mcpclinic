@@ -39,7 +39,7 @@ function buildServer(principal: Principal): McpServer {
     { instructions: "CRM contacts tools. Read tools are safe; write tools require the contacts.write scope; delete requires explicit confirm=true." },
   );
   const upstream = new Upstream(UPSTREAM_BASE_URL, UPSTREAM_TOKEN);
-  const base = `/tenants/${encodeURIComponent(principal.tenant)}`; // tenant isolation by construction
+  const tenantSeg = principal.tenant; // encoded inside Upstream; isolation by construction
   const can = (scope: string) => principal.scopes.includes(scope);
 
   const track = (tool: string) =>
@@ -71,11 +71,10 @@ function buildServer(principal: Principal): McpServer {
         annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       },
       async (args) => track("contacts_list")(args, async () => {
-        const params = new URLSearchParams();
-        if (args.query) params.set("query", args.query);
-        if (args.limit) params.set("limit", String(args.limit));
-        const qs = params.toString();
-        return upstream.request("GET", `${base}/contacts${qs ? `?${qs}` : ""}`);
+        return upstream.callUpstream("GET", ["tenants", tenantSeg, "contacts"], undefined, {
+          ...(args.query ? { query: args.query } : {}),
+          ...(args.limit ? { limit: String(args.limit) } : {}),
+        });
       }),
     );
 
@@ -89,8 +88,7 @@ function buildServer(principal: Principal): McpServer {
         annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       },
       async (args) => track("contacts_get")(args, async () => {
-        const data: any = await upstream.request("GET", `${base}/contacts/${encodeURIComponent(args.id)}`);
-        return data;
+        return upstream.callUpstream("GET", ["tenants", tenantSeg, "contacts", args.id]);
       }),
     );
   }
@@ -115,7 +113,7 @@ function buildServer(principal: Principal): McpServer {
           const stored = idempotency.check(args.idempotencyKey, args);
           if (stored) return { ...stored, replayed: true };
         }
-        const created = await upstream.request("POST", `${base}/contacts`, { name: args.name, email: args.email, company: args.company });
+        const created = await upstream.callUpstream("POST", ["tenants", tenantSeg, "contacts"], { name: args.name, email: args.email, company: args.company });
         if (args.idempotencyKey) idempotency.save(args.idempotencyKey, args, created);
         return created;
       }),
@@ -137,7 +135,7 @@ function buildServer(principal: Principal): McpServer {
       },
       async (args) => track("contacts_update")(args, async () => {
         const { id, ...patch } = args;
-        return upstream.request("PATCH", `${base}/contacts/${encodeURIComponent(id)}`, patch);
+        return upstream.callUpstream("PATCH", ["tenants", tenantSeg, "contacts", id], patch);
       }),
     );
 
@@ -157,7 +155,7 @@ function buildServer(principal: Principal): McpServer {
         if (args.confirm !== true) {
           throw new Error("destructive action refused: pass confirm=true after explicit user approval");
         }
-        await upstream.request("DELETE", `${base}/contacts/${encodeURIComponent(args.id)}`);
+        await upstream.callUpstream("DELETE", ["tenants", tenantSeg, "contacts", args.id]);
         return { deleted: true, id: args.id };
       }),
     );

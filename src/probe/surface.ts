@@ -2,6 +2,7 @@
 
 import { httpGet, sleep, REQUEST_GAP_MS } from "./http.ts";
 import { parseAgentPolicies } from "./heuristics.ts";
+import { assertPublicHost } from "./ssrf.ts";
 import type { SurfaceProbeResult, Check } from "./types.ts";
 
 const OPENAPI_CANDIDATES = [
@@ -22,7 +23,7 @@ export async function probeSurface(
   origin: string,
   extraPaths: string[] = [],
 ): Promise<SurfaceProbeResult> {
-  const base = new URL(origin);
+  const base = await assertPublicHost(origin);
   const root = base.origin;
   const checks: Check[] = [];
 

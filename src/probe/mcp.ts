@@ -3,6 +3,7 @@
 
 import { httpGet, httpPost, extractJsonRpcMessages, sleep, REQUEST_GAP_MS } from "./http.ts";
 import { isWriteAction, descriptionQuality } from "./heuristics.ts";
+import { assertPublicHost } from "./ssrf.ts";
 import type { McpProbeResult, ToolInfo, AuthSignals, CardInfo, Check } from "./types.ts";
 
 const CLIENT_INFO = { name: "mcpclinic-live-test", version: "0.1.0" };
@@ -41,7 +42,7 @@ function mapTool(t: any): ToolInfo {
 }
 
 export async function probeMcpEndpoint(endpoint: string): Promise<McpProbeResult> {
-  const url = new URL(endpoint);
+  const url = await assertPublicHost(endpoint);
   const auth: AuthSignals = { authRequired: false, asMetadataUrlsProbed: [] };
   const card: CardInfo = { present: false };
   const checks: Check[] = [];
