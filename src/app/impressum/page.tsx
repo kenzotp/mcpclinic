@@ -1,7 +1,12 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Impressum — MCP Clinic" };
+// noindex: Impressum ist über den Footer erreichbar, aber nicht suchmaschinen-indiziert
+// (Mika: persönliche/geschäftliche Daten sollen nicht auffindbar sein).
+export const metadata = {
+  title: "Impressum — MCP Clinic",
+  robots: { index: false, follow: false },
+};
 
 export default function Impressum() {
   return (

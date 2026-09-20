@@ -1,8 +1,11 @@
 import Datenschutz from "../../datenschutz/page";
 
-export const metadata = { title: "Privacy — MCP Clinic" };
+export const metadata = {
+  title: "Privacy — MCP Clinic",
+  robots: { index: false, follow: false },
+};
 
-// EN mirror of the (still placeholder) German privacy page until launch.
+// EN mirror, noindex like the German original.
 export default function EnDatenschutz() {
   return <Datenschutz />;
 }

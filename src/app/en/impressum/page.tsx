@@ -1,8 +1,11 @@
 import Impressum from "../../impressum/page";
 
-export const metadata = { title: "Imprint — MCP Clinic" };
+export const metadata = {
+  title: "Imprint — MCP Clinic",
+  robots: { index: false, follow: false },
+};
 
-// EN mirror of the (still placeholder) German imprint until the entity decision.
+// EN mirror, noindex like the German original.
 export default function EnImpressum() {
   return <Impressum />;
 }

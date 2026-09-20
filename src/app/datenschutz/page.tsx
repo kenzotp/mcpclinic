@@ -1,7 +1,11 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Datenschutz — MCP Clinic" };
+// noindex wie Impressum — keine Indizierung der rechtlichen Seiten.
+export const metadata = {
+  title: "Datenschutz — MCP Clinic",
+  robots: { index: false, follow: false },
+};
 
 // Kompakte Datenschutzerklärung für den Live-Test (v1). Keine Cookies, keine
 // Tracker, keine Kontoanmeldung, keine Weitergabe an Modellprovider.
