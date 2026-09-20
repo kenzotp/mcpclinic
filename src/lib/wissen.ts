@@ -44,6 +44,18 @@ function renderDirectives(raw: string): { body: string; takeaways: string[] } {
     }
     const kind = m[1];
     const arg = (m[2] ?? "").trim();
+
+    // single-line directive: :::stat <num> | <label>
+    if (kind === "stat") {
+      const [num, ...label] = arg.split("|");
+      out.push(
+        `<div class="stat-block"><div class="stat-num">${esc(num.trim())}</div><div class="stat-label">${esc(label.join("|").trim())}</div></div>`,
+      );
+      i++;
+      continue;
+    }
+
+    // block directives: :::box <title> / :::takeaway, closed by :::
     const block: string[] = [];
     i++;
     while (i < lines.length && lines[i].trim() !== ":::") {
@@ -53,12 +65,7 @@ function renderDirectives(raw: string): { body: string; takeaways: string[] } {
     i++; // skip closing :::
     const body = block.join("\n").trim();
 
-    if (kind === "stat") {
-      const [num, ...label] = arg.split("|");
-      out.push(
-        `<div class="stat-block"><div class="stat-num">${esc(num.trim())}</div><div class="stat-label">${esc(label.join("|").trim())}</div></div>`,
-      );
-    } else if (kind === "box") {
+    if (kind === "box") {
       out.push(
         `<div class="find-box"><div class="find-title">${esc(arg)}</div><div class="find-body">${marked.parse(body, { async: false })}</div></div>`,
       );
