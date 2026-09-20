@@ -1,24 +1,26 @@
-# Der Live-Caddy-Block auf dem Hub (seit 2026-09-20, Platzhalter-Phase).
-# Original: ~/caddy/Caddyfile (Backup: ~/caddy/Caddyfile.bak-pre-mcpclinic-20260920).
-# Beim Launch: `respond`-Zeile durch reverse_proxy zur Site ersetzen und
-# `import noindex` ENTFERNEN (dies wird eine indexierbare Produktseite).
+# Die LIVE-Blöcke (seit 2026-09-20 Launch, Spiegel der Hub-Caddyfile).
+# Originale: ~/caddy/Caddyfile auf dem Hub (Backups: bak-pre-mcpclinicdev-,
+# bak-pre-mcpcliniclaunch-20260920). Achtung: reverse_proxy über 172.25.0.1
+# (Docker-Bridge-GW) — ufw erlaubt 172.16.0.0/12 → Port 3300.
 
 mcpclinic.dev {
-	import noindex
-	respond "MCP Clinic — coming soon." 200
+	reverse_proxy 172.25.0.1:3300
 }
 
 www.mcpclinic.dev {
-	import noindex
 	redir https://mcpclinic.dev{uri} permanent
 }
 
 mcpclinic.de {
-	import noindex
 	redir https://mcpclinic.dev{uri} permanent
 }
 
 www.mcpclinic.de {
-	import noindex
 	redir https://mcpclinic.dev{uri} permanent
+}
+
+# Review-Instanz (noindex) — bleibt neben der Live-Site für Iterationen:
+mcpclinic-dev.kills.dog {
+	import noindex
+	reverse_proxy 172.25.0.1:3300
 }
