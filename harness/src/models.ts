@@ -41,9 +41,12 @@ async function postJson(url: string, apiKey: string, body: unknown, extraHeaders
       signal: AbortSignal.timeout(90_000),
     });
   let res = await attempt();
-  // Shared keys hit tokens-per-minute limits; a 429 is worth one patient retry.
+  // Shared/throttled keys: 429 = tokens-per-minute (patient retry), 5xx = provider hiccup (quick retry).
   if (res.status === 429) {
     await new Promise((r) => setTimeout(r, 20_000));
+    res = await attempt();
+  } else if (res.status >= 500) {
+    await new Promise((r) => setTimeout(r, 5_000));
     res = await attempt();
   }
   if (!res.ok) {
@@ -121,6 +124,9 @@ export function anthropic(opts: {
   model: string;
   version?: string;
   baseUrl?: string;
+  /** GLM's endpoint defaults thinking ON — every reply comes back as a thinking
+   *  block with zero text unless explicitly disabled. */
+  disableThinking?: boolean;
 }): ModelClient {
   const base = opts.baseUrl ?? "https://api.anthropic.com";
   return {
@@ -141,17 +147,19 @@ export function anthropic(opts: {
           if (blocks.length) messages.push({ role: "assistant", content: blocks });
         }
       }
+      const body: Record<string, unknown> = {
+        model: opts.model,
+        max_tokens: 2048,
+        system,
+        messages,
+        tools: tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.inputSchema })),
+        temperature: 0,
+      };
+      if (opts.disableThinking) body.thinking = { type: "disabled" };
       const data = await postJson(
         `${base}/v1/messages`,
         apiKey,
-        {
-          model: opts.model,
-          max_tokens: 1024,
-          system,
-          messages,
-          tools: tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.inputSchema })),
-          temperature: 0,
-        },
+        body,
         { "anthropic-version": opts.version ?? "2023-06-01" },
       );
       const calls: ModelToolCall[] = [];
@@ -176,12 +184,15 @@ export function buildClients(spec: string): ModelClient[] {
       clients.push(openAiCompatible({ id: `openai/${model}`, baseUrl: "https://api.openai.com/v1", apiKeyEnv: "OPENAI_API_KEY", model }));
     else if (kind === "openrouter")
       clients.push(openAiCompatible({ id: `openrouter/${model}`, baseUrl: "https://openrouter.ai/api/v1", apiKeyEnv: "OPENROUTER_API_KEY", model }));
+    else if (kind === "nvidia")
+      // NVIDIA NIM (integrate.api.nvidia.com) — OpenAI-compatible; ~40 rpm on our key.
+      clients.push(openAiCompatible({ id: `nvidia/${model}`, baseUrl: "https://integrate.api.nvidia.com/v1", apiKeyEnv: "NVIDIA_API_KEY", model }));
     else if (kind === "claude")
       clients.push(anthropic({ id: `claude/${model}`, apiKeyEnv: "ANTHROPIC_API_KEY", model }));
     else if (kind === "glm")
       // Z.ai's Anthropic-compatible endpoint; thinking defaults ON server-side.
-      clients.push(anthropic({ id: `glm/${model}`, apiKeyEnv: "GLM_API_KEY", model, baseUrl: "https://api.z.ai/api/anthropic" }));
-    else throw new Error(`unknown model kind '${kind}' (allowed: openai:MODEL, claude:MODEL, glm:MODEL, openrouter:MODEL)`);
+      clients.push(anthropic({ id: `glm/${model}`, apiKeyEnv: "GLM_API_KEY", model, baseUrl: "https://api.z.ai/api/anthropic", disableThinking: true }));
+    else throw new Error(`unknown model kind '${kind}' (allowed: openai:MODEL, claude:MODEL, glm:MODEL, openrouter:MODEL, nvidia:MODEL)`);
   }
   return clients;
 }
