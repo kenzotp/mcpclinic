@@ -21,10 +21,24 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mcpclinic.dev"),
   title: "MCP Clinic — Wir machen deutsche SaaS agentenfähig",
   description:
     "Kostenloser MCP-Live-Test, Agent-Readiness-Audit zum Festpreis und MCP-Endpoint-Build: Wir machen deutsche B2B-SaaS-Produkte für KI-Agenten nutzbar.",
-  metadataBase: new URL("https://mcpclinic.dev"),
+  openGraph: {
+    title: "MCP Clinic — Wir machen deutsche SaaS agentenfähig",
+    description:
+      "Kostenloser MCP-Live-Test, Agent-Readiness-Audit zum Festpreis und MCP-Endpoint-Build.",
+    url: "https://mcpclinic.dev",
+    siteName: "MCP Clinic",
+    locale: "de_DE",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

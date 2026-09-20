@@ -31,8 +31,8 @@ function ThemeToggle() {
 
 export default function Nav({ lang }: { lang: "de" | "en" }) {
   const t = {
-    de: { weg: "Weg", report: "Report", angebote: "Angebote" },
-    en: { weg: "Process", report: "Report", angebote: "Services" },
+    de: { weg: "Weg", report: "Report", angebote: "Angebote", wissen: "Wissen" },
+    en: { weg: "Process", report: "Report", angebote: "Services", wissen: "Knowledge" },
   }[lang];
 
   function setTheme(initial: string) {
@@ -60,6 +60,9 @@ export default function Nav({ lang }: { lang: "de" | "en" }) {
         </Link>
         <Link href={lang === "de" ? "/report" : "/en/report"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
           {t.report}
+        </Link>
+        <Link href={lang === "de" ? "/wissen" : "/wissen"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+          {t.wissen}
         </Link>
         <Link href={lang === "de" ? "/#angebote" : "/en#angebote"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
           {t.angebote}

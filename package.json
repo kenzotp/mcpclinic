@@ -4,7 +4,9 @@
   "private": true,
   "description": "MCP Clinic — site, probe engine, audit harness and the mcp-basis template server",
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,6 +18,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
+    "marked": "^18.0.13",
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

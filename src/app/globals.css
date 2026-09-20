@@ -94,3 +94,93 @@ body {
 :root[data-theme="light"] ::selection {
   background: rgba(16, 16, 18, 0.16);
 }
+
+/* wissen article typography — monochrome, no typography plugin needed */
+.wissen h2 {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  color: var(--ink);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 2.2rem 0 0.8rem;
+}
+.wissen h3 {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.6rem 0 0.6rem;
+}
+.wissen p {
+  margin: 0.9rem 0;
+}
+.wissen strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.wissen a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s;
+}
+.wissen a:hover {
+  text-decoration-color: var(--ink-2);
+}
+.wissen ul, .wissen ol {
+  margin: 0.9rem 0;
+  padding-left: 1.2rem;
+}
+.wissen ul { list-style: disc; }
+.wissen ol { list-style: decimal; }
+.wissen li { margin: 0.35rem 0; }
+.wissen table {
+  width: 100%;
+  margin: 1.2rem 0;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.wissen th {
+  text-align: left;
+  color: var(--ink-3);
+  font-weight: 500;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.wissen th, .wissen td {
+  border-bottom: 1px solid var(--hairline);
+  padding: 0.55rem 0.75rem 0.55rem 0;
+}
+.wissen code {
+  font-size: 0.88em;
+  background: var(--glass-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+}
+.wissen pre {
+  background: var(--glass-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+.wissen pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.wissen blockquote {
+  border-left: 2px solid var(--hairline);
+  padding-left: 1rem;
+  color: var(--ink-2);
+  margin: 1.2rem 0;
+}
+.wissen hr {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: 2rem 0;
+}
