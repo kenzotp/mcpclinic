@@ -1,8 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-// Platzhalter — rechtliche Angaben hängen von Mikas Entitäts-Entscheidung ab.
-// VOR dem öffentlichen Launch auf mcpclinic.dev zwingend ausfüllen.
 export const metadata = { title: "Impressum — MCP Clinic" };
 
 export default function Impressum() {
@@ -11,22 +9,33 @@ export default function Impressum() {
       <Nav lang="de" />
       <main className="relative z-10 mx-auto max-w-2xl px-6 pb-10 pt-40 text-sm leading-relaxed">
         <h1 className="font-display text-3xl font-extralight">Impressum</h1>
-        <div className="mt-8 flex flex-col gap-4 text-[var(--ink-2)]">
-          <p>Angaben gemäß § 5 TMG / § 5 DDG:</p>
+        <div className="mt-8 flex flex-col gap-5 text-[var(--ink-2)]">
+          <p>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz). Diensteanbieter:</p>
           <p className="text-[var(--ink)]">
-            MCP Clinic
+            Einzelunternehmen, geführt unter der Geschäftsbezeichnung „MCP Clinic“
             <br />
-            [OFFEN: Rechtsträger / Name]
+            Inhaber: Mika Niedbala
             <br />
-            [OFFEN: Anschrift]
+            c/o Online-Impressum
             <br />
-            [OFFEN: Kontakt-E-Mail]
+            Europaring 90
+            <br />
+            53757 Sankt Augustin
+            <br />
+            Deutschland
           </p>
-          <p>Umsatzsteuer-ID: [OFFEN]</p>
-          <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [OFFEN]</p>
+          <p>
+            Kontakt: <a className="underline decoration-[var(--hairline)] underline-offset-4 transition-colors hover:text-[var(--ink)]" href="mailto:info@zuuna.de">info@zuuna.de</a>
+          </p>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE464571290
+          </p>
+          <p>
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Mika Niedbala, Anschrift wie oben.
+          </p>
           <p className="text-[var(--ink-3)]">
-            Hinweis intern: Diese Seite ist Platzhalter. Vor Launch auf mcpclinic.dev
-            ausfüllen (hängt an der Entitäts-Entscheidung).
+            Hinweis: Bei einem Einzelunternehmen ist der bürgerliche Name des Inhabers anzugeben;
+            „MCP Clinic“ ist die Geschäftsbezeichnung und ersetzt den Namen nicht.
           </p>
         </div>
       </main>
