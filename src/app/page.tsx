@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import TestInput from "@/components/TestInput";
+import { wissenAll } from "@/lib/wissen";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 // Deutsche Landing — sechs Beats über einem fortlaufenden Feld.
@@ -27,7 +28,8 @@ const ANGEBOTE = [
   { t: "Betriebs-Retainer", p: "400–800 €/Monat", d: "Spezifikationsänderungen beobachten, monatlicher Regressionstest, Prioritäts-Fixes." },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const posts = (await wissenAll()).slice(0, 5);
   return (
     <>
       <Nav lang="de" />
@@ -125,7 +127,31 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 5 · ANGEBOTE — Festpreise öffentlich */}
+      {/* 5 · WISSEN — Teaser der Analysen */}
+      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Wissen</p>
+        </Reveal>
+        <div className="mt-6 flex flex-col">
+          {posts.map((p, i) => (
+            <Reveal key={p.slug} delay={Math.min(i, 4) * 60}>
+              <Link href={`/wissen/${p.slug}`} className="hairline-t group flex items-center justify-between gap-6 py-5">
+                <span className="font-display text-base font-medium transition-colors group-hover:text-[var(--ink-2)]">
+                  {p.title}
+                </span>
+                <ArrowRight size={15} className="shrink-0 text-[var(--ink-3)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--ink)]" />
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={140}>
+          <Link href="/wissen" className="mt-6 inline-flex items-center gap-2 text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+            Alle Analysen <ArrowRight size={13} />
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* 6 · ANGEBOTE — Festpreise öffentlich */}
       <section id="angebote" className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Angebote — Festpreise, öffentlich</p>
