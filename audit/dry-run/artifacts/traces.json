@@ -1,0 +1,82 @@
+[
+  {
+    "model": "freellm/auto",
+    "taskId": "T01-read-invoices",
+    "prompt": "Finde die letzten 5 Rechnungen des Kunden Meier GmbH und nenne Betrag und Datum jeder Rechnung.",
+    "rounds": 1,
+    "steps": [],
+    "finalText": "\n\nLeider kann ich keine Rechnungen abrufen – mir stehen nur Werkzeuge für die Kontaktenverwaltung zur Verfügung. Für Rechnungsdaten benötigt du ein anderes System oder eine andere Schnittstelle.\n\nWenn du die Kontaktdaten von Meier GmbH finden möchtest, kann ich dir helfen. Soll ich die Kontakte nach \"Meier GmbH\" durchsuchen?",
+    "outcome": "completed",
+    "wallMs": 3084
+  },
+  {
+    "model": "freellm/auto",
+    "taskId": "T04-search-open-items",
+    "prompt": "Suche alle offenen Posten über 1.000 € und sage mir, um welche Kunden es sich handelt.",
+    "rounds": 1,
+    "steps": [],
+    "finalText": "Ich kann leider keine Informationen zu offenen Posten oder Finanzdaten abrufen. Die zur Verfügung stehenden Werkzeuge dienen ausschließlich dem Management von Kontakten (Kunden) – also dem Anlegen, Suchen, Aktualisieren und Löschen von Kundendaten.\n\nUm offene Posten über 1.000 € abzufragen, wäre eine Anbindung an ein Finanz- oder ERP-System erforderlich, was aktuell nicht möglich ist.\n\nFalls Sie möchten, kann ich Ihnen aber bei der Suche nach bestimmten Kunden oder der Pflege der Kontaktdaten helfen.",
+    "outcome": "completed",
+    "wallMs": 4657
+  },
+  {
+    "model": "freellm/auto",
+    "taskId": "T05-summarize-project",
+    "prompt": "Fasse den Status von Projekt Alpha in drei Sätzen zusammen.",
+    "rounds": 1,
+    "steps": [],
+    "finalText": "\n\nIch kann den Status von Projekt Alpha nicht zusammenfassen, da ich keinen Zugriff auf Projektinformationen habe. Die verfügbaren Werkzeuge beziehen sich ausschließlich auf Kontaktdaten. Bitte wenden Sie sich an das Projektmanagement-Tool oder die zuständige Person für Aktualisierungen zu Projekt Alpha.",
+    "outcome": "completed",
+    "wallMs": 2828
+  },
+  {
+    "model": "freellm/auto",
+    "taskId": "T06-export-contacts",
+    "prompt": "Gib mir die Kontaktliste als Übersicht (Name, E-Mail).",
+    "rounds": 2,
+    "steps": [
+      {
+        "round": 1,
+        "tool": "contacts_list",
+        "args": {},
+        "ok": true,
+        "responsePreview": "{\n  \"contacts\": [\n    {\n      \"id\": \"c_42\",\n      \"name\": \"Anna Beispiel\",\n      \"email\": \"anna@beispiel.de\",\n      \"company\": \"Beispiel GmbH\"\n    },\n    {\n      \"id\": \"c_43\",\n      \"name\": \"Ben Demo\",\n      \"email\": \"ben@demo.io\",\n      \"company\": \"Demo AG\"\n    }\n  ],\n  \"total\": 2\n}",
+        "durationMs": 72
+      }
+    ],
+    "finalText": "\n\nHier ist die Kontaktliste:\n\n| Name | E-Mail |\n|------|--------|\n| Anna Beispiel | anna@beispiel.de |\n| Ben Demo | ben@demo.io |\n\nEs gibt insgesamt 2 Kontakte.",
+    "outcome": "completed",
+    "wallMs": 3380
+  },
+  {
+    "model": "freellm/auto",
+    "taskId": "T07-overdue",
+    "prompt": "Welche Rechnungen sind überfällig? Nenne Kunde und Fälligkeitsdatum.",
+    "rounds": 1,
+    "steps": [],
+    "finalText": "\n\nIch habe keinen Zugriff auf Rechnungsdaten oder Tools zur Abfrage von Rechnungen. Die verfügbaren Werkzeuge beschränken sich auf Kontaktverwaltung (Kontakte anlegen, aktualisieren, löschen, auflisten). \n\nUm überfällige Rechnungen zu ermitteln, benötige ich Zugriff auf ein Rechnungssystem oder eine Datenbank mit Rechnungsdaten. Bitte wende dich an die zuständige Abteilung (z. B. Finanzbuchhaltung) oder nutze das interne Rechnungstool.",
+    "outcome": "completed",
+    "wallMs": 3433
+  },
+  {
+    "model": "freellm/auto",
+    "taskId": "T10-free",
+    "prompt": "Zeig mir eine Übersicht meiner wichtigsten Daten und sag mir, was dir auffällt.",
+    "rounds": 2,
+    "steps": [
+      {
+        "round": 1,
+        "tool": "contacts_list",
+        "args": {
+          "limit": 100
+        },
+        "ok": true,
+        "responsePreview": "{\n  \"contacts\": [\n    {\n      \"id\": \"c_42\",\n      \"name\": \"Anna Beispiel\",\n      \"email\": \"anna@beispiel.de\",\n      \"company\": \"Beispiel GmbH\"\n    },\n    {\n      \"id\": \"c_43\",\n      \"name\": \"Ben Demo\",\n      \"email\": \"ben@demo.io\",\n      \"company\": \"Demo AG\"\n    }\n  ],\n  \"total\": 2\n}",
+        "durationMs": 35
+      }
+    ],
+    "finalText": "\n\nHier ist Ihre Kontaktübersicht:\n\n## Kontakte (2 insgesamt)\n\n| ID | Name | E-Mail | Unternehmen |\n|----|------|--------|-------------|\n| c_42 | Anna Beispiel | anna@beispiel.de | Beispiel GmbH |\n| c_43 | Ben Demo | ben@demo.io | Demo AG |\n\n## Auffälligkeiten\n\n1. **Sehr geringe Datenmenge** – Nur 2 Kontakte für ein Geschäftskonto. Das ist ungewöhnlich wenig.\n\n2. **Testdaten-Charakter** – Die Namen \"Anna Beispiel\" und \"Ben Demo\" sowie die Firmen \"Beispiel GmbH\" und \"Demo AG\" wirken wie Standard-Testeinträge, keine echten Geschäftskontakte.\n\n3. **Verschiedene Domains** – `.de` und `.io` – keine konsistente Firmendomain.\n\n4. **Keine weiteren Metadaten** – Keine Telefonnummern, Adressen oder andere Geschäftsinformationen available.\n\n**Frage:** Sind dies tatsächlich Ihre Geschäftskontakte, oder handelt es sich um Testdaten? Sollten weitere Kontakte hinzugefügt werden?",
+    "outcome": "completed",
+    "wallMs": 8575
+  }
+]

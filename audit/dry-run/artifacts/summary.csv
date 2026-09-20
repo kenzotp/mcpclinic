@@ -1,0 +1,7 @@
+model,taskId,rounds,steps,toolsUsed,errors,outcome,wallMs
+"freellm/auto","T01-read-invoices","1","0","","0","completed","3084"
+"freellm/auto","T04-search-open-items","1","0","","0","completed","4657"
+"freellm/auto","T05-summarize-project","1","0","","0","completed","2828"
+"freellm/auto","T06-export-contacts","2","1","contacts_list","0","completed","3380"
+"freellm/auto","T07-overdue","1","0","","0","completed","3433"
+"freellm/auto","T10-free","2","1","contacts_list","0","completed","8575"

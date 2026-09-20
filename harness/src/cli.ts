@@ -8,8 +8,11 @@ import { standardTasks, DEFAULT_SYSTEM } from "./tasks.ts";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 function arg(name: string, fallback?: string): string | undefined {
-  const i = process.argv.indexOf(`--${name}`);
-  return i !== -1 ? process.argv[i + 1] : fallback;
+  const argv = process.argv;
+  const i = argv.indexOf(`--${name}`);
+  if (i !== -1) return argv[i + 1];
+  const eq = argv.find((a) => a.startsWith(`--${name}=`));
+  return eq ? eq.split("=").slice(1).join("=") : fallback;
 }
 
 async function main() {
