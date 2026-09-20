@@ -8,7 +8,9 @@ zwischen
 
 und
 
-**[AUFTRAGNEHMER], [ANSCHRIFT]** — „Auftragnehmer" —
+**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“
+c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
+— nachfolgend „Auftragnehmer" —
 
 ## § 1 Gegenstand
 
@@ -32,6 +34,6 @@ Kein 24/7-Betrieb, keine Verfügbarkeitszusage für die Kundensysteme, keine Rec
 
 ## § 5 Sonstiges
 
-Deutsches Recht; Gerichtsstand [SITZ AUFTRAGNEHMER]. Änderungen in Textform.
+Deutsches Recht; Gerichtsstand Sankt Augustin. Änderungen in Textform.
 
 [ORT, DATUM] — Unterschriften

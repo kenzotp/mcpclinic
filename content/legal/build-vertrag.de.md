@@ -8,7 +8,9 @@ zwischen
 
 und
 
-**[AUFTRAGNEHMER], [ANSCHRIFT]** — „Auftragnehmer" —
+**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“
+c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
+— nachfolgend „Auftragnehmer" —
 
 ## § 1 Gegenstand
 
@@ -46,6 +48,6 @@ Festpreis: **[XX.XXX] € zuzüglich USt.**, fixiert nach Audit-Scope vor Vertra
 
 ## § 8 Sonstiges
 
-Gerichtsstand [SITZ AUFTRAGNEHMER]; deutsches Recht. Änderungen bedürfen der Textform. Nach der Abnahme empfohlen: Betriebs-Retainer (gesonderter Vertrag) zur Begleitung von Spezifikationsänderungen.
+Gerichtsstand Sankt Augustin; deutsches Recht. Änderungen bedürfen der Textform. Nach der Abnahme empfohlen: Betriebs-Retainer (gesonderter Vertrag) zur Begleitung von Spezifikationsänderungen.
 
 [ORT, DATUM] — Unterschriften

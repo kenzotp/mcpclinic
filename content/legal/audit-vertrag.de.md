@@ -8,7 +8,9 @@ zwischen
 
 und
 
-**[AUFTRAGNEHMER = Abrechnungs-Entität], [ANSCHRIFT]** — nachfolgend „Auftragnehmer" —
+**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“  
+c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
+ — nachfolgend „Auftragnehmer" —
 
 ## § 1 Gegenstand
 
@@ -41,7 +43,7 @@ Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit; b
 ## § 7 Sonstiges
 
 (1) Änderungen des Prüfumfangs (z. B. zusätzliche APIs) werden gesondert nach Aufwand oder als weitere Festpreis-Audits beauftragt.
-(2) Erfüllungsort und Gerichtsstand: [SITZ AUFTRAGNEHMER]. Deutsches Recht.
+(2) Erfüllungsort und Gerichtsstand: Sankt Augustin. Deutsches Recht.
 (3) Auftragserteilung per E-Mail mit Bezug auf diese Vorlage gilt als Abschluss.
 
 [ORT, DATUM] — Unterschriften

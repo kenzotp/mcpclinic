@@ -48,12 +48,20 @@ export default function AuditPage() {
               <div className="font-display text-2xl font-extralight">2.400 €</div>
               <div className="text-sm text-[var(--ink-2)]">Festpreis · 2–3 Arbeitstage · Re-Audit in 60 Tagen: 600 €</div>
             </div>
-            <Link
-              href="mailto:info@zuuna.de?subject=Agent-Readiness-Audit"
-              className="flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
-            >
-              Audit anfragen <ArrowRight size={14} weight="bold" />
-            </Link>
+            <div className="flex flex-col gap-2 sm:items-end">
+              <a
+                href="https://buy.stripe.com/14AfZa4T4goL5MJ2VTc3m00"
+                className="flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                Audit direkt buchen — 2.400 € <ArrowRight size={14} weight="bold" />
+              </a>
+              <a
+                href="mailto:info@zuuna.de?subject=Agent-Readiness-Audit"
+                className="px-2 text-xs text-[var(--ink-3)] underline decoration-[var(--hairline)] underline-offset-4 transition-colors hover:text-[var(--ink-2)]"
+              >
+                oder zuerst Fragen stellen: info@zuuna.de
+              </a>
+            </div>
           </div>
         </Reveal>
 
