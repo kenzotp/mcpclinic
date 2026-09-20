@@ -4,6 +4,12 @@
 
 **Meta-Description:** Datenflüsse, Auftragsverarbeitung, Löschfristen, EU-Hosting: die DSGVO-Pflichten rund um MCP-Server — technisch sortiert, ohne Rechtsberatung.
 
+:::takeaway
+- Jeder Agenten-Aufruf sendet Kundendaten an einen Modellprovider — welche, zu wem, mit welchem AVV, muss dokumentiert sein.
+- Der stärkste Hebel ist Datenminimierung im Tool-Design: Felder begrenzen, Seitengrößen deckeln.
+- Statische API-Keys machen delegierte, eingeschränkte Agentenzugriffe unmöglich — OAuth-Scopes sind die Voraussetzung.
+:::
+
 ---
 
 Sobald ein KI-Agent mit Ihrer SaaS arbeitet, verlassen Kundendaten Ihr System. Das war bei klassischen Integrationen nicht anders — nur geschah es dort auf dokumentierten Wegen mit geregelten Verträgen. Agentenverkehr braucht dieselbe Sorgfalt, nur schneller. Hier die fünf Fragen, die Sie beantworten können sollten, bevor der erste Kunde fragt.

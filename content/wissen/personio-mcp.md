@@ -4,6 +4,12 @@
 
 **Meta-Description:** Personio liefert llms.txt und OAuth2 — aber keinen MCP-Endpunkt. Eine Einordnung, was Dokumentations-Signale über die echte Agenten-Fähigkeit einer API aussagen (und was nicht).
 
+:::takeaway
+- llms.txt und moderne Doku sind die Lesbarkeits-Hälfte — die Zugangshälfte (Endpunkt, Delegation, Scopes) fehlt bei Personio komplett.
+- OAuth2 Client Credentials ist ein Maschinen-Login, kein Nutzer-im-Auftrag-Login — für Agenten der falsche Stil.
+- Käufer-Fragen statt Marketing-Sprüchen: Gibt es einen offiziellen Endpunkt? Agiert der Agent im Nutzernamen? Gibt es Scopes pro Werkzeug?
+:::
+
 ---
 
 Es gibt in unserem [Deutscher MCP-Report 2026](/report) eine Gruppe von Anbietern, die auf den ersten Blick KI-ready aussieht: llms.txt wird ausgeliefert, die Dokumentation ist modern, vielleicht sogar explizit für maschinelles Lesen aufbereitet. Personio gehört dazu — und ist zugleich das beste Beispiel dafür, warum diese Signale die Hälfte der Wahrheit sind.

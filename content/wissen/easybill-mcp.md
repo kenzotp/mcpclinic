@@ -4,6 +4,12 @@
 
 **Meta-Description:** Gibt es einen offiziellen easybill-MCP-Connector? Wir haben es geprüft: alle Belege führen zu Drittanbietern. Was die easybill-API heute kann und was für Agenten fehlt.
 
+:::takeaway
+- Ein offizieller easybill-MCP-Connector ist nicht auffindbar — alle Treffer sind Drittanbieter-Gateways oder Miniatur-Repos.
+- Die API selbst ist gut dokumentiert (öffentliche Swagger-Spec, Bearer-Key), aber ohne OAuth gibt es kein „Agent darf nur lesen".
+- Sauberer Weg heute: ein eigener, kontrollierter MCP-Server statt des Rechnungs-Keys in einem Fremd-Gateway.
+:::
+
 ---
 
 Wer nach „easybill MCP" sucht, trifft auf den Eindruck, easybill biete eine offizielle KI-Agenten-Anbindung. Wir haben das gründlich geprüft — und die Antwort ist wichtig, weil sie ein Muster zeigt, das man von vielen Herstellern kennen wird.

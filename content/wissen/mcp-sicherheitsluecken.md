@@ -4,6 +4,12 @@
 
 **Meta-Description:** Die 6 häufigsten Sicherheitslücken bei MCP-Anbindungen — von offenen Servern ohne Login bis zu löschenden Agenten ohne Bestätigung. Mit Beispielen aus unserem Report über 21 deutsche SaaS-APIs.
 
+:::takeaway
+- Die typischen Lücken wiederholen sich: offene Endpunkte, ein Key für alles, Schreibaktionen ohne Bremsen.
+- Mandantentrennung muss auf der Serverseite erzwungen werden — nie über Tool-Argumente.
+- Kostenlose Scanner sehen keine dieser Lücken; sie verschwinden erst hinter dem Login, den Scanner nie durchqueren.
+:::
+
 ---
 
 Wer MCP-Server liest, denkt zuerst an Komfort. Sicherheitsleute lesen sie anders — und sie hätten recht: Ein MCP-Server gibt einem Sprachmodell **ausführende Hände** an Ihrer Software. Was bei einem unvorsichtigen Nutzer ein Klick ist, ist bei einem Agenten ein API-Aufruf in Millisekunden — wiederholbar, skriptbar, und ohne dass ein Mensch hinsieht.

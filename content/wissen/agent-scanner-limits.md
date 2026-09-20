@@ -4,6 +4,12 @@
 
 **Meta-Description:** Kostenlose Scanner prüfen, ob Dateien existieren. Wir schicken echte Agenten gegen Ihre API. Der Unterschied zwischen Oberflächen-Score und Einsatzfähigkeit — im Detail.
 
+:::takeaway
+- Scanner prüfen die Fassade: Dateien, Header, Endpunkt-Verhalten ohne Login.
+- Ob ein Agent das richtige Werkzeug wählt, sicher schreibt und Mandanten trennt, sieht nur ein Live-Test.
+- Sinnvolle Reihenfolge: erst der kostenlose Scan — wenn er gut ausfällt, entscheidet das Audit über die Einsatzfähigkeit.
+:::
+
 ---
 
 Es gibt inzwischen mehrere kostenlose „Agent-Readiness"-Checks: Cloudflares [isitagentready.com](https://isitagentready.com), diverse SEO-Anbieter, einzelne Blog-Tools. Die sind nützlich — wir selbst betreiben einen ([MCP-Live-Test](/test)). Aber es ist wichtig zu verstehen, wo deren Wertebereich endet. Denn zwischen „Scanner sagt 40/100" und „ein Agent kann mit Ihrer API arbeiten" liegt eine ganze Ingenieursdisziplin.

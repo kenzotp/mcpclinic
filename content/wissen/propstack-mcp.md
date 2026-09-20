@@ -4,6 +4,14 @@
 
 **Meta-Description:** Bei propstack existieren mindestens fünf private MCP-Projekte, aber kein offizieller Endpunkt. Warum so ein Muster das beste Nachfragesignal ist, das es gibt.
 
+:::stat 5 | unabhängige Community-MCP-Projekte zu einer API, für die es keinen offiziellen Endpunkt gibt
+
+:::takeaway
+- Fünf persönliche GitHub-Repos bedeuten: Nachfrage existiert — sie fließt nur an der Produktstrategie vorbei.
+- Community-Nutzer arbeiten mit statischen X-API-Keys ohne Scopes und ohne Protokoll.
+- Ein offizieller Endpunkt muss die Projekte nicht ersetzen — nur überflüssig machen.
+:::
+
 ---
 
 Manchmal ist das lauteste Signal die Stille eines Herstellers. Der Fall propstack — die Immobilien-CRM-Plattform mit der KI-Assistentin „Proppi" — zeigt es besonders deutlich.

@@ -4,6 +4,14 @@
 
 **Meta-Description:** seven.io liefert mit „Seven MCP" einen gehosteten OAuth-gesicherten MCP-Endpunkt plus npm-Paket. Was der zweite offizielle Anbieter im Deutschen MCP-Report richtig macht.
 
+:::stat 30/100 | Platz 2 im Report — gehosteter Endpunkt mit OAuth 2.0 PKCE und über 40 Tools
+
+:::takeaway
+- Seven MCP läuft gehostet (mcp.seven.io/mcp, OAuth 2.0 PKCE) und zusätzlich lokal per npm — für beide Nutzungsarten ist offiziell gesorgt.
+- Unser Live-Test bestätigt die saubere OAuth-Discovery; der Score verliert nur bei der maschinenlesbaren API-Doku.
+- Schnittstellen-Anbieter mit Entwickler-Kundschaft haben den klartesten Business Case für einen eigenen Endpunkt — seven.io nutzt ihn.
+:::
+
 ---
 
 Von allen Unternehmen in unserem [Deutscher MCP-Report 2026](/report) ist seven.io die vielleicht unterschätzteste Geschichte: ein SMS-/Kommunikations-API-Anbieter, der mit **„Seven MCP"** als einer von nur zwei deutschen Anbietern einen offiziellen, gehosteten MCP-Endpunkt betreibt — und nebenher demonstriert, wie man eine API für Agenten denkt statt nur für Menschen.

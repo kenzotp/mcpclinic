@@ -4,6 +4,14 @@
 
 **Meta-Description:** MCP (Model Context Protocol) erklärt — ohne Fachjargon: was KI-Agenten brauchen, um mit Ihrer Software zu arbeiten, und warum 19 von 21 geprüften deutschen SaaS-Anbietern es noch nicht anbieten.
 
+:::stat 2/21 | deutsche B2B-SaaS-APIs bieten heute einen eigenen MCP-Endpunkt an (Deutscher MCP-Report 2026)
+
+:::takeaway
+- MCP ist die Schnittstelle, über die KI-Agenten Ihre Software selbstständig bedienen — mit Ihren Berechtigungen und Ihrem Protokoll.
+- Der Standard ist da: Claude, ChatGPT und Copilot sprechen ihn alle.
+- Das Problem ist nicht die Technik, sondern dass fast kein deutscher Anbieter sie anbietet — 2 von 21 im Report.
+:::
+
 ---
 
 Ein Kunde schreibt Ihnen: „Ich habe Claude gerade gebeten, die offenen Posten von Kunde Meier zusammenzufassen — warum funktioniert das nicht mit eurer Software?"

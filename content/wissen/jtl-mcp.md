@@ -4,6 +4,12 @@
 
 **Meta-Description:** JTL öffnet seine Entwickler-Dokumentation ausdrücklich für KI-Tools — Specs für MCP indexiert, llms.txt, Build-with-AI-Seite. Ein offizieller MCP-Endpunkt fehlt trotzdem. Einordnung.
 
+:::takeaway
+- JTL ist der einzige Anbieter im Report, der KI-Systeme ausdrücklich zur Lese seiner Specs einlädt („Build with AI", llms.txt, offene OpenAPI-Dateien).
+- OAuth 2.0 für Cloud-Apps existiert — ein agentengerechter Endpunkt im Nutzernamen fehlt trotzdem.
+- Für Händler gilt bis dahin: Lesen ja, Schreibaktionen nur hinter einer eigenen Kontrollschicht.
+:::
+
 ---
 
 Unter den deutschen E-Commerce- und ERP-Anbietern nimmt JTL eine Sonderstellung ein: Es ist der einzige Hersteller in unserem Report-Umfeld, der KI-Systeme **ausdrücklich einlädt**, seine Dokumentation zu lesen. Und gleichzeitig ein Beispiel dafür, dass Einladung zum Lesen noch kein Agenten-Zugang ist.

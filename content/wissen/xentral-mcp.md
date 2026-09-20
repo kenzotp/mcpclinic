@@ -4,6 +4,12 @@
 
 **Meta-Description:** Xentral pflegt seine API-Specs öffentlich auf GitHub und liefert LLM-freundliche Doku — ein offizieller MCP-Endpunkt und ein OAuth-Delegationsmodell fehlen trotzdem. Analyse.
 
+:::takeaway
+- Öffentliche OpenAPI-Specs auf GitHub (aktiv gepflegt) plus llms.txt — die Doku-Ebene ist besser als bei den meisten Mitbewerbern.
+- Personal Access Tokens ohne Scopes und Ablauf sind die schwächste Basis für Agenten: ein geleakter PAT ist ein voller Kontoübergriff.
+- Bis zu einem offiziellen Endpunkt gilt: Lesen ja, Schreiben nur hinter einer eigenen Kontrollschicht.
+:::
+
 ---
 
 Xentral ist eines der interessantesten Beispiele im [Deutscher MCP-Report 2026](/report), weil der Hersteller auf der Dokumentationsseite vieles richtig macht — und die Prüfung dann trotzdem mit einer ernüchternden Gesamtwertung endet. Das Muster dahinter ist lehrreich für die ganze Branche.

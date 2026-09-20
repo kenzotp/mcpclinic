@@ -4,6 +4,14 @@
 
 **Meta-Description:** awork betreibt den derzeit besten deutschen MCP-Endpunkt (53/100 in unserem Report): OAuth 2.1 mit PKCE, offene OpenAPI-Spec, echte Server Card. Eine Analyse, warum das funktioniert.
 
+:::stat 53/100 | Bestwert des Deutschen MCP-Reports 2026 — inklusive echter Server Card unter /.well-known/mcp.json
+
+:::takeaway
+- aworks Endpunkt besteht den Live-Test vollständig: sauberes 401-Verhalten, RFC-9728-OAuth-Discovery, Server Card.
+- OAuth 2.1 mit PKCE bedeutet: der Agent handelt im Namen des angemeldeten Nutzers, mit dessen Rechten.
+- 19 der 21 geprüften Anbieter haben nichts Vergleichbares — das Zeitfenster für Nachzügler ist offen.
+:::
+
 ---
 
 In unserem [Deutscher MCP-Report 2026](/report) haben wir 21 deutsche B2B-SaaS-APIs auf Agenten-Fähigkeit geprüft. awork führt das Feld mit deutlichem Abstand an — nicht weil das Produkt „KI" im Namen trägt, sondern weil der Zugang technisch sauber gebaut ist. Eine reine Aufzählung wäre langweilig, also schauen wir genau hin: Was macht awork anders, und was bedeutet das für den Rest des Marktes?

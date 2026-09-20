@@ -4,6 +4,14 @@
 
 **Meta-Description:** Zammad hat keine offizielle MCP-Anbindung — aber eine aktive Community, einen 41-Sterne-Community-Server und eine Rolle für Agenten im Ticketsupport. Was heute geht und was fehlt.
 
+:::stat 41★ | der Community-Server, während offizieller MCP „not really planned" ist
+
+:::takeaway
+- Zammad 7 wird „all AI" — aber fremde Agenten haben keinen offiziellen Zugang zum Produkt.
+- Der 41-Sterne-Community-Server läuft lokal (stdio) mit Token-Auth: legitim für Einzelnutzung, kein Angebot für Geschäftskunden.
+- Schreibaktionen dort ohne Idempotenz, Bestätigungspflicht und Protokoll — genau die Lücke, die ein herstellereigener Endpunkt schließt.
+:::
+
 ---
 
 Der Fall Zammad zeigt in Reinform, was gerade in der deutschen B2B-SaaS-Landschaft passiert: Die Nachfrage ist längst da, die Community handelt, und das offizielle Angebot hinkt hinterher.

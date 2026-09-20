@@ -184,3 +184,78 @@ body {
   border-top: 1px solid var(--hairline);
   margin: 2rem 0;
 }
+
+/* article visual elements */
+.stat-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1.6rem 0;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--glass-bg);
+}
+.stat-num {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.stat-label {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.takeaway {
+  margin: 1.6rem 0;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--glass-bg-strong);
+}
+.takeaway-title {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+.takeaway ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.takeaway li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin: 0.45rem 0;
+  color: var(--ink-2);
+}
+.takeaway li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+.find-box {
+  margin: 1.6rem 0;
+  padding: 1.1rem 1.4rem;
+  border-left: 2px solid var(--ink-3);
+  background: var(--glass-bg);
+  border-radius: 0 12px 12px 0;
+}
+.find-title {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.find-body p { margin: 0.3rem 0; }
