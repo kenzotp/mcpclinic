@@ -1,0 +1,7 @@
+
+# mcpclinic-dev.kills.dog — MCP Clinic REVIEW instance (Next.js, 127.0.0.1:3300).
+# Review only; mcpclinic.dev keeps its placeholder until Mika approves the design.
+mcpclinic-dev.kills.dog {
+	import noindex
+	reverse_proxy 127.0.0.1:3300
+}
