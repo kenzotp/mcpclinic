@@ -30,6 +30,7 @@ Ergebnisse: `findings/<lauf>/traces.json` (voll), `summary.csv` (Auswertung),
 
 | Kürzel | API | Env-Key |
 |---|---|---|
+| `freellm:MODEL` | **FreeLLMAPI auf dem Hub** (`http://127.0.0.1:3411/v1`, Docker) — OpenAI-kompatibler Aggregator über 34 Free-Provider, 238 Modelle | `FREELLMAPI_API_KEY` |
 | `openai:MODEL` | OpenAI `/chat/completions` | `OPENAI_API_KEY` |
 | `claude:MODEL` | Anthropic Messages | `ANTHROPIC_API_KEY` |
 | `glm:MODEL` | Z.ai Anthropic-kompatibler Endpunkt (thinking explizit aus) | `GLM_API_KEY` |
@@ -37,28 +38,37 @@ Ergebnisse: `findings/<lauf>/traces.json` (voll), `summary.csv` (Auswertung),
 | `nvidia:VENDOR/MODEL` | NVIDIA NIM (OpenAI-kompatibel, ~40 rpm) | `NVIDIA_API_KEY` |
 
 **Nicht erlaubt (Mika, verbindlich): Groq.** Erlaubt sind OpenAI, Claude, GLM,
-OpenRouter (und NVIDIA NIM, 2026-09-20 ergänzt).
+OpenRouter, NVIDIA NIM — und der selbst gehostete FreeLLMAPI-Router.
+
+**Empfehlung für Audit-Läufe: `freellm:auto`** — der Router wählt das beste
+verfügbare freie Modell und fallbackt bei Rate-Limits automatisch
+(live verifiziert: korrekte Tool-Calls + saubere Antworten über den Router).
+Spezifische Modell-Namen nur nutzen, wenn der dahinterliegende Provider-Key
+auf der FreeLLMAPI-Keys-Seite konfiguriert ist (sonst `model_not_found`);
+einzelne Routen haben Provider-Cooldowns — der Router fängt das ab, hart
+pinieren führt zu `rate_limit_error`.
 
 **Keys auf dem Hub:** `~/.zuuna-secrets/mcpclinic.env` (chmod 600) —
-GLM_API_KEY (= ZAI_API_KEY aus audit-sweep), OPENROUTER_API_KEY,
-NVIDIA_API_KEY. Claude läuft über die Subscription — **Achtung: kein
-API-Key; Subscription-als-API ist ToS-rechtlich angreifbar (gleiche Quelle
-wie die mail-ai-bridge-Einfrierung). Sauberer Claude-Weg für Audits:
-`openrouter:anthropic/claude-…` sobald OpenRouter-Guthaben existiert.**
+FREELLMAPI_API_KEY (unified key des Hub-Proxys), GLM_API_KEY (= ZAI_API_KEY
+aus audit-sweep), OPENROUTER_API_KEY, NVIDIA_API_KEY. Claude läuft über die
+Subscription — **Achtung: kein API-Key; Subscription-als-API ist ToS-rechtlich
+angreifbar (mail-ai-bridge-Präzedenz). Claude im Audit über den FreeLLMAPI-Router
+(`claude-sonnet-4-5` im Katalog) oder via `openrouter:anthropic/claude-…`,
+sobald OpenRouter-Guthaben existiert.**
 
 **Live-Verifiziert 2026-09-20:**
 
-- `nvidia:nvidia/nemotron-3-super-120b-a12b` — Tool-Calling bestätigt,
-  Harness-Lauf erfolgreich (40 rpm reichen für Standardläufe locker).
-  Es sendet `reasoning_content` mit — wird ignoriert, stört nicht.
-- `glm:glm-5.3` — Key gültig, aber Coding-Plan-Wochenlimit erreicht
-  (Reset 2026-09-24). Danach nutzbar; Alternative ohne Plan-ToS-Grau:
-  `nvidia:z-ai/glm-5.3` auf NIM (hing im Test — vor Einsatz prüfen).
-- `openrouter:` — Key gültig, Free-Tier-Limit (50/Tag) erschöpft; mit
-  10 € Guthaben 1000/Tag. Freie Modelle wechseln schnell
-  (`minimax-…:free` wurde delisted); vor Lauf aktuelle belegen.
-- NIM-Modelle rotieren (llama-3.3-70b EOL 8/2026) — vor Audits
-  `GET /v1/models` gegenchecken.
+- `freellm:auto` — Tool-Calling durch den Router bestätigt, Harness-Lauf
+  komplett erfolgreich. **Standard für Audit-Läufe.**
+- `nvidia:nvidia/nemotron-3-super-120b-a12b` — direkter NIM-Fallback, ebenfalls
+  verifiziert (40 rpm reichen; sendet `reasoning_content` mit — wird ignoriert).
+- `glm:glm-5.3` — Key gültig, Coding-Plan-Wochenlimit erreicht (Reset
+  2026-09-24). Danach nutzbar.
+- `openrouter:` — Key gültig, Free-Tier-Limit (50/Tag) erschöpft; 10 € Guthaben
+  → 1000/Tag.
+- NIM/Free-Modelle rotieren schnell (llama-3.3-70b EOL 8/2026,
+  minimax-:free delisted) — vor Audits aktuellen Stand prüfen
+  (`/v1/models` beim Proxy bzw. NIM).
 
 ## Aufgaben (fixtures steuern die Beispieldaten)
 

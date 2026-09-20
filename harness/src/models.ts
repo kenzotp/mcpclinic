@@ -187,12 +187,17 @@ export function buildClients(spec: string): ModelClient[] {
     else if (kind === "nvidia")
       // NVIDIA NIM (integrate.api.nvidia.com) — OpenAI-compatible; ~40 rpm on our key.
       clients.push(openAiCompatible({ id: `nvidia/${model}`, baseUrl: "https://integrate.api.nvidia.com/v1", apiKeyEnv: "NVIDIA_API_KEY", model }));
+    else if (kind === "freellm")
+      // Self-hosted FreeLLMAPI on the hub (127.0.0.1:3411) — OpenAI-compatible
+      // aggregator over 34 free providers, 238 models (claude-*, gemini-*, kimi-*, …).
+      // Hub-local by design: never exposed, no user input reaches this URL.
+      clients.push(openAiCompatible({ id: `freellm/${model}`, baseUrl: "http://127.0.0.1:3411/v1", apiKeyEnv: "FREELLMAPI_API_KEY", model }));
     else if (kind === "claude")
       clients.push(anthropic({ id: `claude/${model}`, apiKeyEnv: "ANTHROPIC_API_KEY", model }));
     else if (kind === "glm")
       // Z.ai's Anthropic-compatible endpoint; thinking defaults ON server-side.
       clients.push(anthropic({ id: `glm/${model}`, apiKeyEnv: "GLM_API_KEY", model, baseUrl: "https://api.z.ai/api/anthropic", disableThinking: true }));
-    else throw new Error(`unknown model kind '${kind}' (allowed: openai:MODEL, claude:MODEL, glm:MODEL, openrouter:MODEL, nvidia:MODEL)`);
+    else throw new Error(`unknown model kind '${kind}' (allowed: freellm:MODEL, openai:MODEL, claude:MODEL, glm:MODEL, openrouter:MODEL, nvidia:MODEL)`);
   }
   return clients;
 }
