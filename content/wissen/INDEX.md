@@ -26,12 +26,18 @@
 
 **Gesamtstand: 12 Posts fertig (Batch 1 + 2). Veröffentlichungstakt 2/Woche ≈ 6 Wochen Vorsprung.**
 
-## Batch 3 (optional, wenn Veröffentlichung läuft)
+## Fertig (Batch 3, 4 Posts)
 
-1. **Collmex-MCP** — CSV-Satz-Protokoll als Anti-Muster: Wenn die API selbst das Problem ist.
-2. **Lexware-MCP-Teardown** — der 31★-Community-Server mit OAuth-Schicht (ausführlicher als in Batch 1 angedeutet).
-3. **„MCP-Server selbst betreiben vs. Drittanbieter-Gateway"** — Datenfluss-/DSGVO-Vergleich, führt zum Build.
-4. **„XRechnung und Agenten"** — Brücke zum geparkten E-Rechnung-Produkt (wenn es reaktiviert wird).
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `collmex-mcp.md` | Collmex MCP (CSV-Protokoll als Anti-Muster) | Test → Build |
+| `lexware-mcp.md` | Lexware MCP (31★-Teardown, OAuth-Schicht) | Audit |
+| `self-host-oder-gateway.md` | Gateway vs. eigener Server (Entscheidungspiece) | Test → Build |
+| `mcp-spezifikation-juli-2026.md` | Spec 2026-07-28 erklärt (Retainer-Hook) | Test → Retainer |
+
+**Gesamtstand: 16 Posts.** Batch 4 (optional): XRechnung-Brücke (nur bei Produkt-Revival), EN-Übersetzungen der Top-6.
+
+## Batch 4 (optional, wenn Veröffentlichung läuft)
 
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 

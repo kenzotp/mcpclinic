@@ -41,10 +41,50 @@ export const metadata: Metadata = {
   },
 };
 
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "MCP Clinic",
+  url: "https://mcpclinic.dev",
+  image: "https://mcpclinic.dev/og.png",
+  description:
+    "Agent-Readiness-Audits und MCP-Endpoint-Entwicklung für deutsche B2B-SaaS: Live-Agententests, Sicherheits- und DSGVO-Review, Festpreise.",
+  email: "info@zuuna.de",
+  areaServed: "DE",
+  brands: { "@type": "Brand", name: "MCP Clinic" },
+  makesOffer: [
+    {
+      "@type": "Offer",
+      name: "MCP-Live-Test",
+      price: 0,
+      priceCurrency: "EUR",
+      url: "https://mcpclinic.dev/test",
+    },
+    {
+      "@type": "Offer",
+      name: "Agent-Readiness-Audit",
+      price: 2400,
+      priceCurrency: "EUR",
+      url: "https://mcpclinic.dev/mcp-audit",
+    },
+    {
+      "@type": "Offer",
+      name: "MCP-Endpoint-Build",
+      price: 8000,
+      priceCurrency: "EUR",
+      url: "https://mcpclinic.dev/mcp-server-entwickeln",
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" data-theme="dark" suppressHydrationWarning>
       <body className={`${jakarta.variable} ${manrope.variable} min-h-screen antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }}
+        />
         <Field />
         <div className="relative z-10">{children}</div>
         <Script defer src="https://stats.kills.dog/script.js" data-website-id={UMAMI_WEBSITE_ID} />

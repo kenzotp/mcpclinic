@@ -65,6 +65,20 @@ export default async function WissenPostPage({ params }: { params: Promise<{ slu
   return (
     <>
       <Nav lang="de" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.description,
+            mainEntityOfPage: `https://mcpclinic.dev/wissen/${slug}`,
+            author: { "@type": "Organization", name: "MCP Clinic" },
+            publisher: { "@type": "Organization", name: "MCP Clinic" },
+          }),
+        }}
+      />
       <main className="relative z-10 mx-auto max-w-2xl px-6 pb-10 pt-32">
         <Reveal>
           <Link href="/wissen" className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)] transition-colors hover:text-[var(--ink-2)]">
