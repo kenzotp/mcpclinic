@@ -8,7 +8,7 @@ zwischen
 
 und
 
-**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“  
+**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
 c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
  — nachfolgend „Auftragnehmer" —
 
