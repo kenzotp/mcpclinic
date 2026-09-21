@@ -51,6 +51,7 @@ export default function AuditPage() {
             <div className="flex flex-col gap-2 sm:items-end">
               <a
                 href="https://buy.stripe.com/14AfZa4T4goL5MJ2VTc3m00"
+                onClick={() => { const w = window as any; w.umami?.track?.("audit-cta-click", { source: "mcp-audit" }); }}
                 className="flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
               >
                 Audit direkt buchen — 2.400 € <ArrowRight size={14} weight="bold" />
