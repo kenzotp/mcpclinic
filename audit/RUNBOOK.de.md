@@ -13,7 +13,7 @@ Schreibaktionen unsicher? (3) Welche DSGVO-Pflichten entstehen durch Agentenverk
 ## Vorbereitung (vor Tag 1, ~2 h)
 
 - [ ] Auftragsbestätigung + Rechnung 2.400 € (50 % vorab bei Neukunden ohne Bonitätshistorie)
-- [ ] Kickoff-Formular vom Kunden einsammeln: API-Host, Test-Zugang (read-only), ggf. Staging-URL, OpenAPI-Datei falls intern, Einschränkungen (Rate Limits, Wartungsfenster), Ansprechpartner für technische Rückfragen
+- [ ] Kickoff-Formular vom Kunden einsammeln (**Vorlage: content/legal/kickoff-form.de.md**): API-Host, Test-Zugang (read-only), ggf. Staging-URL, OpenAPI-Datei falls intern, Einschränkungen (Rate Limits, Wartungsfenster), Ansprechpartner für technische Rückfragen
 - [ ] Kunden-Zugang nur als **read-only-Rolle** akzeptieren; Schreibtests NUR auf Staging oder mit Wegwerf-Entitäten, die das Kickoff-Formular freigibt
 - [ ] Probe-Clients vorbereiten: Claude (API), GPT (API), drittes Modell je nach Ziel-DSGVO-Profil — GLM (Z.ai) oder OpenRouter-Modell. **Groq ist nicht erlaubt (Mika, verbindlich).** — Systemprompt: „Du bist ein geschäftlicher Anwender von <Produkt>. Nutze die bereitgestellten Tools, um die Aufgabe zu erledigen.“
 - [ ] DSGVO-Checkliste (siehe Tag 2) an Juravorlage koppeln; AVV-Status des Kunden erfragen
