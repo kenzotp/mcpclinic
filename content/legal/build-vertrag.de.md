@@ -8,9 +8,9 @@ zwischen
 
 und
 
-**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“
+**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
 c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
-— nachfolgend „Auftragnehmer" —
+— nachfolgend „Auftragnehmer“ —
 
 ## § 1 Gegenstand
 
@@ -33,7 +33,7 @@ Bereitstellung: API-Zugänge (auch Schreibrechte auf Staging), OAuth-Infrastrukt
 
 ## § 5 Vergütung
 
-Festpreis: **[XX.XXX] € zuzüglich USt.**, fixiert nach Audit-Scope vor Vertragsabschluss. Zahlung: 50 % bei Auftragserteilung, 50 % bei Abnahme.
+Festpreis: **ab 8.000 € zuzüglich USt.**, fixiert nach Audit-Scope vor Vertragsabschluss. Zahlung: 50 % bei Auftragserteilung, 50 % bei Abnahme.
 
 ## § 6 Rechte
 
