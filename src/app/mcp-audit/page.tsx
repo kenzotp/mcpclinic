@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import TrackedLink from "@/components/TrackedLink";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
@@ -49,13 +50,14 @@ export default function AuditPage() {
               <div className="text-sm text-[var(--ink-2)]">Festpreis · 2–3 Arbeitstage · Re-Audit in 60 Tagen: 600 €</div>
             </div>
             <div className="flex flex-col gap-2 sm:items-end">
-              <a
+              <TrackedLink
                 href="https://buy.stripe.com/14AfZa4T4goL5MJ2VTc3m00"
-                onClick={() => { const w = window as any; w.umami?.track?.("audit-cta-click", { source: "mcp-audit" }); }}
+                event="audit-cta-click"
+                source="mcp-audit"
                 className="flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
               >
                 Audit direkt buchen: 2.400 € <ArrowRight size={14} weight="bold" />
-              </a>
+              </TrackedLink>
               <a
                 href="mailto:info@zuuna.de?subject=Agent-Readiness-Audit"
                 className="px-2 text-xs text-[var(--ink-3)] underline decoration-[var(--hairline)] underline-offset-4 transition-colors hover:text-[var(--ink-2)]"
