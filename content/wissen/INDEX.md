@@ -48,21 +48,14 @@
 
 **Gesamtstand: 20 Posts.**
 
-## Fertig (Batch 5, 1 Post — veröffentlicht 22.09.2026)
+## Fertig (Batch 5, 2 Posts — veröffentlicht 22.09.2026)
 
 | Datei | Ziel-Keyword | CTA |
 |---|---|---|
 | `remote-mcp-server.md` | Remote MCP Server (DE-Autocomplete 22.09.: eigener Baum mit claude, claude desktop, oauth, url) | Live-Test |
+| `mcp-oekosystem.md` | MCP Server Deutschland / MCP Server Liste | Report |
 
-**Gesamtstand: 21 Posts.**
-
-## Entwurf (Review durch Mika ausstehend, NICHT live)
-
-| Datei | Ziel-Keyword | CTA |
-|---|---|---|
-| `content/drafts/mcp-oekosystem.md` | MCP Server Deutschland / MCP Server Liste | Report |
-
-Freigabe = Datei nach content/wissen/mcp-oekosystem.md verschieben + Zeile hier in einen Fertig-Batch übernehmen.
+**Gesamtstand: 22 Posts.**
 
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
