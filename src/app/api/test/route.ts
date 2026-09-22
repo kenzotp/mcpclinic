@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { probeSurface, deriveAlternateHosts } from "@/probe/surface";
+import { probeSurface, probeOpenapi, deriveAlternateHosts } from "@/probe/surface";
 import { probeMcpEndpoint } from "@/probe/mcp";
 import { assertPublicHost } from "@/probe/ssrf";
-import { httpGet } from "@/probe/http";
 import { scoreCompany, gradeOf } from "@/probe/score";
 import type { CompanyReport, Check } from "@/probe/types";
 
@@ -74,22 +73,20 @@ export async function POST(req: NextRequest) {
       });
     }
     const surface = await probeSurface(url);
-    // Homepage entries miss docs./api. hosts where specs and API signals live:
-    // widen the net, merge best-signal into the scored surface, show the source.
+    // Homepage entries miss docs./api./developer(s). hosts where specs live:
+    // spec-scan each candidate cheaply, fully probe the first spec-bearing one,
+    // merge found-over-missing into the scored surface, show the source.
     const merged: typeof surface = { ...surface };
     const altChecks: Check[] = [];
-    let probedAlternates = 0;
     for (const alt of deriveAlternateHosts(new URL(url).hostname)) {
-      if (probedAlternates >= 2) break;
       const altOrigin = `https://${alt}`;
       try {
         await assertPublicHost(altOrigin);
       } catch {
         continue;
       }
-      const alive = await httpGet(`${altOrigin}/robots.txt`, { timeoutMs: 4000 }).catch(() => null);
-      if (!alive) continue;
-      probedAlternates++;
+      const altSpec = await probeOpenapi(altOrigin);
+      if (!altSpec.url) continue;
       const altSurface = await probeSurface(altOrigin);
       if (!merged.openapi.url && altSurface.openapi.url) {
         merged.openapi = altSurface.openapi;
@@ -108,6 +105,7 @@ export async function POST(req: NextRequest) {
         merged.llmsTxt = altSurface.llmsTxt;
         altChecks.push({ id: `alt-llms-${alt}`, label: `llms.txt gefunden (${alt})`, status: "pass", detail: altSurface.llmsTxt.url ?? "" });
       }
+      break;
     }
     const report: CompanyReport = { name: url, surface: merged, score: 0, grade: "F" };
     const s = scoreCompany(report);

@@ -33,16 +33,11 @@ export function deriveAlternateHosts(hostname: string): string[] {
   return [`docs.${bare}`, `api.${bare}`, `developers.${bare}`, `developer.${bare}`];
 }
 
-export async function probeSurface(
-  origin: string,
+/** Scan standard spec paths (+ extraPaths) on one origin for an OpenAPI/Swagger document. */
+export async function probeOpenapi(
+  root: string,
   extraPaths: string[] = [],
-): Promise<SurfaceProbeResult> {
-  const base = await assertPublicHost(origin);
-  const root = base.origin;
-  const checks: Check[] = [];
-
-  // --- OpenAPI discovery on the given origin (+ common doc hosts are handled by caller via extraPaths) ---
-  let openapi: SurfaceProbeResult["openapi"] = {};
+): Promise<SurfaceProbeResult["openapi"]> {
   const specCandidates = [
     ...OPENAPI_CANDIDATES.map((p) => root + p),
     ...extraPaths.map((p) => (p.startsWith("http") ? p : root + p)),
@@ -62,16 +57,28 @@ export async function probeSurface(
         }
       }
       if (parsed && (parsed.openapi || parsed.swagger || parsed.paths)) {
-        openapi = {
+        return {
           url: candidate,
           title: parsed?.info?.title,
           version: parsed?.openapi ?? parsed?.swagger,
           paths: typeof parsed?.paths === "object" ? Object.keys(parsed.paths).length : undefined,
         };
-        break;
       }
     }
   }
+  return {};
+}
+
+export async function probeSurface(
+  origin: string,
+  extraPaths: string[] = [],
+): Promise<SurfaceProbeResult> {
+  const base = await assertPublicHost(origin);
+  const root = base.origin;
+  const checks: Check[] = [];
+
+  // --- OpenAPI discovery on the given origin (+ common doc hosts are handled by caller via extraPaths) ---
+  const openapi = await probeOpenapi(root, extraPaths);
 
   // --- robots.txt: agent policies ---
   const robotsUrl = `${root}/robots.txt`;
