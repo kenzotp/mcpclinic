@@ -78,7 +78,9 @@ export async function POST(req: NextRequest) {
     // widen the net, merge best-signal into the scored surface, show the source.
     const merged: typeof surface = { ...surface };
     const altChecks: Check[] = [];
+    let probedAlternates = 0;
     for (const alt of deriveAlternateHosts(new URL(url).hostname)) {
+      if (probedAlternates >= 2) break;
       const altOrigin = `https://${alt}`;
       try {
         await assertPublicHost(altOrigin);
@@ -87,6 +89,7 @@ export async function POST(req: NextRequest) {
       }
       const alive = await httpGet(`${altOrigin}/robots.txt`, { timeoutMs: 4000 }).catch(() => null);
       if (!alive) continue;
+      probedAlternates++;
       const altSurface = await probeSurface(altOrigin);
       if (!merged.openapi.url && altSurface.openapi.url) {
         merged.openapi = altSurface.openapi;

@@ -21,7 +21,8 @@ export const REPORTED_AGENTS = [
 
 /**
  * Visitors type the marketing homepage, but specs and API surfaces usually live
- * under docs./api. Only widen the net for apex/www entries — a specific
+ * under docs./api./developer(s). — awork uses developers., JTL developer.,
+ * Clockodo docs. Only widen the net for apex/www entries — a specific
  * subdomain means the user already knows where to look.
  */
 export function deriveAlternateHosts(hostname: string): string[] {
@@ -29,7 +30,7 @@ export function deriveAlternateHosts(hostname: string): string[] {
   const labels = bare.split(".");
   if (labels.length !== 2) return [];
   if (labels.some((l) => /^\d+$/.test(l))) return []; // IP literal
-  return [`docs.${bare}`, `api.${bare}`];
+  return [`docs.${bare}`, `api.${bare}`, `developers.${bare}`, `developer.${bare}`];
 }
 
 export async function probeSurface(
