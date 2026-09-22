@@ -39,6 +39,12 @@
 
 ## Batch 4 (optional, wenn Veröffentlichung läuft)
 
+## Entwurf (Batch 5, 2026-09-22, noch nicht veröffentlicht)
+
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `remote-mcp-server.md` | Remote MCP Server (DE-Autocomplete 22.09.: eigener Baum mit claude, claude desktop, oauth, url) | Live-Test |
+
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
 - Jeder Post endet mit genau einem CTA-Pfad (Live-Test ODER Audit ODER Build), nie allen dreien gleichwertig.
