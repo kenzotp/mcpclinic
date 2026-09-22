@@ -2,9 +2,9 @@
 
 *Ziel-Keywords: MCP vs REST API, REST API KI-Agenten, MCP Endpunkt REST Unterschied*
 
-**Meta-Description:** MCP ersetzt Ihre REST-API nicht. Es baut darauf auf. Der ehrliche Vergleich: was REST für Maschinen leistet, was Agenten zusätzlich brauchen, und warum 15 von 21 deutschen APIs an genau dieser Stelle scheitern.
+**Meta-Description:** MCP ersetzt Ihre REST-API nicht. Es baut darauf auf. Der ehrliche Vergleich: was REST für Maschinen leistet, was Agenten zusätzlich brauchen, und warum 14 von 21 deutschen APIs an genau dieser Stelle scheitern.
 
-:::stat 15/21 | geprüfte deutsche APIs haben keine maschinenlesbare API-Dokumentation: Für Agenten ist das ist wie ein Laden ohne Türschild
+:::stat 14/21 | geprüfte deutsche APIs haben keine maschinenlesbare API-Dokumentation: Für Agenten ist das ist wie ein Laden ohne Türschild
 
 :::takeaway
 - REST bleibt das Fundament: Daten, Endpunkte, Rechte. Daran ändert MCP nichts.
@@ -30,7 +30,7 @@ Genau diese Ebene (geprüfte, stabile, beschriebene Werkzeuge über Ihrer API) i
 Unser [Deutscher MCP-Report 2026](/report) hat 21 B2B-SaaS-APIs automatisiert geprüft. Die Lücke liegt doppelt:
 
 1. **Nur 2 von 21** bieten einen eigenen MCP-Endpunkt an (awork und seven.io, beide vorbildlich dokumentiert).
-2. **15 von 21** haben nicht einmal eine maschinenlesbare API-Dokumentation unter Standardpfaden. Ein Agent (und jedes Werkzeug, das ihn bauen will) findet die Tür nicht.
+2. **14 von 21** haben nicht einmal eine maschinenlesbare API-Dokumentation unter Standardpfaden. Ein Agent (und jedes Werkzeug, das ihn bauen will) findet die Tür nicht.
 
 Die Community springt in die Bresche: Für mindestens 8 der geprüften Produkte existieren inoffizielle MCP-Server auf GitHub, gebaut von Nutzern, ohne API-Zugang der Hersteller, oft ohne Sicherheitsschichten. Wenn Ihre Kunden die Agenten-Fähigkeit Ihrer Software irgendwo anders herholen, haben Sie die Kontrolle über Rechte und Protokoll bereits abgegeben.
 

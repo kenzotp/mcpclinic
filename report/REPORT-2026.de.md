@@ -1,6 +1,6 @@
 # Deutscher MCP-Report 2026: Wie agentenfähig sind 21 deutsche B2B-SaaS-APIs?
 
-*Stand: 2026-09-20 · Automatisiert getestet mit dem MCP-Live-Test von [mcpclinic.dev](https://mcpclinic.dev)*
+*Stand: 2026-09-22 · Automatisiert getestet mit dem MCP-Live-Test von [mcpclinic.dev](https://mcpclinic.dev)*
 
 KI-Agenten (Claude, ChatGPT, Copilot & Co.) können Software nur dann selbstständig bedienen, wenn die API dafür gebaut ist: ein MCP-Endpunkt (Model Context Protocol), saubere Authentifizierung im OAuth-Standard, maschinenlesbare Dokumentation. Wir haben die APIs von 21 deutschen B2B-SaaS-Anbietern aus den Branchen Büro- und Buchhaltungssoftware, ERP, Personal, E-Commerce, Immobilien und Kommunikation einer öffentlichen Oberflächenprüfung unterzogen, mit demselben automatisierten Test, den unser kostenloser MCP-Live-Test für jede API durchführt.
 
@@ -10,7 +10,7 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 
 - **2 von 21 Unternehmen bieten einen offiziellen MCP-Server an: awork und seven.io.** Beide Endpunkte bestehen unseren Live-Test mit vorbildlicher OAuth-Discovery (RFC 9728). Der Rest der Branche fehlt in einer Technologie, die der Markt bereits als Standard einstuft.
 - **Kein Unternehmen erreicht die Hälfte der möglichen 100 Punkte.** Bestwert awork: 53/100, und damit deutscher Benchmark. Der Schnitt liegt unter 10.
-- **15 von 21 stellen keine maschinenlesbare API-Beschreibung bereit.** Ohne OpenAPI-Spec bleibt jeder Agenten-Integration ein handgebautes GitHub-Repos, Fehlerquellen inklusive. Genau solche inoffiziellen Wrapper existieren bereits für mindestens 8 der geprüften Produkte.
+- **14 von 21 stellen keine maschinenlesbare API-Beschreibung bereit.** Ohne OpenAPI-Spec bleibt jeder Agenten-Integration ein handgebautes GitHub-Repos, Fehlerquellen inklusive. Genau solche inoffiziellen Wrapper existieren bereits für mindestens 8 der geprüften Produkte.
 - **Die Nachfrage existiert ohne Angebot:** Zammad-Kunden fordern MCP im offiziellen Forum (561 Aufrufe), die Herstellerantwort ist „not really planned“, während ein Community-Server 41 Sterne sammelt. Personio, propstack und Xentral liefern inzwischen llms.txt für KI-Systeme aus, bieten aber keinen Agentenzugang zum Produkt.
 - **Authentifizierung ist der blinde Fleck:** 9 der 21 APIs arbeiten mit statischen Keys ohne OAuth-Flow. Damit ist delegierter, eingeschränkter Agentenzugriff („dieser Agent darf nur Rechnungen lesen“) technisch gar nicht abbildbar.
 
@@ -24,6 +24,7 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 | Xentral ERP | 18/100 (F) | — | ✅ |  |
 | easybill | 15/100 (F) | — | ✅ |  |
 | Clockodo | 12/100 (F) | — | ✅ |  |
+| sevdesk | 12/100 (F) | — | ✅ |  |
 | PlentyONE (plentymarkets) | 12/100 (F) | — | ✅ |  |
 | Personio | 8/100 (F) | — | — |  |
 | propstack | 8/100 (F) | — | — |  |
@@ -36,7 +37,6 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 | onOffice | 5/100 (F) | — | — |  |
 | Userlike (jetzt Lime Connect) | 5/100 (F) | — | — |  |
 | pretix | 2/100 (F) | — | — |  |
-| sevdesk | 2/100 (F) | — | — |  |
 | Collmex | 2/100 (F) | — | — |  |
 | d.vinci | 0/100 (F) | — | — | 🚫 |
 
@@ -136,6 +136,19 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 **Dokumentations-Oberfläche:**
 
 - ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://docs.clockodo.com/openapi.yaml · (YAML spec)
+- ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
+- ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
+- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
+
+### sevdesk: 12/100 (Note F)
+
+**Recherche:** API-Token ohne Bearer/OAuth-Schema; Swagger-UI nur JS-gerendert, keine offizielle Spec-Datei. Vier kleine Community-Server auf GitHub. Der Markt improvisiert.
+
+**Eigenes MCP-Angebot:** nein
+
+**Dokumentations-Oberfläche:**
+
+- ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://api.sevdesk.de/openapi.yaml · (YAML spec)
 - ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
 - ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
 - ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
@@ -296,19 +309,6 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 - ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
 - ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
 
-### sevdesk: 2/100 (Note F)
-
-**Recherche:** API-Token ohne Bearer/OAuth-Schema; Swagger-UI nur JS-gerendert, keine offizielle Spec-Datei. Vier kleine Community-Server auf GitHub. Der Markt improvisiert.
-
-**Eigenes MCP-Angebot:** nein
-
-**Dokumentations-Oberfläche:**
-
-- ❌ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** keine öffentliche Spec unter Standardpfaden gefunden
-- ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
-- ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
-- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
-
 ### Collmex: 2/100 (Note F)
 
 **Recherche:** CSV-Satz-Protokoll über HTTP-POST statt REST/JSON; API-Doku nur in der App-Hilfe. Auth per LOGIN-Datensatz. Für Agenten ohne dedizierten Adapter unbrauchbar.
@@ -341,7 +341,7 @@ Geprüft wurden pro Unternehmen: (1) MCP-Endpunkt unter der dokumentierten Adres
 
 Scoring: 40 Punkte für ein echtes MCP-Angebot (Handshake 15, abrufbare Tools 10, aktueller Spezifikationsstand 5, Server Card 10), 25 Punkte für Authentifizierungs- und Sicherheits-Signale, 20 Punkte für maschinenlesbare Dokumentation, 15 Punkte für Tool-Beschreibungsqualität. Die Punkteverteilung ist bewusst so gebaut, dass ein Unternehmen ohne MCP-Angebot die Bestnote rechnerisch nicht erreichen kann. Ein Dutzend Blogartikel ersetzen keinen Endpunkt.
 
-Begrenzung: Die Prüfung ist ein Snapshot der öffentlichen Oberfläche (19.–20. September 2026) und ersetzt keine Sicherheitsaudit. Was dieser Test nicht sehen kann (Live-Durchläufe echter Agenten, Tool-Berechtigungen im Detail, Mandantentrennung, DSGVO-Datenflüsse), ist Gegenstand unseres bezahlten Audits.
+Begrenzung: Die Prüfung ist ein Snapshot der öffentlichen Oberfläche (19.–20. September 2026; korrigierter Lauf 22. September 2026, nachdem die Erkennung von Specs an Standardpfaden repariert wurde: sevdesk führt eine zuvor übersehene OpenAPI-Spec unter api.sevdesk.de/openapi.yaml) und ersetzt keine Sicherheitsaudit. Was dieser Test nicht sehen kann (Live-Durchläufe echter Agenten, Tool-Berechtigungen im Detail, Mandantentrennung, DSGVO-Datenflüsse), ist Gegenstand unseres bezahlten Audits.
 
 ---
 

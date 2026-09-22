@@ -37,7 +37,7 @@ Der entscheidende Unterschied zu einem Screen-Scraper-Bot: Der Agent arbeitet ü
 
 - Die großen KI-Plattformen (Claude, ChatGPT, Copilot und andere) sprechen MCP: Der Standard hat sich 2025/2026 als De-facto-Schnittstelle für Agenten etabliert.
 - Die Spezifikation wird aktiv weiterentwickelt (zuletzt im Juli 2026, ein Grund, warum Betriebe einen Wartungspartner brauchen).
-- **Deutsche B2B-SaaS hinkt hinterher:** In unserem Deutscher MCP-Report 2026 haben wir 21 deutsche B2B-SaaS-APIs geprüft. Genau 2 bieten einen eigenen MCP-Server an (awork und seven.io). 15 von 21 stellen nicht einmal eine maschinenlesbare API-Beschreibung bereit.
+- **Deutsche B2B-SaaS hinkt hinterher:** In unserem Deutscher MCP-Report 2026 haben wir 21 deutsche B2B-SaaS-APIs geprüft. Genau 2 bieten einen eigenen MCP-Server an (awork und seven.io). 14 von 21 stellen nicht einmal eine maschinenlesbare API-Beschreibung bereit.
 
 ## Was „MCP-fähig" technisch bedeutet
 

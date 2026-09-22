@@ -20,7 +20,7 @@ Es gibt in unserem [Deutscher MCP-Report 2026](/report) eine Gruppe von Anbieter
 - **OAuth2 Client Credentials** für die API (v2): solide authentifizierungstechnische Basis.
 - **Eine offizielle Swagger-Beschreibung**, laut Doku auf GitHub gepflegt.
 
-Das ist mehr als die Mehrheit des Feldes zeigt: 15 von 21 geprüften Anbietern stellen gar keine maschinenlesbare Beschreibung bereit. Personio hat die Hausaufgaben der **Lesbarkeit** gemacht.
+Das ist mehr als die Mehrheit des Feldes zeigt: 14 von 21 geprüften Anbietern stellen gar keine maschinenlesbare Beschreibung bereit. Personio hat die Hausaufgaben der **Lesbarkeit** gemacht.
 
 ## Was fehlt und warum es der wichtigere Teil ist
 

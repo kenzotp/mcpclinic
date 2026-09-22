@@ -10,7 +10,7 @@
 - Die wichtigste Schnittstelle eines MCP-Servers ist nicht der Endpunkt, sondern der Beschreibungstext jedes Werkzeugs. Dort entscheidet das Sprachmodell, was es tut.
 - Beschreibungen veralten wie Code: Ein neues Modell-Release kann das Verhalten verschieben, ohne dass sich am Server eine Zeile geändert hat.
 - Deshalb gehören Beschreibungen in die Regressionstests: feste Aufgabenkataloge, mehrere Modell-Clients, klare Erfolgskriterien.
-- Im [Report](/report) scheitern Agenten an deutschen APIs öfter an Beschreibbarkeit als an Technik: 15/21 haben keine maschinenlesbare Doku als Ausgangsmaterial.
+- Im [Report](/report) scheitern Agenten an deutschen APIs öfter an Beschreibbarkeit als an Technik: 14/21 haben keine maschinenlesbare Doku als Ausgangsmaterial.
 :::
 
 ---

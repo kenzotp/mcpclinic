@@ -18,7 +18,7 @@ Unter den deutschen E-Commerce- und ERP-Anbietern nimmt JTL eine Sonderstellung 
 
 Das [Entwicklerportal](https://developer.jtl-software.com/) hat eine eigene Seite „Build with AI" und liefert eine llms.txt aus; die OpenAPI-Beschreibungen der JTL-Cloud-APIs (u. a. die ERP-API in mehreren Versionen, dazu Marketplace-Channels und Vouchers) sind als JSON-Dateien direkt abrufbar und werden explizit „für KI-Tools indexiert (MCP, llms.txt)". Authentifizierung der Cloud-APIs läuft über OAuth 2.0 (Client-Credentials für Apps), die On-Premise-Wawi über API-Keys.
 
-Verglichen mit der Konkurrenz ist das die sauberste Ausgangslage im Feld: In unserem [Report](/report) fehlen 15 von 21 Herstellern sogar die maschinenlesbare Beschreibung. JTL liefert sie inklusive KI-Ladezeichen.
+Verglichen mit der Konkurrenz ist das die sauberste Ausgangslage im Feld: In unserem [Report](/report) fehlen 14 von 21 Herstellern sogar die maschinenlesbare Beschreibung. JTL liefert sie inklusive KI-Ladezeichen.
 
 ## Was trotzdem fehlt
 
