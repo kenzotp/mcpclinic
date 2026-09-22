@@ -30,6 +30,17 @@ export async function httpGet(
     await sleep(1_000);
     res = await attempt();
   }
+  // Docs hosts (Readme.io etc.) answer request bursts with 429/503; one
+  // backoff retry turns those from "check failed" into a real measurement.
+  if ([429, 502, 503, 504].includes(res.status)) {
+    const retryAfter = Number(res.headers.get("retry-after")) * 1000;
+    await sleep(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter, 10_000) : 2_500);
+    try {
+      res = await attempt();
+    } catch {
+      // keep the original 429/50x response
+    }
+  }
   const contentType = res.headers.get("content-type") ?? "";
   const body = await res.text().catch(() => null);
   return { status: res.status, headers: res.headers, body, contentType, ok: res.ok };

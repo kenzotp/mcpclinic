@@ -19,20 +19,6 @@ export const REPORTED_AGENTS = [
   "anthropic-ai", "PerplexityBot", "Google-Extended", "CCBot",
 ];
 
-/**
- * Visitors type the marketing homepage, but specs and API surfaces usually live
- * under docs./api./developer(s). — awork uses developers., JTL developer.,
- * Clockodo docs. Only widen the net for apex/www entries — a specific
- * subdomain means the user already knows where to look.
- */
-export function deriveAlternateHosts(hostname: string): string[] {
-  const bare = hostname.replace(/^www\./i, "");
-  const labels = bare.split(".");
-  if (labels.length !== 2) return [];
-  if (labels.some((l) => /^\d+$/.test(l))) return []; // IP literal
-  return [`docs.${bare}`, `api.${bare}`, `developers.${bare}`, `developer.${bare}`];
-}
-
 /** Scan standard spec paths (+ extraPaths) on one origin for an OpenAPI/Swagger document. */
 export async function probeOpenapi(
   root: string,
@@ -81,11 +67,22 @@ export async function probeSurface(
   const openapi = await probeOpenapi(root, extraPaths);
 
   // --- robots.txt: agent policies ---
+  // Highest-value surface check: retry hard, docs-host CDNs (Readme.io etc.)
+  // answer the spec-scan burst with challenges that clear on a later attempt.
   const robotsUrl = `${root}/robots.txt`;
-  const robotsRes = await httpGet(robotsUrl).catch(() => null);
-  await sleep(REQUEST_GAP_MS);
+  let robotsRes: Awaited<ReturnType<typeof httpGet>> | null = null;
+  for (let i = 0; i < 3 && !(robotsRes?.ok); i++) {
+    if (i) await sleep(1_500 * i);
+    robotsRes = await httpGet(robotsUrl).catch(() => null);
+    await sleep(REQUEST_GAP_MS);
+  }
   const robotsTxt = robotsRes?.ok ? robotsRes.body : null;
-  const robots = { url: robotsUrl, found: !!robotsTxt, agents: parseAgentPolicies(robotsTxt).agents };
+  const robots = {
+    url: robotsUrl,
+    found: !!robotsTxt,
+    agents: parseAgentPolicies(robotsTxt).agents,
+    lastStatus: robotsRes?.status,
+  };
 
   // --- llms.txt (cosmetic — we report but never sell it) ---
   const llmsUrl = `${root}/llms.txt`;
@@ -131,7 +128,9 @@ function buildChecks(ctx: {
     label: "Agent-Crawler-Politik (robots.txt)",
     status: !robots.found ? "warn" : blocked.length > 0 ? "fail" : "pass",
     detail: !robots.found
-      ? "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+      ? robots.lastStatus === 403
+        ? "robots.txt verweigert unserer Prüfung den Zugriff (403): von außen nicht bewertbar"
+        : "keine robots.txt: Anwortverhalten für Agenten undefiniert"
       : blocked.length > 0
         ? `blockiert: ${blocked.map((b) => b.agent).join(", ")}`
         : mentioned.length > 0

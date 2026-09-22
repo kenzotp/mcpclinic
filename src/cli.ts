@@ -2,6 +2,7 @@
 
 import { probeMcpEndpoint } from "./probe/mcp.ts";
 import { probeSurface } from "./probe/surface.ts";
+import { probeWithDiscovery } from "./probe/discovery.ts";
 import { scoreCompany, gradeOf } from "./probe/score.ts";
 import { renderReport } from "./probe/report.ts";
 import type { CompanyReport } from "./probe/types.ts";
@@ -38,7 +39,8 @@ async function main() {
     const companies: CompanyReport[] = [];
     for (const t of targets) {
       process.stderr.write(`probing ${t.name} …\n`);
-      const surface = await probeSurface(t.docsUrl, t.openapiHints ?? []);
+      // methodology: docs surface + spec-first widening over sibling dev hosts
+      const surface = await probeWithDiscovery(t.docsUrl, t.openapiHints ?? []);
       let mcp;
       if (t.mcpUrl) {
         mcp = await probeMcpEndpoint(t.mcpUrl).catch(() => undefined);

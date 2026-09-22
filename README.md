@@ -32,7 +32,7 @@ cd mcp-basis && npm install && npm test              # Template-Server E2E
 
 - **2 von 21** haben einen offiziellen MCP-Server: **awork** (53/100, Benchmark —
   inkl. echter Server Card unter `/.well-known/mcp.json`) und **seven.io** (30/100)
-- Bestwert 53/100 — kein Unternehmen erreicht die Hälfte; Schnitt < 10
+- Bestwert 53/100 — kein Unternehmen erreicht die Hälfte; Median 8/100
 - 15 von 21 ohne maschinenlesbare OpenAPI-Spec; 9 mit statischen Keys ohne OAuth
 - Detailbefunde pro Unternehmen in `report/REPORT-2026.de.md`
 

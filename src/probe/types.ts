@@ -59,7 +59,7 @@ export interface AgentRobotRule {
 export interface SurfaceProbeResult {
   url: string;                        // origin or docs URL probed
   openapi: { url?: string; title?: string; version?: string; paths?: number };
-  robots: { url: string; found: boolean; agents: AgentRobotRule[] };
+  robots: { url: string; found: boolean; agents: AgentRobotRule[]; lastStatus?: number };
   llmsTxt: { url: string; found: boolean };
   securityTxt: { url: string; found: boolean };
   checks: Check[];
