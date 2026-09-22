@@ -1,0 +1,3195 @@
+[
+  {
+    "name": "awork",
+    "surface": {
+      "url": "https://developers.awork.com",
+      "openapi": {
+        "url": "https://developers.awork.com/openapi.json",
+        "title": "API v1 Reference",
+        "version": "3.1.0",
+        "paths": 566
+      },
+      "robots": {
+        "url": "https://developers.awork.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://developers.awork.com/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://developers.awork.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://developers.awork.com/openapi.json · 566 Pfade · API v1 Reference"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://developers.awork.com/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.awork.com/api/v1/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://api.awork.com/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer realm=\"awork API\", scope=\"full_access\", resource_metadata=\"https://api.awork.com/.well-known/oauth-protected-resource/mcp\"",
+        "resourceMetadataUrl": "https://api.awork.com/.well-known/oauth-protected-resource/mcp",
+        "resourceMetadata": {
+          "resource": "https://api.awork.com/api/v1/mcp",
+          "description": "awork API - metadata for accessing protected resources",
+          "scopes_supported": [
+            "openid",
+            "offline_access",
+            "full_access"
+          ],
+          "authorization_servers": [
+            "https://api.awork.com/"
+          ],
+          "bearer_methods_supported": [
+            "header"
+          ],
+          "resource_documentation": "https://developers.awork.com/",
+          "version": "1.0"
+        },
+        "authorizationServers": [
+          "https://api.awork.com/"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://api.awork.com/",
+          "authorization_endpoint": "https://api.awork.com/api/v1/accounts/authorize",
+          "token_endpoint": "https://api.awork.com/api/v1/accounts/token",
+          "jwks_uri": "https://api.awork.com/.well-known/jwks.json",
+          "userinfo_endpoint": "https://api.awork.com/api/v1/users/me",
+          "registration_endpoint": "https://api.awork.com/api/v1/clientapplications/register",
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "response_types_supported": [
+            "code"
+          ],
+          "response_modes_supported": [
+            "query"
+          ],
+          "scopes_supported": [
+            "openid",
+            "offline_access",
+            "full_access"
+          ],
+          "claims_supported": [
+            "aud",
+            "exp",
+            "iat",
+            "iss",
+            "sub"
+          ],
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "subject_types_supported": [
+            "public"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "none",
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "request_parameter_supported": false,
+          "request_uri_parameter_supported": false,
+          "claims_parameter_supported": false
+        }
+      },
+      "card": {
+        "present": true,
+        "url": "https://api.awork.com/.well-known/mcp.json",
+        "fields": {
+          "name": "awork",
+          "description": "Connects to awork so users can search, inspect, and manage projects, tasks, time entries, users, companies, and related workspace data through the awork API. Best for project management, task management, time tracking, reporting, and managing awork workspace data.",
+          "icon": "https://cdn.awork.com/img/logo/black/bot-only/black-bot_w200px.png",
+          "endpoint": "https://api.awork.com/api/v1/mcp",
+          "capabilities": {
+            "tools": true,
+            "resources": true,
+            "prompts": false
+          }
+        }
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://api.awork.com/.well-known/oauth-protected-resource/mcp) · Authorization Server: https://api.awork.com/"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "pass",
+          "detail": "gefunden: https://api.awork.com/.well-known/mcp.json"
+        }
+      ]
+    },
+    "officialMcp": "JA: offizieller MCP-Server (api.awork.com/api/v1/mcp, OAuth 2.1 + PKCE, Setup-Guides für Claude Code/VS Code/ChatGPT)",
+    "researchNote": "Vorreiter: offizieller MCP-Server plus eigene Agents-API und KI-Produktseiten. Offizielle OpenAPI-3.1-Spec mit 566 Pfaden; OAuth 2.1 mit PKCE und Dynamic Client Registration.",
+    "apiHost": "https://api.awork.com/api/v1",
+    "score": 53,
+    "grade": "C"
+  },
+  {
+    "name": "seven.io",
+    "surface": {
+      "url": "https://docs.seven.io",
+      "openapi": {},
+      "robots": {
+        "url": "https://docs.seven.io/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://docs.seven.io/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://docs.seven.io/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://mcp.seven.io/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://mcp.seven.io/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer error=\"invalid_token\", error_description=\"Missing Authorization header\", resource_metadata=\"https://mcp.seven.io/.well-known/oauth-protected-resource/mcp\"",
+        "resourceMetadataUrl": "https://mcp.seven.io/.well-known/oauth-protected-resource/mcp",
+        "resourceMetadata": {
+          "resource": "https://mcp.seven.io/mcp",
+          "authorization_servers": [
+            "https://mcp.seven.io"
+          ],
+          "scopes_supported": [
+            "analytics",
+            "balance",
+            "contacts",
+            "groups",
+            "hooks",
+            "journal",
+            "lookup",
+            "numbers",
+            "pricing",
+            "rcs",
+            "sms",
+            "status",
+            "subaccounts",
+            "validate_for_voice",
+            "voice"
+          ],
+          "resource_name": "seven.io MCP"
+        },
+        "authorizationServers": [
+          "https://mcp.seven.io"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://mcp.seven.io",
+          "authorization_endpoint": "https://mcp.seven.io/authorize",
+          "token_endpoint": "https://mcp.seven.io/token",
+          "revocation_endpoint": "https://mcp.seven.io/revoke",
+          "registration_endpoint": "https://mcp.seven.io/register",
+          "response_types_supported": [
+            "code"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "none"
+          ],
+          "scopes_supported": [
+            "analytics",
+            "balance",
+            "contacts",
+            "groups",
+            "hooks",
+            "journal",
+            "lookup",
+            "numbers",
+            "pricing",
+            "rcs",
+            "sms",
+            "status",
+            "subaccounts",
+            "validate_for_voice",
+            "voice"
+          ]
+        }
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://mcp.seven.io/.well-known/oauth-protected-resource/mcp) · Authorization Server: https://mcp.seven.io"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "JA: „Seven MCP“ (mcp.seven.io/mcp, Streamable HTTP mit OAuth2 PKCE; zusätzlich npm @seven.io/mcp für stdio)",
+    "researchNote": "Agenten-forward: betreibt eigenen gehosteten MCP-Server mit über 40 Tools (SMS, Voice, HLR, Kontakte) und dokumentiert ihn offiziell. API-Key-Auth für die REST-API, OAuth2 PKCE für MCP.",
+    "apiHost": "https://gateway.seven.io",
+    "score": 30,
+    "grade": "D"
+  },
+  {
+    "name": "JTL-Software",
+    "surface": {
+      "url": "https://developer.jtl-software.com",
+      "openapi": {
+        "url": "https://developer.jtl-software.com/openapi/erp/2.2.json",
+        "title": "JTL-WAWI API (Cloud)",
+        "version": "3.0.0",
+        "paths": 340
+      },
+      "robots": {
+        "url": "https://developer.jtl-software.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://developer.jtl-software.com/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://developer.jtl-software.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://developer.jtl-software.com/openapi/erp/2.2.json · 340 Pfade · JTL-WAWI API (Cloud)"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://developer.jtl-software.com/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.jtl-software.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": false,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "fail",
+          "detail": "Kein gültiger MCP-Handshake"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "fail",
+          "detail": "WARNUNG: Tools ohne Authentifizierung abrufbar"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "fail",
+          "detail": "Keine Tools abrufbar"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein, aber Entwicklerportal mit llms.txt und „Build with AI“-Seite",
+    "researchNote": "Nächster Kandidat: Spec-Dateien explizit „indexiert für KI-Tools (MCP, llms.txt)“, OAuth 2.0 für Cloud-Apps, aber kein eigenes MCP-Angebot. Keine Community-MCP-Server gefunden.",
+    "apiHost": "per App (JTL-Cloud, OAuth-zugangsgeschützt)",
+    "score": 23,
+    "grade": "F"
+  },
+  {
+    "name": "Personio",
+    "surface": {
+      "url": "https://developer.personio.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://developer.personio.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://developer.personio.de/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://developer.personio.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://developer.personio.de/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://mcp.personio.de/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://mcp.app.personio.com/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer resource_metadata=\"https://mcp.personio.de/.well-known/oauth-protected-resource/mcp\"",
+        "resourceMetadataUrl": "https://mcp.personio.de/.well-known/oauth-protected-resource/mcp",
+        "resourceMetadata": {
+          "resource": "https://mcp.app.personio.com/mcp",
+          "authorization_servers": [
+            "https://mcp.app.personio.com/"
+          ],
+          "bearer_methods_supported": [
+            "header"
+          ],
+          "scopes_supported": [
+            "openid",
+            "offline_access",
+            "mcp:access"
+          ]
+        },
+        "authorizationServers": [
+          "https://mcp.app.personio.com/"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://mcp.app.personio.com/",
+          "authorization_endpoint": "https://login.personio.com/authorize?organization=mcp&audience=https://mcp.personio.de",
+          "token_endpoint": "https://login.personio.com/oauth/token",
+          "jwks_uri": "https://login.personio.com/.well-known/jwks.json",
+          "revocation_endpoint": "https://login.personio.com/oauth/revoke",
+          "response_types_supported": [
+            "code"
+          ],
+          "response_modes_supported": [
+            "query",
+            "fragment",
+            "form_post"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "none",
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "scopes_supported": [
+            "openid",
+            "profile",
+            "email",
+            "offline_access",
+            "mcp:access"
+          ]
+        }
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://mcp.personio.de/.well-known/oauth-protected-resource/mcp) · Authorization Server: https://mcp.app.personio.com/"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "Entwicklerhub mit llms.txt, OAuth2 Client Credentials. Ein winziger Community-Server (1 Stern). Zugleich Hinweis: developer.personio.com hinter Vercel-Bot-Wall. Maschinenlesbare Docs sind hier durchaus Thema.",
+    "apiHost": "https://api.personio.de",
+    "score": 33,
+    "grade": "D"
+  },
+  {
+    "name": "Xentral ERP",
+    "surface": {
+      "url": "https://developer.xentral.com",
+      "openapi": {
+        "url": "https://raw.githubusercontent.com/xentral/api-spec-public/main/openapi/xentral-api.openapi-3.0.0.json",
+        "title": "Xentral API",
+        "version": "3.0.0",
+        "paths": 206
+      },
+      "robots": {
+        "url": "https://developer.xentral.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://developer.xentral.com/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://developer.xentral.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://raw.githubusercontent.com/xentral/api-spec-public/main/openapi/xentral-api.openapi-3.0.0.json · 206 Pfade · Xentral API"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://developer.xentral.com/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein: Docs aber LLM-freundlich (llms.txt, .md-Versionen)",
+    "researchNote": "Öffentliche OpenAPI-Specs auf GitHub (aktiv gepflegt). Ein kleiner Community-Server (mjmirza/xentral-mcp). Auth via Personal Access Tokens ohne OAuth-Flow dokumentiert: schwach für delegierte Agentenzugriffe.",
+    "apiHost": "pro Instanz: {xentralId}.xentral.biz",
+    "score": 18,
+    "grade": "F"
+  },
+  {
+    "name": "Clockodo",
+    "surface": {
+      "url": "https://docs.clockodo.com",
+      "openapi": {
+        "url": "https://docs.clockodo.com/openapi.yaml",
+        "title": "(YAML spec)",
+        "version": "yaml"
+      },
+      "robots": {
+        "url": "https://docs.clockodo.com/robots.txt",
+        "found": false,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "none"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "none"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "none"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "none"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "none"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "none"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "none"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "none"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "none"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "none"
+          }
+        ],
+        "lastStatus": 404
+      },
+      "llmsTxt": {
+        "url": "https://docs.clockodo.com/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://docs.clockodo.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://docs.clockodo.com/openapi.yaml · (YAML spec)"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "warn",
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://mcp.clockodo.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://my.clockodo.com/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer realm=\"Clockodo MCP\", resource_metadata=\"https://mcp.clockodo.com/.well-known/oauth-protected-resource\"",
+        "resourceMetadataUrl": "https://mcp.clockodo.com/.well-known/oauth-protected-resource",
+        "resourceMetadata": {
+          "resource": "https://mcp.clockodo.com",
+          "authorization_servers": [
+            "https://my.clockodo.com"
+          ],
+          "bearer_methods_supported": [
+            "header"
+          ],
+          "scopes_supported": []
+        },
+        "authorizationServers": [
+          "https://my.clockodo.com"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://my.clockodo.com",
+          "authorization_endpoint": "https://my.clockodo.com/oauth/authorize",
+          "token_endpoint": "https://my.clockodo.com/token",
+          "registration_endpoint": "https://my.clockodo.com/oauth/register",
+          "revocation_endpoint": "https://my.clockodo.com/revoke",
+          "introspection_endpoint": "https://my.clockodo.com/introspect",
+          "response_types_supported": [
+            "code"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post",
+            "none"
+          ],
+          "revocation_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "introspection_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "client_id_metadata_document_supported": true,
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "scopes_supported": [
+            "full_access",
+            "accessGroups:read",
+            "accessGroups:write",
+            "absences:read",
+            "absences:write",
+            "browserExtensionRules:read",
+            "browserExtensionRules:write",
+            "clock:read",
+            "clock:write",
+            "company:read",
+            "customers:read",
+            "customers:write",
+            "entryGroups:read",
+            "entryGroups:write",
+            "entries:read",
+            "entries:write",
+            "entriesTexts:read",
+            "entriesTexts:write",
+            "holidaysCarry:read",
+            "holidaysCarry:write",
+            "holidaysQuota:read",
+            "holidaysQuota:write",
+            "lumpSumServices:read",
+            "lumpSumServices:write",
+            "nonbusinessDays:read",
+            "nonbusinessDays:write",
+            "nonbusinessGroups:read",
+            "nonbusinessGroups:write",
+            "overtimeCarry:read",
+            "overtimeCarry:write",
+            "overtimeReductions:read",
+            "overtimeReductions:write",
+            "projects:read",
+            "projects:write",
+            "rates:read",
+            "rates:write",
+            "services:read",
+            "services:write",
+            "subprojects:read",
+            "subprojects:write",
+            "subscription:read",
+            "targetHours:read",
+            "targetHours:write",
+            "teams:read",
+            "teams:write",
+            "userReports:read",
+            "users:read",
+            "users:write",
+            "usersNonbusinessDays:read",
+            "usersNonbusinessGroups:read",
+            "usersNonbusinessGroups:write",
+            "workTimes:read",
+            "workTimes:write"
+          ]
+        }
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://mcp.clockodo.com/.well-known/oauth-protected-resource) · Authorization Server: https://my.clockodo.com"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "ja (mcp.clockodo.com, discovered 2026-09-22)",
+    "researchNote": "Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth: für Agenten-Stellvertreter ungeeignet.",
+    "apiHost": "https://my.clockodo.com/api",
+    "score": 37,
+    "grade": "D"
+  },
+  {
+    "name": "pretix",
+    "surface": {
+      "url": "https://docs.pretix.eu",
+      "openapi": {},
+      "robots": {
+        "url": "https://docs.pretix.eu/robots.txt",
+        "found": false,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "none"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "none"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "none"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "none"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "none"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "none"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "none"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "none"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "none"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "none"
+          }
+        ],
+        "lastStatus": 404
+      },
+      "llmsTxt": {
+        "url": "https://docs.pretix.eu/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://docs.pretix.eu/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "warn",
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "API-first mit OAuth2 („Connect with pretix“) und Token-Auth, aber ohne OpenAPI-Spec. Kein MCP-Angebot, ein geschlossener Drittanbieter-Wrapper (mcpbundles.com).",
+    "apiHost": "https://pretix.eu/api/v1/",
+    "score": 2,
+    "grade": "F"
+  },
+  {
+    "name": "Zammad",
+    "surface": {
+      "url": "https://docs.zammad.org",
+      "openapi": {},
+      "robots": {
+        "url": "https://docs.zammad.org/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://docs.zammad.org/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://docs.zammad.org/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein: offiziell „not really planned“ (Community-Forum 2/2026)",
+    "researchNote": "Größte Community-Lücke: 41-Sterne-Community-Server (basher83/Zammad-MCP) + Feature-Request mit 561 Aufrufen; GitHub-Epic „Chat assistant for agents“ aktiv. Zammad 7 wird „all AI“. Offizieller MCP fehlt trotzdem. Keine OpenAPI-Spec.",
+    "apiHost": "self-hosted: {instanz}/api/v1",
+    "score": 5,
+    "grade": "F"
+  },
+  {
+    "name": "Lexware Office",
+    "surface": {
+      "url": "https://developers.lexware.io",
+      "openapi": {},
+      "robots": {
+        "url": "https://developers.lexware.io/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://developers.lexware.io/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://developers.lexware.io/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.lexware.io/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "Zugang geschützt (401/403), aber keine OAuth-Resource-Metadata auffindbar (RFC 9728)"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "API-Key als Bearer, keine OpenAPI-Datei. Lebendige Community (u. a. marselsel/Lexware-MCP-Server mit 31 Sternen und OAuth-2.1-Wrapper). Kunden bauen bereits selbst.",
+    "apiHost": "https://api.lexware.io",
+    "score": 20,
+    "grade": "F"
+  },
+  {
+    "name": "sevdesk",
+    "surface": {
+      "url": "https://api.sevdesk.de",
+      "openapi": {
+        "url": "https://api.sevdesk.de/openapi.yaml",
+        "title": "(YAML spec)",
+        "version": "yaml"
+      },
+      "robots": {
+        "url": "https://api.sevdesk.de/robots.txt",
+        "found": false,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "none"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "none"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "none"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "none"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "none"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "none"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "none"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "none"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "none"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "none"
+          }
+        ],
+        "lastStatus": 404
+      },
+      "llmsTxt": {
+        "url": "https://api.sevdesk.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://api.sevdesk.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://api.sevdesk.de/openapi.yaml · (YAML spec)"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "warn",
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "API-Token ohne Bearer/OAuth-Schema; Swagger-UI nur JS-gerendert, keine offizielle Spec-Datei. Vier kleine Community-Server auf GitHub. Der Markt improvisiert.",
+    "apiHost": "https://my.sevdesk.de/api/v1",
+    "score": 12,
+    "grade": "F"
+  },
+  {
+    "name": "weclapp",
+    "surface": {
+      "url": "https://www.weclapp.com/api",
+      "openapi": {},
+      "robots": {
+        "url": "https://www.weclapp.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://www.weclapp.com/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://www.weclapp.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://mcp.weclapp.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": false,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "fail",
+          "detail": "Kein gültiger MCP-Handshake"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "fail",
+          "detail": "WARNUNG: Tools ohne Authentifizierung abrufbar"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "fail",
+          "detail": "Keine Tools abrufbar"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "Swagger-UI JS-gerendert, Spec nur pro Mandant abrufbar (SDK generiert sie per API-Key). Custom-Header-Auth statt OAuth. Zwei Miniatur-Community-Server.",
+    "apiHost": "https://{mandant}.weclapp.com/webapp/api/v1",
+    "score": 10,
+    "grade": "F"
+  },
+  {
+    "name": "PlentyONE (plentymarkets)",
+    "surface": {
+      "url": "https://developers.plentymarkets.com",
+      "openapi": {
+        "url": "https://raw.githubusercontent.com/plentymarkets/api-doc/master/plentymarkets/openApiV3/openApiV3.json",
+        "title": "plentymarkets REST-API",
+        "version": "3.0.1",
+        "paths": 1199
+      },
+      "robots": {
+        "url": "https://developers.plentymarkets.com/robots.txt",
+        "found": false,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "none"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "none"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "none"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "none"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "none"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "none"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "none"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "none"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "none"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "none"
+          }
+        ],
+        "lastStatus": 404
+      },
+      "llmsTxt": {
+        "url": "https://developers.plentymarkets.com/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://developers.plentymarkets.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://raw.githubusercontent.com/plentymarkets/api-doc/master/plentymarkets/openApiV3/openApiV3.json · 1199 Pfade · plentymarkets REST-API"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "warn",
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "OpenAPI v2+v3 auf GitHub, aber Login-basierte Auth (E-Mail/Passwort gegen /rest/login): ohne OAuth keine saubere Agenten-Delegation. Dritte bestätigen ausdrücklich: kein Vendor-MCP. Kein Community-Server.",
+    "apiHost": "pro System-Domain",
+    "score": 12,
+    "grade": "F"
+  },
+  {
+    "name": "easybill",
+    "surface": {
+      "url": "https://www.easybill.de/api",
+      "openapi": {
+        "url": "https://api.easybill.de/rest/v1/swagger.json",
+        "title": "easybill REST API",
+        "version": "2.0",
+        "paths": 57
+      },
+      "robots": {
+        "url": "https://www.easybill.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://www.easybill.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://www.easybill.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "pass",
+          "detail": "https://api.easybill.de/rest/v1/swagger.json · 57 Pfade · easybill REST API"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://mcp.easybill.de/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": false,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "fail",
+          "detail": "Kein gültiger MCP-Handshake"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "fail",
+          "detail": "WARNUNG: Tools ohne Authentifizierung abrufbar"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "fail",
+          "detail": "Keine Tools abrufbar"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein (Gerücht „offizieller MCP-Connector“ nicht belegbar; alle Treffer sind Drittanbieter wie viaSocket)",
+    "researchNote": "Verifizierte Swagger-Spec (57 Pfade, Bearer API-Key). Support- und Entwicklerportal hinter Cloudflare/Login: für Agenten und Recherche gleichermaßen verschlossen.",
+    "apiHost": "https://api.easybill.de/rest/v1",
+    "score": 20,
+    "grade": "F"
+  },
+  {
+    "name": "softgarden",
+    "surface": {
+      "url": "https://dev.softgarden.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://dev.softgarden.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://dev.softgarden.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://dev.softgarden.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "OAuth2 Client Credentials, aber kein OpenAPI-Spec, teils deprecated Docs. Keine Community-Server.",
+    "apiHost": "https://api.softgarden.io/api/rest/v2/",
+    "score": 5,
+    "grade": "F"
+  },
+  {
+    "name": "propstack",
+    "surface": {
+      "url": "https://docs.propstack.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://docs.propstack.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://docs.propstack.de/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://docs.propstack.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://docs.propstack.de/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.propstack.de/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": false,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "fail",
+          "detail": "Kein gültiger MCP-Handshake"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "fail",
+          "detail": "WARNUNG: Tools ohne Authentifizierung abrufbar"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "fail",
+          "detail": "Keine Tools abrufbar"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein, aber eigene KI-Assistentin „Proppi“",
+    "researchNote": "llms.txt vorhanden, API-Key via X-API-KEY, keine Spec-Datei. Fünf persönliche Community-MCP-Repos. Signal: Nutzer wollen es.",
+    "apiHost": "https://api.propstack.de/v1",
+    "score": 13,
+    "grade": "F"
+  },
+  {
+    "name": "Maileon",
+    "surface": {
+      "url": "https://support.maileon.com",
+      "openapi": {},
+      "robots": {
+        "url": "https://support.maileon.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://support.maileon.com/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://support.maileon.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://support.maileon.com/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "HTTP Basic mit API-Key als Pseudo-Username; keine Spec. Kein Community-Server.",
+    "apiHost": "https://api.maileon.com/1.0/",
+    "score": 8,
+    "grade": "F"
+  },
+  {
+    "name": "onOffice",
+    "surface": {
+      "url": "https://apidoc.onoffice.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://apidoc.onoffice.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://apidoc.onoffice.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://apidoc.onoffice.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "Action-basierter Einzel-Endpunkt mit HMAC-SHA256-Signatur pro Aufruf: für LLM-Agenten praktisch unbenuzbar ohne Wrapper. API-Modul ist kostenpflichtiges Enterprise-Add-on.",
+    "apiHost": "https://api.onoffice.de/api/stable/api.php",
+    "score": 5,
+    "grade": "F"
+  },
+  {
+    "name": "Userlike (jetzt Lime Connect)",
+    "surface": {
+      "url": "https://docs.lime-connect.com",
+      "openapi": {},
+      "robots": {
+        "url": "https://docs.lime-connect.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://docs.lime-connect.com/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://docs.lime-connect.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.lime-connect.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "Zugang geschützt (401/403), aber keine OAuth-Resource-Metadata auffindbar (RFC 9728)"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "Rebrand zu Lime Connect; keine klassische REST-API (Webhook-Add-ons, JSON-Export ab Enterprise). AI-Produktmarketing („AI Automation Hub“) ohne Agent-Zugang zur eigenen API.",
+    "apiHost": "(Callback-Modell)",
+    "score": 20,
+    "grade": "F"
+  },
+  {
+    "name": "d.vinci",
+    "surface": {
+      "url": "https://www.dvinci.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://www.dvinci.de/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "blocked"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://www.dvinci.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://www.dvinci.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "fail",
+          "detail": "blockiert: GPTBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "Keine öffentliche API-Dokumentation; Schnittstellen nur als vorkonfigurierte Verbindungen zu ~40 Jobbörsen, direkten Zugang via Service Desk. Bewirbt „integrierten AI Agent“: für externe Agenten geschlossen.",
+    "apiHost": "nicht öffentlich dokumentiert",
+    "score": 0,
+    "grade": "F"
+  },
+  {
+    "name": "rexx systems",
+    "surface": {
+      "url": "https://www.rexx-systems.com",
+      "openapi": {},
+      "robots": {
+        "url": "https://www.rexx-systems.com/robots.txt",
+        "found": true,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "allowed"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "allowed"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "allowed"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "allowed"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "allowed"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "allowed"
+          }
+        ],
+        "lastStatus": 200
+      },
+      "llmsTxt": {
+        "url": "https://www.rexx-systems.com/llms.txt",
+        "found": true
+      },
+      "securityTxt": {
+        "url": "https://www.rexx-systems.com/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "pass",
+          "detail": "ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "pass",
+          "detail": "https://www.rexx-systems.com/llms.txt vorhanden"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "mcp": {
+      "url": "https://api.rexx-systems.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": false,
+        "asMetadataUrlsProbed": []
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "fail",
+          "detail": "Kein gültiger MCP-Handshake"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "fail",
+          "detail": "WARNUNG: Tools ohne Authentifizierung abrufbar"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "fail",
+          "detail": "Keine Tools abrufbar"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "FAQ nennt „offene API“, öffentliche Doku fehlt jedoch vollständig (keine Docs-Domain erreichbar). Keine Community-Server.",
+    "apiHost": "nicht öffentlich dokumentiert",
+    "score": 13,
+    "grade": "F"
+  },
+  {
+    "name": "Collmex",
+    "surface": {
+      "url": "https://www.collmex.de",
+      "openapi": {},
+      "robots": {
+        "url": "https://www.collmex.de/robots.txt",
+        "found": false,
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "policy": "none"
+          },
+          {
+            "agent": "OAI-SearchBot",
+            "policy": "none"
+          },
+          {
+            "agent": "ChatGPT-User",
+            "policy": "none"
+          },
+          {
+            "agent": "ClaudeBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Claude-Web",
+            "policy": "none"
+          },
+          {
+            "agent": "anthropic-ai",
+            "policy": "none"
+          },
+          {
+            "agent": "PerplexityBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Perplexity-User",
+            "policy": "none"
+          },
+          {
+            "agent": "Google-Extended",
+            "policy": "none"
+          },
+          {
+            "agent": "CCBot",
+            "policy": "none"
+          },
+          {
+            "agent": "Bytespider",
+            "policy": "none"
+          },
+          {
+            "agent": "Amazonbot",
+            "policy": "none"
+          },
+          {
+            "agent": "meta-externalagent",
+            "policy": "none"
+          }
+        ],
+        "lastStatus": 404
+      },
+      "llmsTxt": {
+        "url": "https://www.collmex.de/llms.txt",
+        "found": false
+      },
+      "securityTxt": {
+        "url": "https://www.collmex.de/.well-known/security.txt",
+        "found": false
+      },
+      "checks": [
+        {
+          "id": "openapi",
+          "label": "Maschinenlesbare API-Beschreibung (OpenAPI/Swagger)",
+          "status": "fail",
+          "detail": "keine öffentliche Spec unter Standardpfaden gefunden"
+        },
+        {
+          "id": "agent-crawlers",
+          "label": "Agent-Crawler-Politik (robots.txt)",
+          "status": "warn",
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
+        },
+        {
+          "id": "llms-txt",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
+          "status": "info",
+          "detail": "nicht vorhanden (unkritisch)"
+        },
+        {
+          "id": "security-txt",
+          "label": "security.txt (Sicherheitskontakt)",
+          "status": "warn",
+          "detail": "nicht vorhanden"
+        }
+      ]
+    },
+    "officialMcp": "nein",
+    "researchNote": "CSV-Satz-Protokoll über HTTP-POST statt REST/JSON; API-Doku nur in der App-Hilfe. Auth per LOGIN-Datensatz. Für Agenten ohne dedizierten Adapter unbrauchbar.",
+    "apiHost": "https://www.collmex.de/cgi-bin/cgi.exe",
+    "score": 2,
+    "grade": "F"
+  }
+]

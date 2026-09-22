@@ -12,10 +12,10 @@
 Wir haben 21 deutsche B2B-SaaS-APIs darauf getestet, ob KI-Agenten (Claude,
 ChatGPT, Copilot) sie heute bedienen können.
 
-Ergebnis: 2.
+Ergebnis: 3.
 
-Von 21. Zwei Anbieter haben einen offiziellen MCP-Endpunkt. 15 haben nicht
-einmal eine maschinenlesbare API-Beschreibung. 9 arbeiten mit statischen
+Von 21. Drei Anbieter haben einen offiziellen MCP-Endpunkt (awork, seven.io,
+clockodo). 14 haben nicht einmal eine maschinenlesbare API-Beschreibung. 9 arbeiten mit statischen
 Keys. Ihr Kunde kann einem Assistenten also nicht mal "nur lesen" erlauben.
 
 Wir haben alles automatisiert geprüft und die Ergebnisse nebst Methodik
@@ -26,7 +26,27 @@ Kommentar mit "Report" und ich schicke den Link.
 (Alternativ: Link in den Kommentaren, besser als im Posttext für die
 Reichweite.)
 
-## Post 2: Was ein Agent mit eurer Software machen würde
+## Post 2: Unser Test hat einen MCP-Endpunkt gefunden, den clockodo nirgends erwähnt
+
+Beim Ausbau unseres Live-Tests ist uns etwas aufgefallen: Wir scannen bei
+einer URL auch die Ableitungs-Hosts (mcp.domain, api.domain, docs.domain).
+Bei clockodo hat geantwortet: mcp.clockodo.com/mcp.
+
+OAuth-Discovery nach RFC 9728, Werkzeuge sauber hinter Auth, erreichbar.
+Nur dokumentiert wird der Endpunkt nirgends: keine Ankündigung, kein
+Setup-Guide, nichts in der Doku (Stand 22. September 2026).
+
+Damit gibt es drei deutsche B2B-Anbieter mit offiziellem MCP-Endpunkt:
+awork, seven.io, clockodo. Vor der eigenen Nachzählung waren es laut
+Recherche noch zwei.
+
+Warum das zählt: Ein Endpunkt, den niemand kennt, ist für Kunden nicht
+existent. Und die Frage an jeden anderen Anbieter bleibt dieselbe: Wenn
+clockodo es nebenbei baut — warum ihr nicht?
+
+Unser Live-Test scannt genau das: Link in den Kommentaren.
+
+## Post 3: Was ein Agent mit eurer Software machen würde
 
 Meine Assistentin soll folgendes können:
 
@@ -44,7 +64,7 @@ Protokoll.
 Wir haben eine kostenlose Prüfung gebaut, die in unter einer Minute zeigt,
 wie weit eure API davon entfernt ist. Link in den Kommentaren.
 
-## Post 3: Die Community baut, was der Hersteller nicht liefert (Zammad/Lexware)
+## Post 4: Die Community baut, was der Hersteller nicht liefert (Zammad/Lexware)
 
 Zwei Beobachtungen aus den letzten Wochen:
 
@@ -52,7 +72,7 @@ Zwei Beobachtungen aus den letzten Wochen:
    Admins: "not really planned". Parallel sammelt ein Community-Server 41
    Sterne auf GitHub.
 
-2. Für Lexware Office gibt es einen 31-Sterne-Community-Server, mit eigenem
+2. Für Lexware Office gibt es einen 32-Sterne-Community-Server, mit eigenem
    OAuth-Ansatz, Docker, Tests. Gebaut von Leuten, die einfach arbeiten
    wollen.
 
@@ -63,7 +83,7 @@ Wenn eure Kunden anfangen, eure API mit Fremd-Code zu verbinden, ist das
 kein Marketing-Problem. Es ist ein Signal, dass die Nachfrage da ist, und
 dass jemand anderes sie gerade bedient.
 
-## Post 4: awork macht es richtig (und das ist gut für alle)
+## Post 5: awork macht es richtig (und das ist gut für alle)
 
 In unserem Test von 21 deutschen B2B-SaaS-APIs gibt es genau einen
 Benchmark: awork.
@@ -79,7 +99,7 @@ Frage der Firmengröße ist. awork ist kein Konzern.
 Und es macht die Frage an jeden anderen Anbieter einfach:
 "Wann?"
 
-## Post 5: Der Staat zahlt 80% (BAFA-Hook für Geschäftsführer)
+## Post 6: Der Staat zahlt 80% (BAFA-Hook für Geschäftsführer)
 
 Für die meisten kleinen Softwarehäuser ist externe Beratung ein Kostenpunkt.
 Es gibt aber ein Programm, das genau das ändert:
@@ -94,7 +114,7 @@ Mit BAFA-Förderung bleibt für euch deutlich weniger hängen.
 Wir bereiten den Antrag vor, ihr unterschreibt. Wenn ihr wissen wollt, ob
 eure API förderfähig geprüft werden kann: Kommentar oder DM.
 
-## Post 6: Erkenntnis aus dem ersten Audit (wenn soweit: Platzhalter)
+## Post 7: Erkenntnis aus dem ersten Audit (wenn soweit: Platzhalter)
 
 [Rückenwind-Post nach dem ersten echten Audit: 1 anonymisiertes Finding
 als Geschichte erzählen. Nicht schreiben, bevor es ihn gibt.]

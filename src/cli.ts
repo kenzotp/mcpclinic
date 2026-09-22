@@ -2,7 +2,7 @@
 
 import { probeMcpEndpoint } from "./probe/mcp.ts";
 import { probeSurface } from "./probe/surface.ts";
-import { probeWithDiscovery } from "./probe/discovery.ts";
+import { probeWithDiscovery, deriveSiblingHosts } from "./probe/discovery.ts";
 import { scoreCompany, gradeOf } from "./probe/score.ts";
 import { renderReport } from "./probe/report.ts";
 import type { CompanyReport } from "./probe/types.ts";
@@ -44,6 +44,27 @@ async function main() {
       let mcp;
       if (t.mcpUrl) {
         mcp = await probeMcpEndpoint(t.mcpUrl).catch(() => undefined);
+      } else {
+        // Methodology: no documented endpoint -> sniff sibling hosts
+        // (mcp./api./docs./developers./developer. of the vendor domain).
+        const hostname = new URL(t.docsUrl).hostname;
+        const bare = hostname.replace(/^(www|docs|api|developers|developer|mcp)\./i, "");
+        const tried = new Set([`${hostname}/mcp`]);
+        for (const host of [`mcp.${bare}`, ...deriveSiblingHosts(hostname)]) {
+          if (tried.size >= 5) break;
+          const candidateUrl = `https://${host}/mcp`;
+          const key = candidateUrl.replace(/^https:\/\//, "");
+          if (tried.has(key)) continue;
+          tried.add(key);
+          try {
+            mcp = await probeMcpEndpoint(candidateUrl);
+          } catch {
+            mcp = undefined;
+          }
+          if (mcp?.reachable) break;
+          mcp = undefined;
+        }
+        if (!mcp?.reachable) mcp = undefined;
       }
       const company: CompanyReport = {
         name: t.name,
