@@ -2,7 +2,7 @@
 
 *Ziel-Keywords: Was ist MCP, Model Context Protocol erklärt, KI-Agenten an SaaS anbinden*
 
-**Meta-Description:** MCP (Model Context Protocol) erklärt, ohne Fachjargon: was KI-Agenten brauchen, um mit Ihrer Software zu arbeiten, und warum 19 von 21 geprüften deutschen SaaS-Anbietern es noch nicht anbieten.
+**Meta-Description:** MCP (Model Context Protocol) erklärt, ohne Fachjargon: was KI-Agenten brauchen, um mit Ihrer Software zu arbeiten, und warum 18 von 21 geprüften deutschen SaaS-Anbietern es noch nicht anbieten.
 
 :::stat 3/21 | deutsche B2B-SaaS-APIs bieten heute einen eigenen MCP-Endpunkt an (Deutscher MCP-Report 2026)
 

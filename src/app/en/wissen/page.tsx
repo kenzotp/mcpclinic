@@ -3,11 +3,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { wissenAll } from "@/lib/wissen";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
   title: "Knowledge — MCP Clinic",
   description:
-    "Analyses and teardowns around MCP, agent readiness, and German B2B SaaS: vendor teardowns, security patterns, GDPR. Published in German.",
+    "Analyses and teardowns around MCP, agent readiness, and German B2B SaaS: vendor teardowns, security patterns, GDPR.",
   alternates: {
     canonical: "https://mcpclinic.dev/en/wissen",
     languages: {
@@ -18,7 +19,7 @@ export const metadata = {
 };
 
 export default async function EnWissenIndex() {
-  const posts = await wissenAll();
+  const posts = await wissenAll("en");
   return (
     <>
       <Nav lang="en" />
@@ -29,24 +30,33 @@ export default async function EnWissenIndex() {
             Analyses &amp; teardowns
           </h1>
           <p className="mt-4 text-[15px] text-[var(--ink-2)]">
-            Our knowledge base is written for the German market and published in German. Every
-            article follows the same rules as our report: only numbers we measured ourselves,
-            vendors described fairly, and exactly one recommended next step.
+            How agent-ready is German B2B software? Every analysis is grounded in real
+            assessments, with numbers from the{" "}
+            <Link href="/en/report" className="underline decoration-[var(--hairline)] underline-offset-4 transition-colors hover:text-[var(--ink)]">
+              German MCP Report
+            </Link>
+            .
           </p>
         </Reveal>
-
-        <div className="mt-10 flex flex-col gap-4">
+        <div className="mt-12 flex flex-col">
           {posts.map((p, i) => (
-            <Reveal key={p.slug} delay={Math.min(i * 40, 240)}>
+            <Reveal key={p.slug} delay={Math.min(i, 4) * 60}>
               <Link
-                href={`/wissen/${p.slug}`}
-                className="glass block rounded-2xl p-5 transition-transform duration-300 hover:scale-[1.01]"
+                href={`/en/wissen/${p.slug}`}
+                className="hairline-t group flex flex-col gap-1 py-6 transition-colors"
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <div className="font-display text-base font-medium">{p.title}</div>
-                  <div className="shrink-0 text-xs text-[var(--ink-3)]">{p.readingMinutes} min · DE</div>
-                </div>
-                <p className="mt-1 text-sm text-[var(--ink-3)]">{p.description}</p>
+                <span className="flex items-center justify-between gap-4">
+                  <span className="font-display text-lg font-medium transition-colors group-hover:text-[var(--ink-2)]">
+                    {p.title}
+                  </span>
+                  <ArrowRight
+                    size={15}
+                    className="shrink-0 text-[var(--ink-3)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--ink)]"
+                  />
+                </span>
+                {p.description && (
+                  <span className="text-sm leading-relaxed text-[var(--ink-2)]">{p.description}</span>
+                )}
               </Link>
             </Reveal>
           ))}

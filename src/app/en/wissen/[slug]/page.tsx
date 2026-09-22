@@ -6,22 +6,22 @@ import Reveal from "@/components/Reveal";
 import { wissenAll, wissenPost, wissenSlugs } from "@/lib/wissen";
 
 export async function generateStaticParams() {
-  return (await wissenSlugs()).map((slug) => ({ slug }));
+  return (await wissenSlugs("en")).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await wissenPost(slug);
-  if (!post) return { title: "Wissen — MCP Clinic" };
+  const post = await wissenPost(slug, "en");
+  if (!post) return { title: "Knowledge — MCP Clinic" };
   return {
-    title: `${post.title} — MCP Clinic Wissen`,
+    title: `${post.title} — MCP Clinic Knowledge`,
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: `https://mcpclinic.dev/wissen/${slug}`,
+      canonical: `https://mcpclinic.dev/en/wissen/${slug}`,
       languages: {
-        "de-DE": `https://mcpclinic.dev/wissen/${slug}`,
         en: `https://mcpclinic.dev/en/wissen/${slug}`,
+        "de-DE": `https://mcpclinic.dev/wissen/${slug}`,
       },
     },
   };
@@ -63,15 +63,15 @@ function fieldHeader(slug: string): string {
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" style="width:100%;height:${H}px;display:block" aria-hidden="true"><rect width="${W}" height="${H}" fill="rgba(255,255,255,0.02)"/>${edges}${dots}</svg>`;
 }
 
-export default async function WissenPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function EnWissenPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await wissenPost(slug);
+  const post = await wissenPost(slug, "en");
   if (!post) notFound();
-  const others = (await wissenAll()).filter((p) => p.slug !== slug).slice(0, 3);
+  const others = (await wissenAll("en")).filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <>
-      <Nav lang="de" />
+      <Nav lang="en" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -80,7 +80,7 @@ export default async function WissenPostPage({ params }: { params: Promise<{ slu
             "@type": "Article",
             headline: post.title,
             description: post.description,
-            mainEntityOfPage: `https://mcpclinic.dev/wissen/${slug}`,
+            mainEntityOfPage: `https://mcpclinic.dev/en/wissen/${slug}`,
             author: { "@type": "Organization", name: "MCP Clinic" },
             publisher: { "@type": "Organization", name: "MCP Clinic" },
           }),
@@ -88,12 +88,12 @@ export default async function WissenPostPage({ params }: { params: Promise<{ slu
       />
       <main className="relative z-10 mx-auto max-w-2xl px-6 pb-10 pt-32">
         <Reveal>
-          <Link href="/wissen" className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)] transition-colors hover:text-[var(--ink-2)]">
-            ← Wissen
+          <Link href="/en/wissen" className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)] transition-colors hover:text-[var(--ink-2)]">
+            ← Knowledge
           </Link>
           <h1 className="font-display mt-5 text-3xl md:text-4xl font-light leading-tight tracking-tight">{post.title}</h1>
           {post.description && <p className="mt-4 text-[15px] text-[var(--ink-2)]">{post.description}</p>}
-          <p className="mt-4 text-xs text-[var(--ink-3)]">{post.readingMinutes} Min. Lesezeit</p>
+          <p className="mt-4 text-xs text-[var(--ink-3)]">{post.readingMinutes} min read</p>
         </Reveal>
         <Reveal delay={80}>
           <article
@@ -103,10 +103,10 @@ export default async function WissenPostPage({ params }: { params: Promise<{ slu
         </Reveal>
         <Reveal delay={80}>
           <div className="hairline-t mt-16 pt-8">
-            <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Weiterlesen</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Keep reading</p>
             <div className="mt-4 flex flex-col gap-2">
               {others.map((p) => (
-                <Link key={p.slug} href={`/wissen/${p.slug}`} className="text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+                <Link key={p.slug} href={`/en/wissen/${p.slug}`} className="text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
                   {p.title}
                 </Link>
               ))}
@@ -114,7 +114,7 @@ export default async function WissenPostPage({ params }: { params: Promise<{ slu
           </div>
         </Reveal>
       </main>
-      <Footer lang="de" />
+      <Footer lang="en" />
     </>
   );
 }

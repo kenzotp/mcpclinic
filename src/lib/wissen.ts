@@ -92,7 +92,7 @@ function parse(raw: string, slug: string): WissenPost {
   const descMatch = t.match(/\*\*Meta-Description:\*\*\s*(.+)/);
   const description = descMatch ? descMatch[1].trim() : "";
   if (descMatch) t = t.replace(descMatch[0], "");
-  const kwMatch = t.match(/\*Ziel-Keywords:\s*(.+?)\*/);
+  const kwMatch = t.match(/\*(?:Ziel-Keywords|Target keywords):\s*(.+?)\*/);
   const keywords = kwMatch ? kwMatch[1].trim() : undefined;
   if (kwMatch) t = t.replace(kwMatch[0], "");
 
@@ -110,8 +110,12 @@ function parse(raw: string, slug: string): WissenPost {
   };
 }
 
-export async function wissenSlugs(): Promise<string[]> {
-  const dir = path.join(process.cwd(), "content", "wissen");
+function wissenDir(lang: "de" | "en"): string {
+  return path.join(process.cwd(), "content", lang === "en" ? "wissen-en" : "wissen");
+}
+
+export async function wissenSlugs(lang: "de" | "en" = "de"): Promise<string[]> {
+  const dir = wissenDir(lang);
   const files = await readdir(dir);
   return files
     .filter((f) => f.endsWith(".md") && f !== "INDEX.md")
@@ -119,17 +123,17 @@ export async function wissenSlugs(): Promise<string[]> {
     .sort();
 }
 
-export async function wissenPost(slug: string): Promise<WissenPost | null> {
+export async function wissenPost(slug: string, lang: "de" | "en" = "de"): Promise<WissenPost | null> {
   try {
-    const raw = await readFile(path.join(process.cwd(), "content", "wissen", `${slug}.md`), "utf8");
+    const raw = await readFile(path.join(wissenDir(lang), `${slug}.md`), "utf8");
     return parse(raw, slug);
   } catch {
     return null;
   }
 }
 
-export async function wissenAll(): Promise<WissenPost[]> {
-  const slugs = await wissenSlugs();
-  const posts = await Promise.all(slugs.map((s) => wissenPost(s)));
+export async function wissenAll(lang: "de" | "en" = "de"): Promise<WissenPost[]> {
+  const slugs = await wissenSlugs(lang);
+  const posts = await Promise.all(slugs.map((s) => wissenPost(s, lang)));
   return posts.filter((p): p is WissenPost => p !== null);
 }
