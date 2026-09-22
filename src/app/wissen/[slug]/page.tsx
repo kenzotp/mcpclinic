@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import { wissenAll, wissenPost, wissenSlugs } from "@/lib/wissen";
+import { wissenAll, wissenPost, wissenSlugs, enSlugFor } from "@/lib/wissen";
 
 export async function generateStaticParams() {
   return (await wissenSlugs()).map((slug) => ({ slug }));
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `https://mcpclinic.dev/wissen/${slug}`,
       languages: {
         "de-DE": `https://mcpclinic.dev/wissen/${slug}`,
-        en: `https://mcpclinic.dev/en/wissen/${slug}`,
+        en: `https://mcpclinic.dev/en/knowledge/${enSlugFor(slug)}`,
       },
     },
   };

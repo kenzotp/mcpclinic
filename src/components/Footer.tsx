@@ -35,10 +35,10 @@ export default function Footer({ lang }: { lang: "de" | "en" }) {
           <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-audit", "/en/mcp-audit")}>
             {t.nav.audit}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-server-entwickeln", "/en/mcp-server-entwickeln")}>
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-server-entwickeln", "/en/mcp-server-development")}>
             {t.nav.build}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/wissen", "/en/wissen")}>
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/wissen", "/en/knowledge")}>
             {t.nav.wissen}
           </Link>
         </div>

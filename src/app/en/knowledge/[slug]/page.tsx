@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import { wissenAll, wissenPost, wissenSlugs } from "@/lib/wissen";
+import { wissenAll, wissenPost, wissenSlugs, deSlugFor } from "@/lib/wissen";
 
 export async function generateStaticParams() {
   return (await wissenSlugs("en")).map((slug) => ({ slug }));
@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: `https://mcpclinic.dev/en/wissen/${slug}`,
+      canonical: `https://mcpclinic.dev/en/knowledge/${slug}`,
       languages: {
-        en: `https://mcpclinic.dev/en/wissen/${slug}`,
-        "de-DE": `https://mcpclinic.dev/wissen/${slug}`,
+        en: `https://mcpclinic.dev/en/knowledge/${slug}`,
+        "de-DE": `https://mcpclinic.dev/wissen/${deSlugFor(slug)}`,
       },
     },
   };
@@ -88,7 +88,7 @@ export default async function EnWissenPostPage({ params }: { params: Promise<{ s
       />
       <main className="relative z-10 mx-auto max-w-2xl px-6 pb-10 pt-32">
         <Reveal>
-          <Link href="/en/wissen" className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)] transition-colors hover:text-[var(--ink-2)]">
+          <Link href="/en/knowledge" className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)] transition-colors hover:text-[var(--ink-2)]">
             ← Knowledge
           </Link>
           <h1 className="font-display mt-5 text-3xl md:text-4xl font-light leading-tight tracking-tight">{post.title}</h1>
@@ -106,7 +106,7 @@ export default async function EnWissenPostPage({ params }: { params: Promise<{ s
             <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Keep reading</p>
             <div className="mt-4 flex flex-col gap-2">
               {others.map((p) => (
-                <Link key={p.slug} href={`/en/wissen/${p.slug}`} className="text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+                <Link key={p.slug} href={`/en/knowledge/${p.slug}`} className="text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
                   {p.title}
                 </Link>
               ))}

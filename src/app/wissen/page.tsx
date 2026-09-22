@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://mcpclinic.dev/wissen",
     languages: {
       "de-DE": "https://mcpclinic.dev/wissen",
-      en: "https://mcpclinic.dev/en/wissen",
+      en: "https://mcpclinic.dev/en/knowledge",
     },
   },
   description:

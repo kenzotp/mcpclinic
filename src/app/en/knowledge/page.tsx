@@ -10,9 +10,9 @@ export const metadata = {
   description:
     "Analyses and teardowns around MCP, agent readiness, and German B2B SaaS: vendor teardowns, security patterns, GDPR.",
   alternates: {
-    canonical: "https://mcpclinic.dev/en/wissen",
+    canonical: "https://mcpclinic.dev/en/knowledge",
     languages: {
-      en: "https://mcpclinic.dev/en/wissen",
+      en: "https://mcpclinic.dev/en/knowledge",
       "de-DE": "https://mcpclinic.dev/wissen",
     },
   },
@@ -42,7 +42,7 @@ export default async function EnWissenIndex() {
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={Math.min(i, 4) * 60}>
               <Link
-                href={`/en/wissen/${p.slug}`}
+                href={`/en/knowledge/${p.slug}`}
                 className="hairline-t group flex flex-col gap-1 py-6 transition-colors"
               >
                 <span className="flex items-center justify-between gap-4">

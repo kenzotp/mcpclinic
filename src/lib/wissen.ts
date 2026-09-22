@@ -114,6 +114,27 @@ function wissenDir(lang: "de" | "en"): string {
   return path.join(process.cwd(), "content", lang === "en" ? "wissen-en" : "wissen");
 }
 
+// English editions use English slugs; this maps the German originals.
+const EN_SLUGS: Record<string, string> = {
+  "was-ist-mcp": "what-is-mcp",
+  "mcp-sicherheitsluecken": "mcp-security-vulnerabilities",
+  "mcp-server-dsgvo": "mcp-server-gdpr",
+  "mcp-spezifikation-juli-2026": "mcp-specification-july-2026",
+  "mcp-tool-beschreibungen": "mcp-tool-descriptions",
+  "mcp-oekosystem": "mcp-ecosystem",
+  "self-host-oder-gateway": "self-host-or-gateway",
+  "was-kostet-ein-mcp-server": "mcp-server-pricing",
+};
+
+export function enSlugFor(deSlug: string): string {
+  return EN_SLUGS[deSlug] ?? deSlug;
+}
+
+export function deSlugFor(enSlug: string): string {
+  for (const [de, en] of Object.entries(EN_SLUGS)) if (en === enSlug) return de;
+  return enSlug;
+}
+
 export async function wissenSlugs(lang: "de" | "en" = "de"): Promise<string[]> {
   const dir = wissenDir(lang);
   const files = await readdir(dir);
