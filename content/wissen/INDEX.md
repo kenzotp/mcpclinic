@@ -56,6 +56,14 @@
 
 **Gesamtstand: 21 Posts.**
 
+## Entwurf (Review durch Mika ausstehend, NICHT live)
+
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `content/drafts/mcp-oekosystem.md` | MCP Server Deutschland / MCP Server Liste | Report |
+
+Freigabe = Datei nach content/wissen/mcp-oekosystem.md verschieben + Zeile hier in einen Fertig-Batch übernehmen.
+
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
 - Jeder Post endet mit genau einem CTA-Pfad (Live-Test ODER Audit ODER Build), nie allen dreien gleichwertig.
