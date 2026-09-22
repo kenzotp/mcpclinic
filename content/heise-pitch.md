@@ -15,7 +15,7 @@ Hallo heise-developer-Team,
 
 ich baue MCP-Server für den Produktivbetrieb und habe zuletzt 21 deutsche
 B2B-SaaS-APIs automatisiert auf Agenten-Fähigkeit geprüft (Ergebnisse
-öffentlich: mcpclinic.dev/report). Ergebnis: 3 von 21 bieten MCP an, 15
+öffentlich: mcpclinic.dev/report). Ergebnis: 4 von 21 bieten MCP an, 15
 haben keine maschinenlesbare API-Doku, und bei den Community-Anbindungen,
 die es gibt, wiederholen sich dieselben Fehler.
 

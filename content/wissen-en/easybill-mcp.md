@@ -43,6 +43,6 @@ The interpretation splits in two: a good API description is half the work for ag
 
 ## The pattern note for vendors
 
-easybill is not an isolated case: we continuously check German B2B SaaS for exactly this gap. The [German MCP Report 2026](/report) shows the overall picture: 3 of 21 vendors officially have MCP. Whoever makes the move immediately stands apart: with an endpoint that brings scopes, logging and GDPR order, instead of the silent outsourcing to third-party gateways.
+easybill is not an isolated case: we continuously check German B2B SaaS for exactly this gap. The [German MCP Report 2026](/report) shows the overall picture: 4 of 21 vendors officially have MCP. Whoever makes the move immediately stands apart: with an endpoint that brings scopes, logging and GDPR order, instead of the silent outsourcing to third-party gateways.
 
 **→ Where does your API stand? [Free MCP live test](/test), in under a minute.**

@@ -32,7 +32,7 @@ The report scores it anyway, because for the purchasing decision the current sta
 
 The report measures three levels, and Collmex shows that they really exist:
 
-1. **Access** (MCP endpoint present? OAuth? scopes?): only 3 of 21 manage that.
+1. **Access** (MCP endpoint present? OAuth? scopes?): only 4 of 21 manage that.
 2. **Readability** (OpenAPI? llms.txt? described fields?): 6 of 21.
 3. **Protocol era** (REST/JSON vs. CSV records, CGI, HMAC signatures): this is where the Collmex-like cases sit.
 

@@ -4,7 +4,7 @@
 
 **Meta-Description:** Was ein gehosteter MCP-Server nach Spezifikation 2026-07-28 können muss, damit Claude und ChatGPT ihn per URL anbinden: Transport, OAuth 2.1, Metadaten.
 
-:::stat 3/21 | geprüfte deutsche B2B-SaaS-APIs betreiben einen Remote-MCP-Endpunkt mit OAuth-Metadaten nach RFC 9728 (awork, seven.io und clockodo)
+:::stat 4/21 | geprüfte deutsche B2B-SaaS-APIs betreiben einen Remote-MCP-Endpunkt mit OAuth-Metadaten nach RFC 9728 (awork, seven.io, clockodo und personio)
 
 :::takeaway
 - Ein Remote-MCP-Server ist ein HTTPS-Endpunkt wie `https://api.example.com/mcp`, der Streamable HTTP spricht. Das ältere HTTP+SSE-Verfahren ist abgekündigt.

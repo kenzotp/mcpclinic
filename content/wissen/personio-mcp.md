@@ -2,10 +2,10 @@
 
 *Ziel-Keywords: Personio MCP, Personio API KI-Agent, llms.txt sinnvoll, agentenfähige API*
 
-**Meta-Description:** Personio liefert llms.txt und OAuth2, aber keinen MCP-Endpunkt. Eine Einordnung, was Dokumentations-Signale über die echte Agenten-Fähigkeit einer API aussagen (und was nicht).
+**Meta-Description:** Personio liefert llms.txt und OAuth2, und seit dem 22.09.2026 ist auch ein eigener MCP-Endpunkt nachweisbar (mcp.personio.de, undokumentiert). Eine Einordnung, was Dokumentations-Signale über die echte Agenten-Fähigkeit einer API aussagen. Eine Einordnung, was Dokumentations-Signale über die echte Agenten-Fähigkeit einer API aussagen (und was nicht).
 
 :::takeaway
-- llms.txt und moderne Doku sind die Lesbarkeits-Hälfte. Die Zugangshälfte (Endpunkt, Delegation, Scopes) fehlt bei Personio komplett.
+- Update 22.09.2026: Personio betreibt einen eigenen MCP-Endpunkt (mcp.personio.de, OAuth nach RFC 9728, undokumentiert). Die Zugangshälfte existiert damit technisch, ist aber weder dokumentiert noch ankündigt.
 - OAuth2 Client Credentials ist ein Maschinen-Login, kein Nutzer-im-Auftrag-Login: für Agenten der falsche Stil.
 - Käufer-Fragen statt Marketing-Sprüchen: Gibt es einen offiziellen Endpunkt? Agiert der Agent im Nutzernamen? Gibt es Scopes pro Werkzeug?
 :::
@@ -32,7 +32,7 @@ Ein KI-Agent, der Personio bedienen soll, braucht drei Dinge, die keine llms.txt
 
 ## Die allgemeine Lektion: Lesbar ≠ Betretbar
 
-Wir sehen dieses Muster bei mehreren Anbietern des Reports (Personio, Xentral, propstack, jeweils mit llms.txt oder öffentlichen Specs): Die Dokumentationsebene zieht an, die Zugangsebene steht. Verständlich, denn Doku-Maßnahmen sind günstig und risikofrei. Aber der Wert für Kunden entsteht erst auf der Zugangsebene, und genau deshalb sind die Unterschiede im Report so groß: **3 von 21 Anbietern liefern den Zugang, ein Dutzend liefern Literatur.**
+Wir sehen dieses Muster bei mehreren Anbietern des Reports (Personio, Xentral, propstack, jeweils mit llms.txt oder öffentlichen Specs): Die Dokumentationsebene zieht an, die Zugangsebene steht. Verständlich, denn Doku-Maßnahmen sind günstig und risikofrei. Aber der Wert für Kunden entsteht erst auf der Zugangsebene, und genau deshalb sind die Unterschiede im Report so groß: **4 von 21 Anbietern liefern den Zugang, ein Dutzend liefern Literatur.**
 
 Ein Praxishinweis für Käufer, die „KI-fähig" als Auswahlkriterium hören: Fragen Sie nicht nach llms.txt. Fragen Sie nach drei Dingen: Gibt es einen offiziellen Agenten-Endpunkt? Agiert der Agent im Namen des angemeldeten Nutzers (OAuth im Nutzerkontext)? Und: Können Berechtigungen pro Werkzeug eingeschränkt werden? Drei „Nein" bedeuten: KI-Fähigkeit ist in diesem Produkt derzeit Broschüre.
 

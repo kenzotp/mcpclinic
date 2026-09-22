@@ -2,10 +2,10 @@
 
 *Target keywords: Personio MCP, Personio API AI agent, llms.txt benefits, agent-ready API*
 
-**Meta-Description:** Personio delivers llms.txt and OAuth2, but no MCP endpoint. An assessment of what documentation signals say about an API's real agent capability (and what they do not).
+**Meta-Description:** Personio ships llms.txt and OAuth2, and as of 2026-09-22 it also runs its own MCP endpoint (mcp.personio.de, undocumented). An assessment of what documentation signals say about an API's real agent capability. An assessment of what documentation signals say about an API's real agent capability (and what they do not).
 
 :::takeaway
-- llms.txt and modern docs are the readability half. The access half (endpoint, delegation, scopes) is entirely missing at Personio.
+- Update September 22, 2026: Personio operates its own MCP endpoint (mcp.personio.de, OAuth per RFC 9728, undocumented). The access half now exists technically, but it is neither documented nor announced.
 - OAuth2 client credentials is a machine login, not a login on behalf of a user: the wrong style for agents.
 - Buyer questions instead of marketing slogans: Is there an official endpoint? Does the agent act in the user's name? Are there scopes per tool?
 :::
@@ -32,7 +32,7 @@ An AI agent meant to operate Personio needs three things that no llms.txt in the
 
 ## The general lesson: readable ≠ enterable
 
-We see this pattern at several vendors in the report (Personio, Xentral, propstack, each with llms.txt or public specs): the documentation layer is attractive, the access layer stands still. Understandable, because documentation measures are cheap and risk-free. But value for customers only emerges at the access layer, and that is exactly why the differences in the report are so large: **3 of 21 vendors deliver access, a dozen deliver literature.**
+We see this pattern at several vendors in the report (Personio, Xentral, propstack, each with llms.txt or public specs): the documentation layer is attractive, the access layer stands still. Understandable, because documentation measures are cheap and risk-free. But value for customers only emerges at the access layer, and that is exactly why the differences in the report are so large: **4 of 21 vendors deliver access, a dozen deliver literature.**
 
 A practical note for buyers who hear "AI-capable" as a selection criterion: do not ask about llms.txt. Ask about three things: Is there an official agent endpoint? Does the agent act in the name of the logged-in user (OAuth in the user context)? And: can permissions be restricted per tool? Three "no"s mean: AI capability in this product is currently a brochure.
 

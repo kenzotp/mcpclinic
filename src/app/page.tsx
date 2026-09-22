@@ -10,7 +10,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 // 1 Hero (Stimmung + Test-Eingabe) · 2 Zahlen · 3 Weg · 4 Report · 5 Angebote · 6 Footer
 
 const STATS = [
-  { n: "3/21", t: "deutsche B2B-SaaS-APIs haben einen eigenen MCP-Endpunkt" },
+  { n: "4/21", t: "deutsche B2B-SaaS-APIs haben einen eigenen MCP-Endpunkt" },
   { n: "14/21", t: "stellen keine maschinenlesbare API-Beschreibung bereit" },
   { n: "9/21", t: "arbeiten mit statischen Keys: Agenten-Delegation unmöglich" },
 ];

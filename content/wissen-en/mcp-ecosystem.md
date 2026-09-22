@@ -4,7 +4,7 @@
 
 **Meta-Description:** For most German B2B SaaS products there is no official MCP server, but instead a growing community wave: over 25 unofficial projects for the tested products alone. A data report on the gap nobody fills.
 
-:::stat 26 | community MCP servers we count for the 21 tested German B2B SaaS products alone; 3 of 21 have an official one
+:::stat 26 | community MCP servers we count for the 21 tested German B2B SaaS products alone; 4 of 21 have an official one
 
 :::takeaway
 - Where no official MCP endpoint exists, the community builds one: 6 projects for Zammad, 7 for Lexware Office, 5 for Propstack, 4 for Personio, 3 for Xentral.
@@ -32,7 +32,7 @@ Our [German MCP Report 2026](/report) tested 21 German B2B SaaS APIs for agent c
 | easybill | no | 1 | 0★ |
 | JTL-Software, Collmex | no | 0 | — |
 
-Three patterns stand out. **First: where no official MCP endpoint exists, the community builds one:** 6 projects for Zammad, 7 for Lexware Office, 5 for Propstack, 4 for Personio, 3 for Xentral. **Second: where an official endpoint exists, nobody builds alongside:** awork and seven.io, as established official providers, have no community copies. **Third: the newest addition only came to light through systematic rescanning:** our live test found a previously unannounced endpoint at clockodo under mcp.clockodo.com (OAuth-protected, reachable), and directories like [Glama](https://glama.ai/mcp/servers) make even the community projects discoverable for end customers.
+Three patterns stand out. **First: where no official MCP endpoint exists, the community builds one:** 6 projects for Zammad, 7 for Lexware Office, 5 for Propstack, 4 for Personio, 3 for Xentral. **Second: where an official endpoint exists, nobody builds alongside:** awork and seven.io, as established official providers, have no community copies. **Third: the newest addition only came to light through systematic rescanning:** our live test found a previously unannounced endpoint at clockodo under mcp.clockodo.com (OAuth-protected, reachable), and the same scan exposed a protected endpoint at personio under mcp.personio.de (undocumented), and directories like [Glama](https://glama.ai/mcp/servers) make even the community projects discoverable for end customers.
 
 ## How good is the community wave?
 

@@ -4,7 +4,7 @@
 
 **Meta-Description:** Für die meisten deutschen B2B-SaaS-Produkte gibt es keinen offiziellen MCP-Server, dafür aber eine wachsende Community-Welle: allein für die geprüften Produkte über 25 inoffizielle Projekte. Ein Datenbericht über die Lücke, die niemand füllt.
 
-:::stat 26 | Community-MCP-Server zählen wir allein für die 21 geprüften deutschen B2B-SaaS-Produkte, bei 3 von 21 gibt es einen offiziellen
+:::stat 26 | Community-MCP-Server zählen wir allein für die 21 geprüften deutschen B2B-SaaS-Produkte, bei 4 von 21 gibt es einen offiziellen
 
 :::takeaway
 - Wo kein offizieller MCP-Endpunkt existiert, baut die Community ihn nach: für Zammad 6 Projekte, für Lexware Office 7, für Propstack 5, für Personio 4, für Xentral 3.
@@ -24,6 +24,7 @@ Unser [Deutscher MCP-Report 2026](/report) hat 21 deutsche B2B-SaaS-APIs auf Age
 | awork | ja | 0 | — |
 | seven.io | ja | 0 | — |
 | Clockodo | ja, seit kurzem | 0 | [mcp.clockodo.com](https://mcp.clockodo.com/mcp) |
+| Personio | ja, undokumentiert | 4 | 1★ |
 | Lexware Office | nein | 7 | [Lexware-MCP-Server](https://github.com/marselsel/Lexware-MCP-Server) (32★) |
 | Zammad | nein | 6 | [Zammad-MCP](https://github.com/basher83/Zammad-MCP) (41★) |
 | Propstack | nein | 5 | [propstack-mcp](https://github.com/ashev87/propstack-mcp) (8★) |
@@ -32,7 +33,7 @@ Unser [Deutscher MCP-Report 2026](/report) hat 21 deutsche B2B-SaaS-APIs auf Age
 | easybill | nein | 1 | 0★ |
 | JTL-Software, Collmex | nein | 0 | — |
 
-Drei Muster springen heraus. **Erstens: Wo kein offizieller MCP-Endpunkt existiert, baut die Community ihn nach:** für Zammad 6 Projekte, für Lexware Office 7, für Propstack 5, für Personio 4, für Xentral 3. **Zweitens: Wo ein offizieller Endpunkt existiert, baut niemand daneben:** awork und seven.io haben als etablierte offizielle Anbieter keine Community-Kopien. **Drittens: Der neueste Zuwachs kam erst durch systematisches Nachscannen ans Licht:** Unser Live-Test fand bei clockodo einen bislang nicht kommunizierten Endpunkt unter mcp.clockodo.com (OAuth-geschützt, erreichbar), und Verzeichnisse wie [Glama](https://glama.ai/mcp/servers) machen auch die Community-Projekte für Endkunden auffindbar.
+Drei Muster springen heraus. **Erstens: Wo kein offizieller MCP-Endpunkt existiert, baut die Community ihn nach:** für Zammad 6 Projekte, für Lexware Office 7, für Propstack 5, für Personio 4, für Xentral 3. **Zweitens: Wo ein offizieller Endpunkt existiert, baut niemand daneben:** awork und seven.io haben als etablierte offizielle Anbieter keine Community-Kopien. **Drittens: Der neueste Zuwachs kam erst durch systematisches Nachscannen ans Licht:** Unser Live-Test fand bei clockodo einen bislang nicht kommunizierten Endpunkt unter mcp.clockodo.com (OAuth-geschützt, erreichbar), denselben Scan legte bei personio einen geschützten Endpunkt unter mcp.personio.de offen (undokumentiert), und Verzeichnisse wie [Glama](https://glama.ai/mcp/servers) machen auch die Community-Projekte für Endkunden auffindbar.
 
 ## Wie gut ist die Community-Welle?
 

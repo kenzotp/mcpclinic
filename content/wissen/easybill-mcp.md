@@ -43,6 +43,6 @@ Das Interpretationsthematik ist zweigeteilt: Eine gute API-Beschreibung ist die 
 
 ## Der Musterhinweis für Hersteller
 
-Easybill ist kein Einzelfall: Wir prüfen laufend deutsche B2B-SaaS auf genau diese Lücke. Der [Deutscher MCP-Report 2026](/report) zeigt das Gesamtbild: 3 von 21 Herstellern haben offiziell MCP. Wer den Schritt geht, unterscheidet sich sofort: mit einem Endpunkt, der Scopes, Protokollierung und DSGVO-Ordnung mitbringt, statt der stillen Auslagerung an Drittanbieter-Gateways.
+Easybill ist kein Einzelfall: Wir prüfen laufend deutsche B2B-SaaS auf genau diese Lücke. Der [Deutscher MCP-Report 2026](/report) zeigt das Gesamtbild: 4 von 21 Herstellern haben offiziell MCP. Wer den Schritt geht, unterscheidet sich sofort: mit einem Endpunkt, der Scopes, Protokollierung und DSGVO-Ordnung mitbringt, statt der stillen Auslagerung an Drittanbieter-Gateways.
 
 **→ Wo steht Ihre API? [Kostenloser MCP-Live-Test](/test) in unter einer Minute.**

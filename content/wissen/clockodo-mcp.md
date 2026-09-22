@@ -9,7 +9,7 @@
 :::takeaway
 - Clockodo betreibt einen eigenen MCP-Endpunkt unter mcp.clockodo.com/mcp: erreichbar, mit OAuth-Discovery nach RFC 9728, Werkzeuge sauber hinter Auth.
 - Dokumentiert wird der Endpunkt nirgends: keine Ankündigung, kein Setup-Guide, kein Eintrag in der Doku (Stand 22. September 2026).
-- Damit bietet ein dritter von 21 geprüften Anbietern offiziell MCP an; im Ranking springt clockodo auf 37/100 und Platz 2.
+- Damit bietet ein dritter von 21 geprüften Anbietern offiziell MCP an; im Ranking springt clockodo auf 37/100 und Platz 2. (Derselbe Scan fand tags darauf einen vierten: personio, mcp.personio.de, undokumentiert.)
 - Was noch fehlt: Server Card, aktuelles server/discover und ein öffentlicher Setup-Weg. Genau die Bausteine, die aus einem Endpunkt ein Angebot machen.
 :::
 
@@ -41,7 +41,7 @@ Hinzu kommt: Ohne Test-Zugang bleiben die Werkzeuge selbst unbewertet. Wie viele
 
 ## Einordnung: das Feld hat jetzt drei
 
-Mit clockodo bieten drei von 21 geprüften Anbietern offiziell MCP an: [awork](/wissen/awork-mcp) (53/100), [clockodo](/report) (37/100) und [seven.io](/wissen/seven-io-mcp) (30/100). Interessant an clockodo ist die Kombination: Auf der REST-Seite existiert eine verifizierte OpenAPI-3.1-Spec mit 80 Pfaden, auf der MCP-Seite ein OAuth-geschützter Endpunkt ohne Dokumentation. Die Bausteine für Agenten-Fähigkeit sind also alle vorhanden, sie sind nur noch nicht zusammengesetzt und kommuniziert.
+Mit clockodo bieten drei von 21 geprüften Anbietern offiziell MCP an: [awork](/wissen/awork-mcp) (53/100), [clockodo](/report) (37/100) und [seven.io](/wissen/seven-io-mcp) (30/100). Derselbe Scan deckte einen vierten auf: personio betreibt mcp.personio.de (OAuth-geschützt, undokumentiert). Interessant an clockodo ist die Kombination: Auf der REST-Seite existiert eine verifizierte OpenAPI-3.1-Spec mit 80 Pfaden, auf der MCP-Seite ein OAuth-geschützter Endpunkt ohne Dokumentation. Die Bausteine für Agenten-Fähigkeit sind also alle vorhanden, sie sind nur noch nicht zusammengesetzt und kommuniziert.
 
 Für die Branche ist die Botschaft dieselbe wie bei [awork](/wissen/awork-mcp): Es beweist kein Konzern, dass agentenfähig machbar ist. Es beweist ein Zeiterfassungs-Tool aus dem Mittelstand.
 

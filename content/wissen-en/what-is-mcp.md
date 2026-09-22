@@ -4,12 +4,12 @@
 
 **Meta-Description:** MCP (Model Context Protocol) explained without jargon: what AI agents need to work with your software, and why 18 of 21 audited German SaaS providers do not offer it yet.
 
-:::stat 3/21 | German B2B SaaS APIs offer their own MCP endpoint today (German MCP Report 2026)
+:::stat 4/21 | German B2B SaaS APIs offer their own MCP endpoint today (German MCP Report 2026)
 
 :::takeaway
 - MCP is the interface through which AI agents operate your software on their own, with your permissions and your audit log.
 - The standard is here: Claude, ChatGPT, and Copilot all speak it.
-- The problem is not the technology but that almost no German provider offers it: 3 out of 21 in the report.
+- The problem is not the technology but that almost no German provider offers it: 4 out of 21 in the report.
 :::
 
 ---
@@ -37,7 +37,7 @@ The decisive difference from a screen-scraping bot: the agent works through your
 
 - The major AI platforms (Claude, ChatGPT, Copilot, and others) speak MCP: the standard established itself in 2025/2026 as the de facto interface for agents.
 - The specification is being actively developed further (most recently in July 2026, one reason why operations need a maintenance partner).
-- **German B2B SaaS is lagging behind:** in our German MCP Report 2026, we audited 21 German B2B SaaS APIs. Exactly 3 offer their own MCP server (awork, seven.io, and clockodo). 14 of 21 do not even provide a machine-readable API description.
+- **German B2B SaaS is lagging behind:** in our German MCP Report 2026, we audited 21 German B2B SaaS APIs. Exactly 4 offer their own MCP server (awork, seven.io, clockodo, and personio). 14 of 21 do not even provide a machine-readable API description.
 
 ## What "MCP-capable" means technically
 

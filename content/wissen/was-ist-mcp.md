@@ -4,12 +4,12 @@
 
 **Meta-Description:** MCP (Model Context Protocol) erklärt, ohne Fachjargon: was KI-Agenten brauchen, um mit Ihrer Software zu arbeiten, und warum 18 von 21 geprüften deutschen SaaS-Anbietern es noch nicht anbieten.
 
-:::stat 3/21 | deutsche B2B-SaaS-APIs bieten heute einen eigenen MCP-Endpunkt an (Deutscher MCP-Report 2026)
+:::stat 4/21 | deutsche B2B-SaaS-APIs bieten heute einen eigenen MCP-Endpunkt an (Deutscher MCP-Report 2026)
 
 :::takeaway
 - MCP ist die Schnittstelle, über die KI-Agenten Ihre Software selbstständig bedienen, mit Ihren Berechtigungen und Ihrem Protokoll.
 - Der Standard ist da: Claude, ChatGPT und Copilot sprechen ihn alle.
-- Das Problem ist nicht die Technik, sondern dass fast kein deutscher Anbieter sie anbietet: 3 von 21 im Report.
+- Das Problem ist nicht die Technik, sondern dass fast kein deutscher Anbieter sie anbietet: 4 von 21 im Report.
 :::
 
 ---
@@ -37,7 +37,7 @@ Der entscheidende Unterschied zu einem Screen-Scraper-Bot: Der Agent arbeitet ü
 
 - Die großen KI-Plattformen (Claude, ChatGPT, Copilot und andere) sprechen MCP: Der Standard hat sich 2025/2026 als De-facto-Schnittstelle für Agenten etabliert.
 - Die Spezifikation wird aktiv weiterentwickelt (zuletzt im Juli 2026, ein Grund, warum Betriebe einen Wartungspartner brauchen).
-- **Deutsche B2B-SaaS hinkt hinterher:** In unserem Deutscher MCP-Report 2026 haben wir 21 deutsche B2B-SaaS-APIs geprüft. Genau 3 bieten einen eigenen MCP-Server an (awork, seven.io und clockodo). 14 von 21 stellen nicht einmal eine maschinenlesbare API-Beschreibung bereit.
+- **Deutsche B2B-SaaS hinkt hinterher:** In unserem Deutscher MCP-Report 2026 haben wir 21 deutsche B2B-SaaS-APIs geprüft. Genau 4 bieten einen eigenen MCP-Server an (awork, seven.io, clockodo und personio). 14 von 21 stellen nicht einmal eine maschinenlesbare API-Beschreibung bereit.
 
 ## Was „MCP-fähig" technisch bedeutet
 

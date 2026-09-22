@@ -29,7 +29,7 @@ This exact layer (tested, stable, described tools on top of your API) is MCP. Pl
 
 Our [German MCP Report 2026](/report) automatically tested 21 B2B SaaS APIs. The gap is twofold:
 
-1. **Only 3 of 21** offer their own MCP endpoint (awork, seven.io, and clockodo, all with clean OAuth discovery).
+1. **Only 4 of 21** offer their own MCP endpoint (awork, seven.io, clockodo, and personio, all with clean OAuth discovery).
 2. **14 of 21** do not even have machine-readable API documentation at standard paths. An agent (and every tool that wants to build one) cannot find the door.
 
 The community steps into the breach: for at least 8 of the tested products, unofficial MCP servers exist on GitHub, built by users, without API access from the vendors, often without security layers. If your customers get the agent capability of your software from somewhere else, you have already given up control over permissions and logging.
@@ -38,4 +38,4 @@ The community steps into the breach: for at least 8 of the tested products, unof
 
 The REST API stays as it is. On top comes an MCP layer: 10–20 tools that map your most important use cases, with descriptions regression-tested against real model clients, with idempotency for write actions and a confirmation flow for destructive ones. [The numbers](/wissen/was-kostet-ein-mcp-server): the audit at a fixed price, the build in 2–4 weeks.
 
-The first step costs nothing and commits you to nothing: the [live test](/test) shows in minutes how agent-ready your public API is today, and where it stands compared to the 3 of 21.
+The first step costs nothing and commits you to nothing: the [live test](/test) shows in minutes how agent-ready your public API is today, and where it stands compared to the 4 of 21.
