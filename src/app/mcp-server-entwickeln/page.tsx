@@ -5,17 +5,17 @@ import Reveal from "@/components/Reveal";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-  title: "MCP-Server entwickeln lassen — ab 8.000 € Festpreis | MCP Clinic",
+  title: "MCP-Server entwickeln lassen: ab 8.000 € Festpreis | MCP Clinic",
   description:
     "Produktionsreifer MCP-Endpunkt vor Ihrer API: OAuth, Scopes pro Werkzeug, Idempotenz, Bestätigungspflicht, Audit-Protokoll. 2–4 Wochen, Festpreis nach Audit.",
 };
 
 const LEISTUNGEN = [
   { t: "Standardarchitektur", d: "TypeScript, Streamable HTTP, aktueller Spezifikationsstand (2026-07-28). Bewährtes Template statt Einzelbau." },
-  { t: "OAuth im Nutzernamen", d: "Pro-Nutzer-Anmeldung, wo Ihre API sie hergibt — sonst eingeschränkte Service-Keys. Der Agent handelt im Namen des angemeldeten Nutzers." },
+  { t: "OAuth im Nutzernamen", d: "Pro-Nutzer-Anmeldung, wo Ihre API sie hergibt; sonst eingeschränkte Service-Keys. Der Agent handelt im Namen des angemeldeten Nutzers." },
   { t: "Berechtigungen pro Werkzeug", d: "Lesen und Schreiben trennbar, Mandantentrennung auf Werkzeug-Ebene. „Dieser Agent darf nur Rechnungen lesen“ wird technisch erzwungen." },
   { t: "Sichere Schreibaktionen", d: "Idempotenz-Keys, Bestätigungspflicht für destruktive Operationen, vollständiges Audit-Protokoll ohne sensible Werte." },
-  { t: "Beschreibungen, die funktionieren", d: "Jedes Werkzeug so formuliert, dass Sprachmodelle es korrekt wählen — regressionstestet mit 3 Modell-Clients." },
+  { t: "Beschreibungen, die funktionieren", d: "Jedes Werkzeug so formuliert, dass Sprachmodelle es korrekt wählen: regressionstestet mit 3 Modell-Clients." },
   { t: "Übergabe, nicht Abhängigkeit", d: "Tests, Betriebshandbuch, Docker. Läuft in Ihrer Infrastruktur oder in unserer EU-Umgebung (+49 €/Monat)." },
 ];
 
@@ -33,7 +33,7 @@ export default function BuildPage() {
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">MCP-Endpoint-Build</p>
           <h1 className="font-display mt-4 max-w-3xl text-4xl font-extralight leading-tight tracking-tight md:text-5xl">
-            Der offizielle Weg für Agenten — gebaut, protokolliert, übergeben.
+            Der offizielle Weg für Agenten: gebaut, protokolliert, übergeben.
           </h1>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-2)]">
             Ein produktionsreifer MCP-Server vor Ihrer bestehenden API: eine API, bis zu 20 Werkzeuge,
@@ -93,7 +93,7 @@ export default function BuildPage() {
               <h2 className="font-display text-lg font-medium">Häufige Fragen</h2>
               <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed text-[var(--ink-2)]">
                 <p><strong className="text-[var(--ink)]">Wartung danach?</strong> Optional der Betriebs-Retainer (400–800 €/Monat): Spezifikationsänderungen, monatlicher Regressionstest, Prioritäts-Fixes.</p>
-                <p><strong className="text-[var(--ink)]">Förderung?</strong> Als registrierte Beratungsstelle bereiten wir den BAFA-Antrag vor — für KMU ist die Audit-Beratung regelmäßig bezuschusst.</p>
+                <p><strong className="text-[var(--ink)]">Förderung?</strong> Als registrierte Beratungsstelle bereiten wir den BAFA-Antrag vor; für KMU ist die Audit-Beratung regelmäßig bezuschusst.</p>
                 <p><strong className="text-[var(--ink)]">Eigentum?</strong> Sie erhalten Nutzungsrechte am kompletten System; unsere Standardbausteine bleiben weiterhin für andere Kunden einsetzbar.</p>
               </div>
             </div>

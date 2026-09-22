@@ -5,17 +5,17 @@ import Reveal from "@/components/Reveal";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-  title: "Agent-Readiness-Audit — 2.400 € Festpreis | MCP Clinic",
+  title: "Agent-Readiness-Audit: 2.400 € Festpreis | MCP Clinic",
   description:
-    "Live-Agententests mit 3 Modellen, Auth- und Schreib-Sicherheitsreview, DSGVO-Layer, priorisierter Fixplan. Was kostenlose Scanner nicht sehen können — in 2–3 Tagen.",
+    "Live-Agententests mit 3 Modellen, Auth- und Schreib-Sicherheitsreview, DSGVO-Layer, priorisierter Fixplan. Was kostenlose Scanner nicht sehen können, in 2–3 Tagen.",
 };
 
 const TAG1 = [
-  { t: "Live-Agententests", d: "10 Standardaufgaben — Rechnungen finden, Entwürfe anlegen, Adressen ändern — ausgeführt von Claude, GPT und einem dritten Modell. Protokolliert: welches Werkzeug gewählt, wo es scheitert, wie sich der Agent erholt." },
+  { t: "Live-Agententests", d: "10 Standardaufgaben (Rechnungen finden, Entwürfe anlegen, Adressen ändern), ausgeführt von Claude, GPT und einem dritten Modell. Protokolliert: welches Werkzeug gewählt, wo es scheitert, wie sich der Agent erholt." },
   { t: "Auth & Berechtigungen", d: "Scopes pro Werkzeug, delegierte Agentenzugriffe („dieser Agent darf nur lesen“), Mandantentrennung, Token-Lebensdauer." },
   { t: "Schreib-Sicherheit", d: "Idempotenz bei Wiederholung, Bestätigungspflicht bei destruktiven Aktionen, Audit-Protokoll, Rate-Limits." },
   { t: "DSGVO-Layer", d: "Datenflüsse in Modellprovider, AVV-Bedarf, EU-Hosting-Optionen, Protokoll-Aufbewahrung. Technische Einordnung, keine Rechtsberatung." },
-  { t: "Werkzeug-Beschreibungen", d: "Für jedes Tool: Ist-Zustand, Problem, Neuentwurf — verifiziert mit 3 Modell-Clients." },
+  { t: "Werkzeug-Beschreibungen", d: "Für jedes Tool: Ist-Zustand, Problem, Neuentwurf. Verifiziert mit 3 Modell-Clients." },
   { t: "Fixplan", d: "15–25 Seiten Bericht: Befunde nach Schweregrad, priorisierte Maßnahmen mit Aufwandsschätzung, Angebot für den Bau." },
 ];
 
@@ -33,11 +33,11 @@ export default function AuditPage() {
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-3)]">Agent-Readiness-Audit</p>
           <h1 className="font-display mt-4 max-w-3xl text-4xl font-extralight leading-tight tracking-tight md:text-5xl">
-            Was ein echter Agent aus Ihrer API macht — bevor Ihre Kunden es tun.
+            Was ein echter Agent aus Ihrer API macht, bevor Ihre Kunden es tun.
           </h1>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-2)]">
             Der kostenlose Live-Test zeigt die Oberfläche. Das Audit zeigt den Betrieb: Wir schicken
-            echte Agenten gegen Ihre API, prüfen Authentifizierung, Schreibaktionen und DSGVO-Datenflüsse —
+            echte Agenten gegen Ihre API, prüfen Authentifizierung, Schreibaktionen und DSGVO-Datenflüsse,
             und liefern den Fixplan zum Festpreis.
           </p>
         </Reveal>
@@ -54,7 +54,7 @@ export default function AuditPage() {
                 onClick={() => { const w = window as any; w.umami?.track?.("audit-cta-click", { source: "mcp-audit" }); }}
                 className="flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
               >
-                Audit direkt buchen — 2.400 € <ArrowRight size={14} weight="bold" />
+                Audit direkt buchen: 2.400 € <ArrowRight size={14} weight="bold" />
               </a>
               <a
                 href="mailto:info@zuuna.de?subject=Agent-Readiness-Audit"
@@ -99,11 +99,11 @@ export default function AuditPage() {
             <div className="glass rounded-2xl p-7">
               <h2 className="font-display text-lg font-medium">Enthaltene Zusagen</h2>
               <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-[var(--ink-2)]">
-                <li>· Prüfprotokolle aller Agententests als Anhang — Ihre Evidenz, nicht unsere Behauptung</li>
+                <li>· Prüfprotokolle aller Agententests als Anhang: Ihre Evidenz, nicht unsere Behauptung</li>
                 <li>· Priorisierter Fixplan mit Aufwandsschätzung (S/M/L) je Maßnahme</li>
                 <li>· Angebot für den MCP-Endpoint-Build (ab 8.000 €, Festpreis nach Audit-Scope)</li>
                 <li>· Re-Audit innerhalb von 60 Tagen zum Festpreis von 600 €</li>
-                <li>· Technische Momentaufnahme — keine Rechtsberatung, klar im Vertrag verankert</li>
+                <li>· Technische Momentaufnahme: keine Rechtsberatung, klar im Vertrag verankert</li>
               </ul>
             </div>
           </Reveal>
@@ -116,7 +116,7 @@ export default function AuditPage() {
               href="/test"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3 text-[13px] font-semibold text-[var(--bg-0)] transition-transform duration-300 hover:scale-[1.03]"
             >
-              MCP-Live-Test starten — kostenlos <ArrowRight size={14} weight="bold" />
+              MCP-Live-Test kostenlos starten <ArrowRight size={14} weight="bold" />
             </Link>
           </Reveal>
         </section>

@@ -1,16 +1,16 @@
 # Vertrag über die Durchführung eines Agent-Readiness-Audits
 
-*(AI-Entwurf 2026-09-20 — vor Verwendung: Platzhalter füllen, Anwalt-Check optional)*
+*(AI-Entwurf 2026-09-20, vor Verwendung: Platzhalter füllen, Anwalt-Check optional)*
 
 zwischen
 
-**[AUFTRAGGEBER], [ANSCHRIFT], vertreten durch [NAME]** — nachfolgend „Auftraggeber" —
+**[AUFTRAGGEBER], [ANSCHRIFT], vertreten durch [NAME]** (nachfolgend „Auftraggeber")
 
 und
 
-**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
+**Mika Niedbala**, Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
 c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
- — nachfolgend „Auftragnehmer" —
+ (nachfolgend „Auftragnehmer")
 
 ## § 1 Gegenstand
 
@@ -33,7 +33,7 @@ Festpreis: **2.400 € zuzüglich USt.** 50 % bei Auftragserteilung fällig, 50 
 
 ## § 5 Nutzungsrechte, Vertraulichkeit
 
-(1) Der Auftraggeber erhält das einfache, zeitlich unbegrenzte Recht, den Prüfbericht intern zu nutzen. Der Auftragnehmer darf Erkenntnisse nur in anonymisierter, aggregierter Form (ohne Unternehmens-, Produkt- und Endpunktnamen) veröffentlichen — es sei denn, der Auftraggeber stimmt einer namentlichen Nennung schriftlich zu (z. B. als Referenz).
+(1) Der Auftraggeber erhält das einfache, zeitlich unbegrenzte Recht, den Prüfbericht intern zu nutzen. Der Auftragnehmer darf Erkenntnisse nur in anonymisierter, aggregierter Form (ohne Unternehmens-, Produkt- und Endpunktnamen) veröffentlichen, es sei denn, der Auftraggeber stimmt einer namentlichen Nennung schriftlich zu (z. B. als Referenz).
 (2) Beide Seiten wahren Vertraulichkeit über alle im Projekt bekannt gewordenen Betriebs- und Geschäftsgeheimnisse, unbegrenzt über das Vertragsende hinaus.
 
 ## § 6 Haftung
@@ -46,4 +46,4 @@ Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit; b
 (2) Erfüllungsort und Gerichtsstand: Sankt Augustin. Deutsches Recht.
 (3) Auftragserteilung per E-Mail mit Bezug auf diese Vorlage gilt als Abschluss.
 
-[ORT, DATUM] — Unterschriften
+[ORT, DATUM]: Unterschriften

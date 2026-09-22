@@ -8,7 +8,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 const STATS = [
   { n: "2/21", t: "German B2B SaaS APIs ship their own MCP endpoint" },
   { n: "15/21", t: "provide no machine-readable API description at all" },
-  { n: "9/21", t: "run static keys — delegated agent access is impossible" },
+  { n: "9/21", t: "run static keys: delegated agent access is impossible" },
 ];
 
 const WEG = [
@@ -52,7 +52,7 @@ export default function EnHome() {
         </div>
         <Reveal delay={200}>
           <Link href="/report" className="mt-10 inline-flex items-center gap-2 text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
-            Read the report — 21 APIs, tested and named <ArrowRight size={13} />
+            Read the report: 21 APIs, tested and named <ArrowRight size={13} />
           </Link>
         </Reveal>
       </section>
@@ -90,7 +90,7 @@ export default function EnHome() {
         <Reveal delay={160}>
           <div className="mt-12 flex justify-center" data-field-cta>
             <Link href="/en/test" className="glass-strong flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold transition-transform duration-300 hover:scale-[1.03]">
-              Run your test — free <ArrowRight size={14} weight="bold" />
+              Run your free test <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
         </Reveal>

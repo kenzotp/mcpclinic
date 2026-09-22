@@ -125,9 +125,9 @@ export default async function ReportPage() {
 
         <Reveal delay={80}>
           <div className="glass mt-16 rounded-2xl p-8 text-center" data-field-cta>
-            <div className="font-display text-lg font-medium">Ihr Produkt ist dabei — und fehlt?</div>
+            <div className="font-display text-lg font-medium">Ihr Produkt ist dabei oder fehlt?</div>
             <p className="mx-auto mt-2 max-w-lg text-sm text-[var(--ink-2)]">
-              Wir prüfen Ihre API kostenlos — oder liefern die volle Diagnose mit Live-Agententests zum Festpreis.
+              Wir prüfen Ihre API kostenlos oder liefern die volle Diagnose mit Live-Agententests zum Festpreis.
             </p>
             <Link
               href="/test"

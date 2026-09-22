@@ -1,16 +1,16 @@
 # Betriebs-Retainer-Vertrag (Dienstvertrag)
 
-*(AI-Entwurf 2026-09-20 — vor Verwendung Platzhalter füllen)*
+*(AI-Entwurf 2026-09-20, vor Verwendung Platzhalter füllen)*
 
 zwischen
 
-**[KUNDE], [ANSCHRIFT]** — „Kunde" —
+**[KUNDE], [ANSCHRIFT]** („Kunde")
 
 und
 
-**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
+**Mika Niedbala**, Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
 c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
-— nachfolgend „Auftragnehmer“ —
+(nachfolgend „Auftragnehmer“)
 
 ## § 1 Gegenstand
 
@@ -36,4 +36,4 @@ Kein 24/7-Betrieb, keine Verfügbarkeitszusage für die Kundensysteme, keine Rec
 
 Deutsches Recht; Gerichtsstand Sankt Augustin. Änderungen in Textform.
 
-[ORT, DATUM] — Unterschriften
+[ORT, DATUM]: Unterschriften

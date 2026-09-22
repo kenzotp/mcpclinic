@@ -1,16 +1,16 @@
 # Vertrag über den Bau eines MCP-Endpoints („MCP-Endpoint-Build")
 
-*(AI-Entwurf 2026-09-20 — Festpreis wird nach Audit-Scope fixiert; vor Verwendung Platzhalter füllen)*
+*(AI-Entwurf 2026-09-20; Festpreis wird nach Audit-Scope fixiert; vor Verwendung Platzhalter füllen)*
 
 zwischen
 
-**[AUFTRAGGEBER], [ANSCHRIFT]** — „Auftraggeber" —
+**[AUFTRAGGEBER], [ANSCHRIFT]** („Auftraggeber")
 
 und
 
-**Mika Niedbala** — Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
+**Mika Niedbala**, Einzelunternehmen, Geschäftsbezeichnung „Zuuna“, USt-ID DE464571290  
 c/o Online-Impressum · Europaring 90 · 53757 Sankt Augustin · Deutschland · info@zuuna.de
-— nachfolgend „Auftragnehmer“ —
+(nachfolgend „Auftragnehmer“)
 
 ## § 1 Gegenstand
 
@@ -50,4 +50,4 @@ Festpreis: **ab 8.000 € zuzüglich USt.**, fixiert nach Audit-Scope vor Vertra
 
 Gerichtsstand Sankt Augustin; deutsches Recht. Änderungen bedürfen der Textform. Nach der Abnahme empfohlen: Betriebs-Retainer (gesonderter Vertrag) zur Begleitung von Spezifikationsänderungen.
 
-[ORT, DATUM] — Unterschriften
+[ORT, DATUM]: Unterschriften

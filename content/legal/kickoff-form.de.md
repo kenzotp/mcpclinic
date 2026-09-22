@@ -1,4 +1,4 @@
-# Kickoff-Formular — MCP-Audit
+# Kickoff-Formular: MCP-Audit
 
 *(Vom Kunden auszufüllen, vor Prüftag 1 zurück an info@zuuna.de. Basis für § 2 des Audit-Vertrags: Ohne dieses Formular startet die Prüfung nicht, und die 10-Werktage-Frist beginnt erst mit vollständiger Rückgabe.)*
 
@@ -12,7 +12,7 @@
 - OpenAPI-/Swagger-Datei, falls vorhanden (URL oder Anhang): ________________________________
 - Falls die Doku nur intern existiert: bitte Datei mitliefern.
 
-**2. Testzugang** *(ausnahmslos minimale Rechte — siehe § 2 des Audit-Vertrags)*
+**2. Testzugang** *(ausnahmslos minimale Rechte, siehe § 2 des Audit-Vertrags)*
 - Art der Authentifizierung: ☐ API-Key ☐ OAuth 2.0 (Flow: ______) ☐ Basic ☐ Sonstiges: ______
 - Zugangsdaten (werden nach Prüfende gelöscht): ________________________________
 - Rolle/Scopes des Zugangs: ________________________________
@@ -41,4 +41,4 @@
 
 **Datenschutz-Hinweis:** Die Angaben werden ausschließlich zur Durchführung des Audits verwendet, nach Berichtsübergabe gelöscht (Zugangsdaten sofort nach Prüftag 3) und nicht an Dritte weitergegeben. Details: https://mcpclinic.dev/impressum
 
-**Rückgabe:** ausgefüllt an **info@zuuna.de** — Rückfragen zum Formular beantworten wir vor der Prüfung.
+**Rückgabe:** ausgefüllt an **info@zuuna.de**. Rückfragen zum Formular beantworten wir vor der Prüfung.

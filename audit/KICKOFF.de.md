@@ -1,4 +1,4 @@
-# Kickoff-Formular — Agent-Readiness-Audit
+# Kickoff-Formular: Agent-Readiness-Audit
 
 *Bitte ausfüllen und vor Prüfbeginn an info@zuuna.de zurücksenden. Alle Angaben
 behandeln wir vertraulich. Rückfragen beantworten wir in der Regel innerhalb von
@@ -11,7 +11,7 @@ behandeln wir vertraulich. Rückfragen beantworten wir in der Regel innerhalb vo
 | Produktname + Kurzbeschreibung (1–2 Sätze) | |
 | Öffentliche API-Dokumentation (URL) | |
 | API-Basis-URL (Produktion) | |
-| Staging-/Test-Umgebung (URL) — für Schreibtests | |
+| Staging-/Test-Umgebung (URL): für Schreibtests | |
 
 ## 2. Zugang
 
@@ -47,6 +47,6 @@ Wegwerf-Objekte (z. B. `TESTKONTAKT`).
 
 - Der Audit-Zugang sollte so minimal wie möglich sein (Empfehlung: read-only).
 - Live-Agententests senden Aufgaben an Modellprovider (Claude/GPT/OpenRouter).
-  Enthält Ihre Testumgebung echte personenbezogene Daten, sagen Sie Bescheid —
-  wir prüfen dann den Ablauf gemeinsam, bevor Tests starten.
+  Enthält Ihre Testumgebung echte personenbezogene Daten, sagen Sie Bescheid.
+  Wir prüfen dann den Ablauf gemeinsam, bevor Tests starten.
 - Prüfprotokolle speichern wir für die Dauer des Projekts + 30 Tage.

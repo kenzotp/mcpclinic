@@ -1,4 +1,4 @@
-# Agent-Readiness-Audit: {{KUNDE}} — {{PRODUKT}}
+# Agent-Readiness-Audit: {{KUNDE}}, {{PRODUKT}}
 
 **Prüfzeitraum:** {{DATUM_VON}} – {{DATUM_BIS}} · **Prüfer:** MCP Clinic ({{PRUEFER}})
 **Auftraggeber:** {{KUNDE_GMBH}} · **Version:** 1.0 · Vertraulich
@@ -27,7 +27,7 @@
 
 ## 2. Methodik in Kürze
 
-Live-Agententests (Claude, GPT, {{MODEL_3}} — 10 Standardaufgaben), automatisierte
+Live-Agententests (Claude, GPT, {{MODEL_3}}: 10 Standardaufgaben), automatisierte
 Oberflächenprüfung (MCP-Handshake, OAuth-Discovery RFC 9728/8414, OpenAPI,
 Agent-Crawler-Politik, Server Card), Code-/Docs-Review von Auth, Scopes und
 Schreibaktionen, DSGVO-Beurteilung der Datenflüsse in Modellprovider.
@@ -58,7 +58,7 @@ Vollständige Protokolle der Agententests liegen als Anhang A bei.
 
 ## 5. Authentifizierung & Berechtigungen
 
-{{IST_MODELL: OAuth/Keys/Scopes/Delegation/Mandantentrennung — je Finding mit Severity}}
+{{IST_MODELL: OAuth/Keys/Scopes/Delegation/Mandantentrennung, je Finding mit Severity}}
 
 ## 6. Schreibaktions-Sicherheit
 
@@ -78,9 +78,9 @@ Vollständige Protokolle der Agententests liegen als Anhang A bei.
 
 ## 9. Nächste Schritte
 
-1. **Fixplan umsetzen** — bei Prio-1-Elementen unterstützen wir mit dem
+1. **Fixplan umsetzen**: Bei Prio-1-Elementen unterstützen wir mit dem
    MCP-Endpoint-Build (Festpreis ab 8.000 €, exakter Scope nach diesem Audit, Dauer 2–4 Wochen).
-2. **Re-Audit innerhalb von 60 Tagen** zum Festpreis von 600 € — Gutschein beiliegend.
+2. **Re-Audit innerhalb von 60 Tagen** zum Festpreis von 600 €, Gutschein beiliegend.
 3. **Betriebs-Retainer (optional)** ab 400 €/Monat: Spezifikationsänderungen beobachten,
    monatlicher Agenten-Regressionstest, Prioritäts-Fixes.
 

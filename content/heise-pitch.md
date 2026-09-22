@@ -1,4 +1,4 @@
-# heise developer Pitch — „Was beim MCP-Bau wirklich schiefgeht"
+# heise developer Pitch: „Was beim MCP-Bau wirklich schiefgeht"
 
 **An:** heise developer (Redaktion)
 **Von:** Mika Niedbala (MCP Clinic)
@@ -8,7 +8,7 @@ Beispiele statt nur Demo). Entwurf fertig, Freigabe Mika.
 
 ---
 
-Betreff: Artikelvorschlag — MCP-Server produktiv betreiben: die Fehler, die
+Betreff: Artikelvorschlag „MCP-Server produktiv betreiben": die Fehler, die
 uns bei 21 deutschen SaaS-APIs begegnet sind
 
 Hallo heise-developer-Team,
@@ -44,7 +44,7 @@ nur im Autorenprofil.
 
 Über eine Rückmeldung freue ich mich.
 
-Mika Niedbala — MCP Clinic, mcpclinic.dev
+Mika Niedbala · MCP Clinic · mcpclinic.dev
 
 ---
 

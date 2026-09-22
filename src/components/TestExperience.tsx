@@ -20,42 +20,42 @@ type State =
 const STR = {
   de: {
     title: "MCP-Live-Test",
-    sub: "Eine URL — unter einer Minute. Keine Anmeldung, keine Zugangsdaten.",
+    sub: "Eine URL, unter einer Minute. Keine Anmeldung, keine Zugangsdaten.",
     placeholder: "https://docs.ihre-software.de",
     run: "Test starten",
     scanning: "Prüfe Ihre öffentliche Oberfläche …",
     score: "von 100",
     rerun: "Neue URL testen",
     cta: "Das war die Oberfläche. Was ein echter Agent daraus macht, zeigt das Audit.",
-    ctaBtn: "Agent-Readiness-Audit — 2.400 € Festpreis",
+    ctaBtn: "Agent-Readiness-Audit: 2.400 € Festpreis",
     rateLimited: "Limit erreicht: 3 Tests pro Tag und IP-Adresse.",
     fail: "Prüfung fehlgeschlagen.",
     mcpFound: "MCP-Endpunkt gefunden und geprüft.",
-    surfaceOnly: "Kein MCP-Endpunkt an dieser URL — Dokumentations-Oberfläche geprüft.",
+    surfaceOnly: "Kein MCP-Endpunkt an dieser URL: Dokumentations-Oberfläche geprüft.",
     verdict: (s: number) =>
       s >= 65 ? "Stark. Der Feinschliff entscheidet." :
-      s >= 45 ? "Solide Basis — mit Lücken, die Agenten spüren." :
-      s >= 25 ? "Erste Schritte vorhanden — der Zugang für Agenten fehlt." :
+      s >= 45 ? "Solide Basis mit Lücken, die Agenten spüren." :
+      s >= 25 ? "Erste Schritte vorhanden; der Zugang für Agenten fehlt." :
       "Für KI-Agenten praktisch nicht erreichbar.",
   },
   en: {
     title: "MCP Live-Test",
-    sub: "One URL — under a minute. No sign-up, no credentials.",
+    sub: "One URL, under a minute. No sign-up, no credentials.",
     placeholder: "https://docs.your-product.com",
     run: "Run test",
     scanning: "Scanning your public surface …",
     score: "of 100",
     rerun: "Test another URL",
-    cta: "That was the surface. What a real agent does with it — that's the audit.",
-    ctaBtn: "Agent-Readiness Audit — €2,400 fixed",
+    cta: "That was the surface. What a real agent does with it: that's the audit.",
+    ctaBtn: "Agent-Readiness Audit: €2,400 fixed",
     rateLimited: "Limit reached: 3 tests per day and IP.",
     fail: "Probe failed.",
     mcpFound: "MCP endpoint found and probed.",
-    surfaceOnly: "No MCP endpoint at this URL — documentation surface checked.",
+    surfaceOnly: "No MCP endpoint at this URL: documentation surface checked.",
     verdict: (s: number) =>
       s >= 65 ? "Strong. The details decide now." :
-      s >= 45 ? "Solid base — with gaps agents will feel." :
-      s >= 25 ? "First steps exist — agent access is missing." :
+      s >= 45 ? "Solid base with gaps agents will feel." :
+      s >= 25 ? "First steps exist; agent access is missing." :
       "Practically unreachable for AI agents.",
   },
 } as const;

@@ -12,7 +12,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 const STATS = [
   { n: "2/21", t: "deutsche B2B-SaaS-APIs haben einen eigenen MCP-Endpunkt" },
   { n: "15/21", t: "stellen keine maschinenlesbare API-Beschreibung bereit" },
-  { n: "9/21", t: "arbeiten mit statischen Keys — Agenten-Delegation unmöglich" },
+  { n: "9/21", t: "arbeiten mit statischen Keys: Agenten-Delegation unmöglich" },
 ];
 
 const WEG = [
@@ -64,7 +64,7 @@ export default async function Home() {
         </div>
         <Reveal delay={200}>
           <Link href="/report" className="mt-10 inline-flex items-center gap-2 text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
-            Zum Report — 21 APIs, geprüft und benannt <ArrowRight size={13} />
+            Zum Report: 21 APIs, geprüft und benannt <ArrowRight size={13} />
           </Link>
         </Reveal>
       </section>
@@ -122,7 +122,7 @@ export default async function Home() {
         </Reveal>
         <Reveal delay={140}>
           <Link href="/report" className="mt-8 inline-flex items-center gap-2 text-sm text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
-            Vollständiges Ranking — 21 Unternehmen <ArrowRight size={13} />
+            Vollständiges Ranking: 21 Unternehmen <ArrowRight size={13} />
           </Link>
         </Reveal>
       </section>
@@ -175,7 +175,7 @@ export default async function Home() {
               href="/test"
               className="glass-strong flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold transition-transform duration-300 hover:scale-[1.03]"
             >
-              Jetzt testen — kostenlos <ArrowRight size={14} weight="bold" />
+              Jetzt kostenlos testen <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
         </Reveal>

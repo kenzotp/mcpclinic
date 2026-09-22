@@ -107,7 +107,7 @@ function buildChecks(ctx: {
     label: "Agent-Crawler-Politik (robots.txt)",
     status: !robots.found ? "warn" : blocked.length > 0 ? "fail" : "pass",
     detail: !robots.found
-      ? "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+      ? "keine robots.txt: Anwortverhalten für Agenten undefiniert"
       : blocked.length > 0
         ? `blockiert: ${blocked.map((b) => b.agent).join(", ")}`
         : mentioned.length > 0
@@ -117,7 +117,7 @@ function buildChecks(ctx: {
 
   checks.push({
     id: "llms-txt",
-    label: "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+    label: "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
     status: llmsTxt.found ? "pass" : "info",
     detail: llmsTxt.found ? `${llmsTxt.url} vorhanden` : "nicht vorhanden (unkritisch)",
   });

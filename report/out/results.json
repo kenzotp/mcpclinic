@@ -90,7 +90,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://developers.awork.com/llms.txt vorhanden"
         },
@@ -206,13 +206,13 @@
           "id": "handshake",
           "label": "MCP-Handshake (initialize)",
           "status": "info",
-          "detail": "Authentifizierung erforderlich — ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
         },
         {
           "id": "transport-current",
           "label": "Aktueller Stand (2026-07-28, server/discover)",
           "status": "warn",
-          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet — älterer Stand oder Auth nötig"
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
         },
         {
           "id": "auth",
@@ -240,7 +240,7 @@
         }
       ]
     },
-    "officialMcp": "JA — offizieller MCP-Server (api.awork.com/api/v1/mcp, OAuth 2.1 + PKCE, Setup-Guides für Claude Code/VS Code/ChatGPT)",
+    "officialMcp": "JA: offizieller MCP-Server (api.awork.com/api/v1/mcp, OAuth 2.1 + PKCE, Setup-Guides für Claude Code/VS Code/ChatGPT)",
     "researchNote": "Vorreiter: offizieller MCP-Server plus eigene Agents-API und KI-Produktseiten. Offizielle OpenAPI-3.1-Spec mit 566 Pfaden; OAuth 2.1 mit PKCE und Dynamic Client Registration.",
     "apiHost": "https://api.awork.com/api/v1",
     "score": 53,
@@ -332,7 +332,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -437,13 +437,13 @@
           "id": "handshake",
           "label": "MCP-Handshake (initialize)",
           "status": "info",
-          "detail": "Authentifizierung erforderlich — ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
         },
         {
           "id": "transport-current",
           "label": "Aktueller Stand (2026-07-28, server/discover)",
           "status": "warn",
-          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet — älterer Stand oder Auth nötig"
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
         },
         {
           "id": "auth",
@@ -471,7 +471,7 @@
         }
       ]
     },
-    "officialMcp": "JA — „Seven MCP“ (mcp.seven.io/mcp, Streamable HTTP mit OAuth2 PKCE; zusätzlich npm @seven.io/mcp für stdio)",
+    "officialMcp": "JA: „Seven MCP“ (mcp.seven.io/mcp, Streamable HTTP mit OAuth2 PKCE; zusätzlich npm @seven.io/mcp für stdio)",
     "researchNote": "Agenten-forward: betreibt eigenen gehosteten MCP-Server mit über 40 Tools (SMS, Voice, HLR, Kontakte) und dokumentiert ihn offiziell. API-Key-Auth für die REST-API, OAuth2 PKCE für MCP.",
     "apiHost": "https://gateway.seven.io",
     "score": 30,
@@ -568,7 +568,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://developer.jtl-software.com/llms.txt vorhanden"
         },
@@ -580,8 +580,8 @@
         }
       ]
     },
-    "officialMcp": "nein — aber Entwicklerportal mit llms.txt und „Build with AI“-Seite",
-    "researchNote": "Nächster Kandidat: Spec-Dateien explizit „indexiert für KI-Tools (MCP, llms.txt)“, OAuth 2.0 für Cloud-Apps — aber kein eigenes MCP-Angebot. Keine Community-MCP-Server gefunden.",
+    "officialMcp": "nein, aber Entwicklerportal mit llms.txt und „Build with AI“-Seite",
+    "researchNote": "Nächster Kandidat: Spec-Dateien explizit „indexiert für KI-Tools (MCP, llms.txt)“, OAuth 2.0 für Cloud-Apps, aber kein eigenes MCP-Angebot. Keine Community-MCP-Server gefunden.",
     "apiHost": "per App (JTL-Cloud, OAuth-zugangsgeschützt)",
     "score": 18,
     "grade": "F"
@@ -672,7 +672,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://developer.personio.de/llms.txt vorhanden"
         },
@@ -685,7 +685,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "Entwicklerhub mit llms.txt, OAuth2 Client Credentials. Ein winziger Community-Server (1 Stern). Zugleich Hinweis: developer.personio.com hinter Vercel-Bot-Wall — maschinenlesbare Docs sind hier durchaus Thema.",
+    "researchNote": "Entwicklerhub mit llms.txt, OAuth2 Client Credentials. Ein winziger Community-Server (1 Stern). Zugleich Hinweis: developer.personio.com hinter Vercel-Bot-Wall. Maschinenlesbare Docs sind hier durchaus Thema.",
     "apiHost": "https://api.personio.de",
     "score": 8,
     "grade": "F"
@@ -781,7 +781,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://developer.xentral.com/llms.txt vorhanden"
         },
@@ -793,8 +793,8 @@
         }
       ]
     },
-    "officialMcp": "nein — Docs aber LLM-freundlich (llms.txt, .md-Versionen)",
-    "researchNote": "Öffentliche OpenAPI-Specs auf GitHub (aktiv gepflegt). Ein kleiner Community-Server (mjmirza/xentral-mcp). Auth via Personal Access Tokens ohne OAuth-Flow dokumentiert — schwach für delegierte Agentenzugriffe.",
+    "officialMcp": "nein: Docs aber LLM-freundlich (llms.txt, .md-Versionen)",
+    "researchNote": "Öffentliche OpenAPI-Specs auf GitHub (aktiv gepflegt). Ein kleiner Community-Server (mjmirza/xentral-mcp). Auth via Personal Access Tokens ohne OAuth-Flow dokumentiert: schwach für delegierte Agentenzugriffe.",
     "apiHost": "pro Instanz: {xentralId}.xentral.biz",
     "score": 18,
     "grade": "F"
@@ -885,11 +885,11 @@
           "id": "agent-crawlers",
           "label": "Agent-Crawler-Politik (robots.txt)",
           "status": "warn",
-          "detail": "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -902,7 +902,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth — für Agenten-Stellvertreter ungeeignet.",
+    "researchNote": "Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth: für Agenten-Stellvertreter ungeeignet.",
     "apiHost": "https://my.clockodo.com/api",
     "score": 12,
     "grade": "F"
@@ -989,11 +989,11 @@
           "id": "agent-crawlers",
           "label": "Agent-Crawler-Politik (robots.txt)",
           "status": "warn",
-          "detail": "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1097,7 +1097,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1109,8 +1109,8 @@
         }
       ]
     },
-    "officialMcp": "nein — offiziell „not really planned“ (Community-Forum 2/2026)",
-    "researchNote": "Größte Community-Lücke: 41-Sterne-Community-Server (basher83/Zammad-MCP) + Feature-Request mit 561 Aufrufen; GitHub-Epic „Chat assistant for agents“ aktiv. Zammad 7 wird „all AI“ — offizieller MCP fehlt trotzdem. Keine OpenAPI-Spec.",
+    "officialMcp": "nein: offiziell „not really planned“ (Community-Forum 2/2026)",
+    "researchNote": "Größte Community-Lücke: 41-Sterne-Community-Server (basher83/Zammad-MCP) + Feature-Request mit 561 Aufrufen; GitHub-Epic „Chat assistant for agents“ aktiv. Zammad 7 wird „all AI“. Offizieller MCP fehlt trotzdem. Keine OpenAPI-Spec.",
     "apiHost": "self-hosted: {instanz}/api/v1",
     "score": 5,
     "grade": "F"
@@ -1201,7 +1201,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1214,7 +1214,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "API-Key als Bearer, keine OpenAPI-Datei. Lebendige Community (u. a. marselsel/Lexware-MCP-Server mit 31 Sternen und OAuth-2.1-Wrapper) — Kunden bauen bereits selbst.",
+    "researchNote": "API-Key als Bearer, keine OpenAPI-Datei. Lebendige Community (u. a. marselsel/Lexware-MCP-Server mit 31 Sternen und OAuth-2.1-Wrapper). Kunden bauen bereits selbst.",
     "apiHost": "https://api.lexware.io",
     "score": 5,
     "grade": "F"
@@ -1301,11 +1301,11 @@
           "id": "agent-crawlers",
           "label": "Agent-Crawler-Politik (robots.txt)",
           "status": "warn",
-          "detail": "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1318,7 +1318,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "API-Token ohne Bearer/OAuth-Schema; Swagger-UI nur JS-gerendert, keine offizielle Spec-Datei. Vier kleine Community-Server auf GitHub — der Markt improvisiert.",
+    "researchNote": "API-Token ohne Bearer/OAuth-Schema; Swagger-UI nur JS-gerendert, keine offizielle Spec-Datei. Vier kleine Community-Server auf GitHub. Der Markt improvisiert.",
     "apiHost": "https://my.sevdesk.de/api/v1",
     "score": 2,
     "grade": "F"
@@ -1409,7 +1409,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1514,11 +1514,11 @@
           "id": "agent-crawlers",
           "label": "Agent-Crawler-Politik (robots.txt)",
           "status": "warn",
-          "detail": "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1531,7 +1531,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "OpenAPI v2+v3 auf GitHub, aber Login-basierte Auth (E-Mail/Passwort gegen /rest/login) — ohne OAuth keine saubere Agenten-Delegation. Dritte bestätigen ausdrücklich: kein Vendor-MCP. Kein Community-Server.",
+    "researchNote": "OpenAPI v2+v3 auf GitHub, aber Login-basierte Auth (E-Mail/Passwort gegen /rest/login): ohne OAuth keine saubere Agenten-Delegation. Dritte bestätigen ausdrücklich: kein Vendor-MCP. Kein Community-Server.",
     "apiHost": "pro System-Domain",
     "score": 12,
     "grade": "F"
@@ -1627,7 +1627,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1639,8 +1639,8 @@
         }
       ]
     },
-    "officialMcp": "nein (Gerücht „offizieller MCP-Connector“ nicht belegbar — alle Treffer sind Drittanbieter wie viaSocket)",
-    "researchNote": "Verifizierte Swagger-Spec (57 Pfade, Bearer API-Key). Support- und Entwicklerportal hinter Cloudflare/Login — für Agenten und Recherche gleichermaßen verschlossen.",
+    "officialMcp": "nein (Gerücht „offizieller MCP-Connector“ nicht belegbar; alle Treffer sind Drittanbieter wie viaSocket)",
+    "researchNote": "Verifizierte Swagger-Spec (57 Pfade, Bearer API-Key). Support- und Entwicklerportal hinter Cloudflare/Login: für Agenten und Recherche gleichermaßen verschlossen.",
     "apiHost": "https://api.easybill.de/rest/v1",
     "score": 15,
     "grade": "F"
@@ -1731,7 +1731,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -1835,7 +1835,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://docs.propstack.de/llms.txt vorhanden"
         },
@@ -1847,8 +1847,8 @@
         }
       ]
     },
-    "officialMcp": "nein — aber eigene KI-Assistentin „Proppi“",
-    "researchNote": "llms.txt vorhanden, API-Key via X-API-KEY, keine Spec-Datei. Fünf persönliche Community-MCP-Repos — Signal: Nutzer wollen es.",
+    "officialMcp": "nein, aber eigene KI-Assistentin „Proppi“",
+    "researchNote": "llms.txt vorhanden, API-Key via X-API-KEY, keine Spec-Datei. Fünf persönliche Community-MCP-Repos. Signal: Nutzer wollen es.",
     "apiHost": "https://api.propstack.de/v1",
     "score": 8,
     "grade": "F"
@@ -1939,7 +1939,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://support.maileon.com/llms.txt vorhanden"
         },
@@ -2043,7 +2043,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -2056,7 +2056,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "Action-basierter Einzel-Endpunkt mit HMAC-SHA256-Signatur pro Aufruf — für LLM-Agenten praktisch unbenuzbar ohne Wrapper. API-Modul ist kostenpflichtiges Enterprise-Add-on.",
+    "researchNote": "Action-basierter Einzel-Endpunkt mit HMAC-SHA256-Signatur pro Aufruf: für LLM-Agenten praktisch unbenuzbar ohne Wrapper. API-Modul ist kostenpflichtiges Enterprise-Add-on.",
     "apiHost": "https://api.onoffice.de/api/stable/api.php",
     "score": 5,
     "grade": "F"
@@ -2147,7 +2147,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -2161,7 +2161,7 @@
     },
     "officialMcp": "nein",
     "researchNote": "Rebrand zu Lime Connect; keine klassische REST-API (Webhook-Add-ons, JSON-Export ab Enterprise). AI-Produktmarketing („AI Automation Hub“) ohne Agent-Zugang zur eigenen API.",
-    "apiHost": "— (Callback-Modell)",
+    "apiHost": "(Callback-Modell)",
     "score": 5,
     "grade": "F"
   },
@@ -2251,7 +2251,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },
@@ -2264,7 +2264,7 @@
       ]
     },
     "officialMcp": "nein",
-    "researchNote": "Keine öffentliche API-Dokumentation; Schnittstellen nur als vorkonfigurierte Verbindungen zu ~40 Jobbörsen, direkten Zugang via Service Desk. Bewirbt „integrierten AI Agent“ — für externe Agenten geschlossen.",
+    "researchNote": "Keine öffentliche API-Dokumentation; Schnittstellen nur als vorkonfigurierte Verbindungen zu ~40 Jobbörsen, direkten Zugang via Service Desk. Bewirbt „integrierten AI Agent“: für externe Agenten geschlossen.",
     "apiHost": "nicht öffentlich dokumentiert",
     "score": 0,
     "grade": "F"
@@ -2355,7 +2355,7 @@
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "pass",
           "detail": "https://www.rexx-systems.com/llms.txt vorhanden"
         },
@@ -2455,11 +2455,11 @@
           "id": "agent-crawlers",
           "label": "Agent-Crawler-Politik (robots.txt)",
           "status": "warn",
-          "detail": "keine robots.txt — Anwortverhalten für Agenten undefiniert"
+          "detail": "keine robots.txt: Anwortverhalten für Agenten undefiniert"
         },
         {
           "id": "llms-txt",
-          "label": "llms.txt (kosmetisch — laut Google-Studie 6/2026 ohne Effekt)",
+          "label": "llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt)",
           "status": "info",
           "detail": "nicht vorhanden (unkritisch)"
         },

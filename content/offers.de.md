@@ -1,10 +1,10 @@
-# MCP Clinic — Angebote (DE, Fassung Website + PDF)
+# MCP Clinic: Angebote (DE, Fassung Website + PDF)
 
-*MCP Clinic — wir machen deutsche B2B-SaaS-Produkte für KI-Agenten nutzbar. Alle Preise zzgl. USt.*
+*MCP Clinic: Wir machen deutsche B2B-SaaS-Produkte für KI-Agenten nutzbar. Alle Preise zzgl. USt.*
 
 ---
 
-## 1. MCP-Live-Test — kostenlos, automatisch, sofort
+## 1. MCP-Live-Test: kostenlos, automatisch, sofort
 
 Der Schnelltest Ihrer öffentlichen API-Oberfläche: MCP-Handshake, OAuth-Discovery
 (RFC 9728/8414), Anzahl und Sichtbarkeit von Tools, OpenAPI-Verfügbarkeit,
@@ -17,12 +17,12 @@ Score 0–100 mit konkreter Mängelliste.
 
 ---
 
-## 2. Agent-Readiness-Audit — 2.400 € Festpreis (2–3 Arbeitstage)
+## 2. Agent-Readiness-Audit: 2.400 € Festpreis (2–3 Arbeitstage)
 
 Was der kostenlose Test nicht sehen kann, prüfen wir live:
 
 - **Live-Agententests:** 10 Standardaufgaben mit Claude, GPT und einem offenen
-  Modell — protokolliert: welches Tool gewählt, wo es scheitert, wie sich der
+  Modell, protokolliert: welches Tool gewählt, wo es scheitert, wie sich der
   Agent erholt
 - **Auth & Berechtigungen:** Scopes pro Tool, delegierte Agentenzugriffe
   („dieser Agent darf nur lesen“), Mandantentrennung
@@ -30,14 +30,14 @@ Was der kostenlose Test nicht sehen kann, prüfen wir live:
   Aktionen, Audit-Log, Rate Limits
 - **DSGVO:** Datenflüsse in Modellprovider, AVV-Bedarf, EU-Hosting-Optionen,
   Protokoll-Aufbewahrung
-- **Ergebnis:** 15–25 Seiten Bericht — Findings nach Schweregrad, priorisierter
+- **Ergebnis:** 15–25 Seiten Bericht: Findings nach Schweregrad, priorisierter
   Fixplan mit Aufwandsschätzung, Angebot für den Fix-Bau
 
 **Re-Audit innerhalb von 60 Tagen: 600 € Festpreis.**
 
 ---
 
-## 3. MCP-Endpoint-Build — ab 8.000 € Festpreis (2–4 Wochen)
+## 3. MCP-Endpoint-Build: ab 8.000 € Festpreis (2–4 Wochen)
 
 Der standardisierte Bau eines produktionsreifen MCP-Servers vor Ihre bestehende API:
 
@@ -55,7 +55,7 @@ Der standardisierte Bau eines produktionsreifen MCP-Servers vor Ihre bestehende 
 
 ---
 
-## 4. Betriebs-Retainer — 400–800 €/Monat
+## 4. Betriebs-Retainer: 400–800 €/Monat
 
 - Beobachtung der MCP-Spezifikation und relevanter Standards (der Standard hat
   sich zuletzt im Juli 2026 grundlegend geändert)
@@ -74,4 +74,4 @@ Der standardisierte Bau eines produktionsreifen MCP-Servers vor Ihre bestehende 
   optionales EU-Hosting.
 - **Förderfähig:** Wir sind als Beratungsstelle registriert; für KMU sind
   Beratungsleistungen regelmäßig mit 50–80 % bezuschussbar (BAFA-Programm
-  „Förderung unternehmerischen Know-hows“) — wir bereiten den Antrag vor.
+  „Förderung unternehmerischen Know-hows“). Wir bereiten den Antrag vor.

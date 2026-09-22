@@ -329,7 +329,7 @@ function buildChecks(ctx: {
     detail: protocolVersion
       ? `Protokollversion ${protocolVersion}${serverInfo?.name ? ` · Server: ${serverInfo.name}${serverInfo.version ? " " + serverInfo.version : ""}` : ""}`
       : auth.authRequired
-        ? "Authentifizierung erforderlich — ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        ? "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
         : "Kein gültiger MCP-Handshake",
   });
 
@@ -339,7 +339,7 @@ function buildChecks(ctx: {
     status: supportedVersions ? "pass" : "warn",
     detail: supportedVersions
       ? `unterstützt: ${supportedVersions.join(", ")}`
-      : "server/discover (Spez 2026-07-28) nicht beantwortet — älterer Stand oder Auth nötig",
+      : "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig",
   });
 
   checks.push({

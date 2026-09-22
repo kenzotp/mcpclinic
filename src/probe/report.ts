@@ -27,7 +27,7 @@ export function renderRankingTable(companies: CompanyReport[]): string {
 export function renderCompanySection(c: CompanyReport): string {
   const s = scoreCompany(c);
   const lines: string[] = [];
-  lines.push(`### ${c.name} — ${s.total}/100 (Note ${gradeOf(s.total)})`);
+  lines.push(`### ${c.name}: ${s.total}/100 (Note ${gradeOf(s.total)})`);
   if (c.researchNote) lines.push(`\n**Recherche:** ${c.researchNote}`);
   if (c.officialMcp !== undefined) lines.push(`\n**Eigenes MCP-Angebot:** ${c.officialMcp}`);
 

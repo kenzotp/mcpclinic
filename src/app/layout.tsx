@@ -22,11 +22,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mcpclinic.dev"),
-  title: "MCP Clinic — Wir machen deutsche SaaS agentenfähig",
+  title: "MCP Clinic: Wir machen deutsche SaaS agentenfähig",
   description:
     "Kostenloser MCP-Live-Test, Agent-Readiness-Audit zum Festpreis und MCP-Endpoint-Build: Wir machen deutsche B2B-SaaS-Produkte für KI-Agenten nutzbar.",
   openGraph: {
-    title: "MCP Clinic — Wir machen deutsche SaaS agentenfähig",
+    title: "MCP Clinic: Wir machen deutsche SaaS agentenfähig",
     description:
       "Kostenloser MCP-Live-Test, Agent-Readiness-Audit zum Festpreis und MCP-Endpoint-Build.",
     url: "https://mcpclinic.dev",
