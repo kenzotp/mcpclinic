@@ -6,7 +6,7 @@ import TestInput from "@/components/TestInput";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 const STATS = [
-  { n: "2/21", t: "German B2B SaaS APIs ship their own MCP endpoint" },
+  { n: "3/21", t: "German B2B SaaS APIs ship their own MCP endpoint" },
   { n: "14/21", t: "provide no machine-readable API description at all" },
   { n: "9/21", t: "run static keys: delegated agent access is impossible" },
 ];

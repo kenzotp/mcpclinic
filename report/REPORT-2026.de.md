@@ -8,7 +8,7 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 
 ## Kernbefunde
 
-- **2 von 21 Unternehmen bieten einen offiziellen MCP-Server an: awork und seven.io.** Beide Endpunkte bestehen unseren Live-Test mit vorbildlicher OAuth-Discovery (RFC 9728). Der Rest der Branche fehlt in einer Technologie, die der Markt bereits als Standard einstuft.
+- **3 von 21 Unternehmen bieten einen offiziellen MCP-Server an: awork, seven.io und clockodo.** Alle Endpunkte bestehen unseren Live-Test mit sauberer OAuth-Discovery (RFC 9728). Der Rest der Branche fehlt in einer Technologie, die der Markt bereits als Standard einstuft.
 - **Kein Unternehmen erreicht die Hälfte der möglichen 100 Punkte.** Bestwert awork: 53/100, und damit deutscher Benchmark. Der Median des Feldes liegt bei 8 von 100 Punkten.
 - **14 von 21 stellen keine maschinenlesbare API-Beschreibung bereit.** Ohne OpenAPI-Spec bleibt jeder Agenten-Integration ein handgebautes GitHub-Repos, Fehlerquellen inklusive. Genau solche inoffiziellen Wrapper existieren bereits für mindestens 8 der geprüften Produkte.
 - **Die Nachfrage existiert ohne Angebot:** Zammad-Kunden fordern MCP im offiziellen Forum (561 Aufrufe), die Herstellerantwort ist „not really planned“, während ein Community-Server 41 Sterne sammelt. Personio, propstack und Xentral liefern inzwischen llms.txt für KI-Systeme aus, bieten aber keinen Agentenzugang zum Produkt.
@@ -19,11 +19,11 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 | Unternehmen | Score | MCP | OpenAPI | blockiert Agenten |
 |---|---|---|---|---|
 | awork | 53/100 (C) | 🔒 OAuth | ✅ |  |
+| Clockodo | 37/100 (D) | 🔒 OAuth | ✅ |  |
 | seven.io | 30/100 (D) | 🔒 OAuth | — |  |
 | JTL-Software | 18/100 (F) | — | ✅ |  |
 | Xentral ERP | 18/100 (F) | — | ✅ |  |
 | easybill | 15/100 (F) | — | ✅ |  |
-| Clockodo | 12/100 (F) | — | ✅ |  |
 | sevdesk | 12/100 (F) | — | ✅ |  |
 | PlentyONE (plentymarkets) | 12/100 (F) | — | ✅ |  |
 | Personio | 8/100 (F) | — | — |  |
@@ -64,6 +64,29 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 - ℹ️ **Tools sichtbar (tools/list):** Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)
 - ℹ️ **Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs):** ohne Toolsliste nicht bewertbar
 - ✅ **MCP Server Card (Entwurf, Working Group):** gefunden: https://api.awork.com/.well-known/mcp.json
+
+### Clockodo: 37/100 (Note D)
+
+**Recherche:** Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth: für Agenten-Stellvertreter ungeeignet.
+
+**Eigenes MCP-Angebot:** nein
+
+**Dokumentations-Oberfläche:**
+
+- ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://docs.clockodo.com/openapi.yaml · (YAML spec)
+- ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
+- ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
+- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
+
+**MCP-Endpunkt** (https://mcp.clockodo.com/mcp):
+
+- ✅ **Endpunkt erreichbar:** HTTP-Antwort erhalten (Transport unklar)
+- ℹ️ **MCP-Handshake (initialize):** Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)
+- ⚠️ **Aktueller Stand (2026-07-28, server/discover):** server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig
+- ✅ **Authentifizierung:** OAuth-Discovery vorhanden (https://mcp.clockodo.com/.well-known/oauth-protected-resource) · Authorization Server: https://my.clockodo.com
+- ℹ️ **Tools sichtbar (tools/list):** Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)
+- ℹ️ **Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs):** ohne Toolsliste nicht bewertbar
+- ⚠️ **MCP Server Card (Entwurf, Working Group):** kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)
 
 ### seven.io: 30/100 (Note D)
 
@@ -124,19 +147,6 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 
 - ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://api.easybill.de/rest/v1/swagger.json · 57 Pfade · easybill REST API
 - ✅ **Agent-Crawler-Politik (robots.txt):** ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot
-- ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
-- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
-
-### Clockodo: 12/100 (Note F)
-
-**Recherche:** Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth: für Agenten-Stellvertreter ungeeignet.
-
-**Eigenes MCP-Angebot:** nein
-
-**Dokumentations-Oberfläche:**
-
-- ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://docs.clockodo.com/openapi.yaml · (YAML spec)
-- ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
 - ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
 - ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
 

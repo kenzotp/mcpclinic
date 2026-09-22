@@ -6,6 +6,13 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
   title: "MCP-Server entwickeln lassen: ab 8.000 € Festpreis | MCP Clinic",
+  alternates: {
+    canonical: "https://mcpclinic.dev/mcp-server-entwickeln",
+    languages: {
+      "de-DE": "https://mcpclinic.dev/mcp-server-entwickeln",
+      en: "https://mcpclinic.dev/en/mcp-server-entwickeln",
+    },
+  },
   description:
     "Produktionsreifer MCP-Endpunkt vor Ihrer API: OAuth, Scopes pro Werkzeug, Idempotenz, Bestätigungspflicht, Audit-Protokoll. 2–4 Wochen, Festpreis nach Audit.",
 };

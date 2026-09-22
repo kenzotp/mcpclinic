@@ -32,7 +32,7 @@ Ein KI-Agent, der Personio bedienen soll, braucht drei Dinge, die keine llms.txt
 
 ## Die allgemeine Lektion: Lesbar ≠ Betretbar
 
-Wir sehen dieses Muster bei mehreren Anbietern des Reports (Personio, Xentral, propstack, jeweils mit llms.txt oder öffentlichen Specs): Die Dokumentationsebene zieht an, die Zugangsebene steht. Verständlich, denn Doku-Maßnahmen sind günstig und risikofrei. Aber der Wert für Kunden entsteht erst auf der Zugangsebene, und genau deshalb sind die Unterschiede im Report so groß: **2 von 21 Anbietern liefern den Zugang, ein Dutzend liefern Literatur.**
+Wir sehen dieses Muster bei mehreren Anbietern des Reports (Personio, Xentral, propstack, jeweils mit llms.txt oder öffentlichen Specs): Die Dokumentationsebene zieht an, die Zugangsebene steht. Verständlich, denn Doku-Maßnahmen sind günstig und risikofrei. Aber der Wert für Kunden entsteht erst auf der Zugangsebene, und genau deshalb sind die Unterschiede im Report so groß: **3 von 21 Anbietern liefern den Zugang, ein Dutzend liefern Literatur.**
 
 Ein Praxishinweis für Käufer, die „KI-fähig" als Auswahlkriterium hören: Fragen Sie nicht nach llms.txt. Fragen Sie nach drei Dingen: Gibt es einen offiziellen Agenten-Endpunkt? Agiert der Agent im Namen des angemeldeten Nutzers (OAuth im Nutzerkontext)? Und: Können Berechtigungen pro Werkzeug eingeschränkt werden? Drei „Nein" bedeuten: KI-Fähigkeit ist in diesem Produkt derzeit Broschüre.
 

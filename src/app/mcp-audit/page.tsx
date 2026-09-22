@@ -7,6 +7,13 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
   title: "Agent-Readiness-Audit: 2.400 € Festpreis | MCP Clinic",
+  alternates: {
+    canonical: "https://mcpclinic.dev/mcp-audit",
+    languages: {
+      "de-DE": "https://mcpclinic.dev/mcp-audit",
+      en: "https://mcpclinic.dev/en/mcp-audit",
+    },
+  },
   description:
     "Live-Agententests mit 3 Modellen, Auth- und Schreib-Sicherheitsreview, DSGVO-Layer, priorisierter Fixplan. Was kostenlose Scanner nicht sehen können, in 2–3 Tagen.",
 };

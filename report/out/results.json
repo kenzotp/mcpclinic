@@ -864,7 +864,8 @@
             "agent": "meta-externalagent",
             "policy": "none"
           }
-        ]
+        ],
+        "lastStatus": 404
       },
       "llmsTxt": {
         "url": "https://docs.clockodo.com/llms.txt",
@@ -904,8 +905,171 @@
     "officialMcp": "nein",
     "researchNote": "Verifizierte OpenAPI-3.1-Spec (80 Pfade). Mehrere hobbyhafte Community-Server. API-Key-Header statt OAuth: für Agenten-Stellvertreter ungeeignet.",
     "apiHost": "https://my.clockodo.com/api",
-    "score": 12,
-    "grade": "F"
+    "score": 37,
+    "grade": "D",
+    "mcp": {
+      "url": "https://mcp.clockodo.com/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://my.clockodo.com/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer realm=\"Clockodo MCP\", resource_metadata=\"https://mcp.clockodo.com/.well-known/oauth-protected-resource\"",
+        "resourceMetadataUrl": "https://mcp.clockodo.com/.well-known/oauth-protected-resource",
+        "resourceMetadata": {
+          "resource": "https://mcp.clockodo.com",
+          "authorization_servers": [
+            "https://my.clockodo.com"
+          ],
+          "bearer_methods_supported": [
+            "header"
+          ],
+          "scopes_supported": []
+        },
+        "authorizationServers": [
+          "https://my.clockodo.com"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://my.clockodo.com",
+          "authorization_endpoint": "https://my.clockodo.com/oauth/authorize",
+          "token_endpoint": "https://my.clockodo.com/token",
+          "registration_endpoint": "https://my.clockodo.com/oauth/register",
+          "revocation_endpoint": "https://my.clockodo.com/revoke",
+          "introspection_endpoint": "https://my.clockodo.com/introspect",
+          "response_types_supported": [
+            "code"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post",
+            "none"
+          ],
+          "revocation_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "introspection_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "client_id_metadata_document_supported": true,
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "scopes_supported": [
+            "full_access",
+            "accessGroups:read",
+            "accessGroups:write",
+            "absences:read",
+            "absences:write",
+            "browserExtensionRules:read",
+            "browserExtensionRules:write",
+            "clock:read",
+            "clock:write",
+            "company:read",
+            "customers:read",
+            "customers:write",
+            "entryGroups:read",
+            "entryGroups:write",
+            "entries:read",
+            "entries:write",
+            "entriesTexts:read",
+            "entriesTexts:write",
+            "holidaysCarry:read",
+            "holidaysCarry:write",
+            "holidaysQuota:read",
+            "holidaysQuota:write",
+            "lumpSumServices:read",
+            "lumpSumServices:write",
+            "nonbusinessDays:read",
+            "nonbusinessDays:write",
+            "nonbusinessGroups:read",
+            "nonbusinessGroups:write",
+            "overtimeCarry:read",
+            "overtimeCarry:write",
+            "overtimeReductions:read",
+            "overtimeReductions:write",
+            "projects:read",
+            "projects:write",
+            "rates:read",
+            "rates:write",
+            "services:read",
+            "services:write",
+            "subprojects:read",
+            "subprojects:write",
+            "subscription:read",
+            "targetHours:read",
+            "targetHours:write",
+            "teams:read",
+            "teams:write",
+            "userReports:read",
+            "users:read",
+            "users:write",
+            "usersNonbusinessDays:read",
+            "usersNonbusinessGroups:read",
+            "usersNonbusinessGroups:write",
+            "workTimes:read",
+            "workTimes:write"
+          ]
+        }
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://mcp.clockodo.com/.well-known/oauth-protected-resource) · Authorization Server: https://my.clockodo.com"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    }
   },
   {
     "name": "pretix",

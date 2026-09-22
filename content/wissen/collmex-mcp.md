@@ -32,7 +32,7 @@ Der Report wertet das trotzdem, denn für die Kaufentscheidung zählt der Ist-Zu
 
 Der Report misst drei Stufen, und Collmex zeigt, dass es sie wirklich gibt:
 
-1. **Zugang** (MCP-Endpunkt vorhanden? OAuth? Scopes?): Nur 2 von 21 schaffen das.
+1. **Zugang** (MCP-Endpunkt vorhanden? OAuth? Scopes?): Nur 3 von 21 schaffen das.
 2. **Lesbarkeit** (OpenAPI? llms.txt? beschriebene Felder?): 6 von 21.
 3. **Protokoll-Ära** (REST/JSON vs. CSV-Sätze, CGI, HMAC-Signaturen): Hier stehen die collmex-artigen Fälle.
 

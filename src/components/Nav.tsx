@@ -58,10 +58,10 @@ export default function Nav({ lang }: { lang: "de" | "en" }) {
         <Link href={lang === "de" ? "/#weg" : "/en#weg"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
           {t.weg}
         </Link>
-        <Link href="/report" className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+        <Link href={lang === "de" ? "/report" : "/en/report"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
           {t.report}
         </Link>
-        <Link href={lang === "de" ? "/wissen" : "/wissen"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
+        <Link href={lang === "de" ? "/wissen" : "/en/wissen"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">
           {t.wissen}
         </Link>
         <Link href={lang === "de" ? "/#angebote" : "/en#angebote"} className="rounded-full px-3 py-1 text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]">

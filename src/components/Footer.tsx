@@ -29,16 +29,16 @@ export default function Footer({ lang }: { lang: "de" | "en" }) {
           <Link className="transition-colors hover:text-[var(--ink)]" href={p("/test", "/en/test")}>
             {t.nav.test}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href="/report">
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/report", "/en/report")}>
             {t.nav.report}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-audit", "/mcp-audit")}>
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-audit", "/en/mcp-audit")}>
             {t.nav.audit}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-server-entwickeln", "/mcp-server-entwickeln")}>
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/mcp-server-entwickeln", "/en/mcp-server-entwickeln")}>
             {t.nav.build}
           </Link>
-          <Link className="transition-colors hover:text-[var(--ink)]" href="/wissen">
+          <Link className="transition-colors hover:text-[var(--ink)]" href={p("/wissen", "/en/wissen")}>
             {t.nav.wissen}
           </Link>
         </div>

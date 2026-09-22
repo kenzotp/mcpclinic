@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { probeSurface } from "@/probe/surface";
 import { probeWithDiscovery } from "@/probe/discovery";
+import { deriveSiblingHosts } from "@/probe/discovery";
 import { probeMcpEndpoint } from "@/probe/mcp";
 import { assertPublicHost } from "@/probe/ssrf";
 import { scoreCompany, gradeOf } from "@/probe/score";
@@ -74,6 +75,41 @@ export async function POST(req: NextRequest) {
       });
     }
     const surface = await probeWithDiscovery(url);
+    // MCP endpoints often live on sibling hosts (mcp./api./docs. + /mcp): a
+    // homepage entry would never see them. Speculative sniff, first hit wins.
+    const bare = new URL(url).hostname.replace(/^(www|docs|api|developers|developer)\./i, "");
+    const tried = new Set([`${new URL(url).hostname}/mcp`]);
+    let mcp;
+    let mcpReachable = false;
+    for (const host of [`mcp.${bare}`, ...deriveSiblingHosts(new URL(url).hostname)]) {
+      if (tried.size >= 5) break;
+      const candidateUrl = `https://${host}/mcp`;
+      const key = candidateUrl.replace(/^https:\/\//, "");
+      if (tried.has(key)) continue;
+      tried.add(key);
+      try {
+        mcp = await probeMcpEndpoint(candidateUrl);
+      } catch {
+        mcp = undefined;
+      }
+      if (mcp?.reachable) {
+        mcpReachable = true;
+        break;
+      }
+    }
+    if (mcpReachable && mcp) {
+      const report: CompanyReport = { name: url, surface, mcp, score: 0, grade: "F" };
+      const s = scoreCompany(report);
+      return NextResponse.json({
+        ok: true,
+        kind: "mcp",
+        target: url,
+        score: s.total,
+        grade: gradeOf(s.total),
+        checks: mcp.checks,
+        surfaceChecks: surface.checks,
+      });
+    }
     const report: CompanyReport = { name: url, surface, score: 0, grade: "F" };
     const s = scoreCompany(report);
     return NextResponse.json({

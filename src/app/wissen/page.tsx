@@ -7,6 +7,13 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
   title: "Wissen — MCP Clinic",
+  alternates: {
+    canonical: "https://mcpclinic.dev/wissen",
+    languages: {
+      "de-DE": "https://mcpclinic.dev/wissen",
+      en: "https://mcpclinic.dev/en/wissen",
+    },
+  },
   description:
     "Analysen und Anleitungen rund um MCP, Agenten-Fähigkeit und deutsche B2B-SaaS: Teardowns, Sicherheitsmuster, DSGVO.",
 };
