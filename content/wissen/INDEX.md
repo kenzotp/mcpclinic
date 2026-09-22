@@ -35,15 +35,26 @@
 | `self-host-oder-gateway.md` | Gateway vs. eigener Server (Entscheidungspiece) | Test → Build |
 | `mcp-spezifikation-juli-2026.md` | Spec 2026-07-28 erklärt (Retainer-Hook) | Test → Retainer |
 
-**Gesamtstand: 16 Posts.** Batch 4 (optional): XRechnung-Brücke (nur bei Produkt-Revival), EN-Übersetzungen der Top-6.
+**Gesamtstand: 16 Posts.**
 
-## Batch 4 (optional, wenn Veröffentlichung läuft)
+## Fertig (Batch 4, 4 Posts — veröffentlicht 21.09.2026)
 
-## Entwurf (Batch 5, 2026-09-22, noch nicht veröffentlicht)
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `was-kostet-ein-mcp-server.md` | MCP Server Kosten / was kostet ein MCP-Server | Audit → Build |
+| `mcp-api-key-oauth.md` | API Key vs OAuth / MCP OAuth 2.0 | Test → Audit |
+| `mcp-vs-rest-api.md` | MCP vs REST API | Test → Build |
+| `mcp-tool-beschreibungen.md` | MCP Tool Description / Tool-Beschreibungen schreiben | Audit |
+
+**Gesamtstand: 20 Posts.**
+
+## Fertig (Batch 5, 1 Post — veröffentlicht 22.09.2026)
 
 | Datei | Ziel-Keyword | CTA |
 |---|---|---|
 | `remote-mcp-server.md` | Remote MCP Server (DE-Autocomplete 22.09.: eigener Baum mit claude, claude desktop, oauth, url) | Live-Test |
+
+**Gesamtstand: 21 Posts.**
 
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
