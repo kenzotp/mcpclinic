@@ -19,6 +19,19 @@ export const REPORTED_AGENTS = [
   "anthropic-ai", "PerplexityBot", "Google-Extended", "CCBot",
 ];
 
+/**
+ * Visitors type the marketing homepage, but specs and API surfaces usually live
+ * under docs./api. Only widen the net for apex/www entries — a specific
+ * subdomain means the user already knows where to look.
+ */
+export function deriveAlternateHosts(hostname: string): string[] {
+  const bare = hostname.replace(/^www\./i, "");
+  const labels = bare.split(".");
+  if (labels.length !== 2) return [];
+  if (labels.some((l) => /^\d+$/.test(l))) return []; // IP literal
+  return [`docs.${bare}`, `api.${bare}`];
+}
+
 export async function probeSurface(
   origin: string,
   extraPaths: string[] = [],
@@ -29,7 +42,10 @@ export async function probeSurface(
 
   // --- OpenAPI discovery on the given origin (+ common doc hosts are handled by caller via extraPaths) ---
   let openapi: SurfaceProbeResult["openapi"] = {};
-  const specCandidates = [...OPENAPI_CANDIDATES, ...extraPaths.map((p) => (p.startsWith("http") ? p : root + p))];
+  const specCandidates = [
+    ...OPENAPI_CANDIDATES.map((p) => root + p),
+    ...extraPaths.map((p) => (p.startsWith("http") ? p : root + p)),
+  ];
   for (const candidate of specCandidates) {
     const res = await httpGet(candidate).catch(() => null);
     await sleep(REQUEST_GAP_MS);

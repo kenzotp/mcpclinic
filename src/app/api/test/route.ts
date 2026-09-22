@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { probeSurface } from "@/probe/surface";
+import { probeSurface, deriveAlternateHosts } from "@/probe/surface";
 import { probeMcpEndpoint } from "@/probe/mcp";
 import { assertPublicHost } from "@/probe/ssrf";
+import { httpGet } from "@/probe/http";
 import { scoreCompany, gradeOf } from "@/probe/score";
-import type { CompanyReport } from "@/probe/types";
+import type { CompanyReport, Check } from "@/probe/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -73,7 +74,39 @@ export async function POST(req: NextRequest) {
       });
     }
     const surface = await probeSurface(url);
-    const report: CompanyReport = { name: url, surface, score: 0, grade: "F" };
+    // Homepage entries miss docs./api. hosts where specs and API signals live:
+    // widen the net, merge best-signal into the scored surface, show the source.
+    const merged: typeof surface = { ...surface };
+    const altChecks: Check[] = [];
+    for (const alt of deriveAlternateHosts(new URL(url).hostname)) {
+      const altOrigin = `https://${alt}`;
+      try {
+        await assertPublicHost(altOrigin);
+      } catch {
+        continue;
+      }
+      const alive = await httpGet(`${altOrigin}/robots.txt`, { timeoutMs: 4000 }).catch(() => null);
+      if (!alive) continue;
+      const altSurface = await probeSurface(altOrigin);
+      if (!merged.openapi.url && altSurface.openapi.url) {
+        merged.openapi = altSurface.openapi;
+        altChecks.push({
+          id: `alt-openapi-${alt}`,
+          label: `API-Spec gefunden (${alt})`,
+          status: "pass",
+          detail: `${altSurface.openapi.url}${altSurface.openapi.paths ? ` · ${altSurface.openapi.paths} Pfade` : ""}`,
+        });
+      }
+      if (!merged.securityTxt.found && altSurface.securityTxt.found) {
+        merged.securityTxt = altSurface.securityTxt;
+        altChecks.push({ id: `alt-security-${alt}`, label: `security.txt gefunden (${alt})`, status: "pass", detail: altSurface.securityTxt.url ?? "" });
+      }
+      if (!merged.llmsTxt.found && altSurface.llmsTxt.found) {
+        merged.llmsTxt = altSurface.llmsTxt;
+        altChecks.push({ id: `alt-llms-${alt}`, label: `llms.txt gefunden (${alt})`, status: "pass", detail: altSurface.llmsTxt.url ?? "" });
+      }
+    }
+    const report: CompanyReport = { name: url, surface: merged, score: 0, grade: "F" };
     const s = scoreCompany(report);
     return NextResponse.json({
       ok: true,
@@ -81,7 +114,7 @@ export async function POST(req: NextRequest) {
       target: url,
       score: s.total,
       grade: gradeOf(s.total),
-      checks: surface.checks,
+      checks: [...surface.checks, ...altChecks],
     });
   } catch (e) {
     return err(502, "probe_failed", e instanceof Error ? e.message : "Prüfung fehlgeschlagen.");
