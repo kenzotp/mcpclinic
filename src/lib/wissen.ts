@@ -124,6 +124,10 @@ const EN_SLUGS: Record<string, string> = {
   "mcp-oekosystem": "mcp-ecosystem",
   "self-host-oder-gateway": "self-host-or-gateway",
   "was-kostet-ein-mcp-server": "mcp-server-pricing",
+  "mcp-faehig-machen": "mcp-ready",
+  "mcp-agentur": "mcp-agency",
+  "mcp-audit-checkliste": "mcp-audit-checklist",
+  "ki-agenten-anbinden": "connect-ai-agents",
 };
 
 export function enSlugFor(deSlug: string): string {

@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       { source: "/en/wissen/self-host-oder-gateway", destination: "/en/knowledge/self-host-or-gateway", permanent: true },
       { source: "/en/wissen/was-kostet-ein-mcp-server", destination: "/en/knowledge/mcp-server-pricing", permanent: true },
       { source: "/en/wissen/:path*", destination: "/en/knowledge/:path*", permanent: true },
+      { source: "/en/knowledge/mcp-faehig-machen", destination: "/en/knowledge/mcp-ready", permanent: true },
+      { source: "/en/knowledge/mcp-agentur", destination: "/en/knowledge/mcp-agency", permanent: true },
+      { source: "/en/knowledge/mcp-audit-checkliste", destination: "/en/knowledge/mcp-audit-checklist", permanent: true },
+      { source: "/en/knowledge/ki-agenten-anbinden", destination: "/en/knowledge/connect-ai-agents", permanent: true },
       { source: "/en/mcp-server-entwickeln", destination: "/en/mcp-server-development", permanent: true },
     ];
   },
