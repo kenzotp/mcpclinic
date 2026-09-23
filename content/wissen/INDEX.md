@@ -58,6 +58,15 @@
 
 **Gesamtstand: 23 Posts.**
 
+## Fertig (Batch 6, 2 Posts — veröffentlicht 23.09.2026)
+
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `mcp-faehig-machen.md` | Software MCP-fähig machen / agentenfähig machen | Live-Test |
+| `mcp-agentur.md` | MCP-Agentur / MCP-Beratung / MCP Consulting | Live-Test → Audit |
+
+**Gesamtstand: 25 Posts.**
+
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
 - Jeder Post endet mit genau einem CTA-Pfad (Live-Test ODER Audit ODER Build), nie allen dreien gleichwertig.
