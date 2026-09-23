@@ -67,6 +67,17 @@
 
 **Gesamtstand: 25 Posts.**
 
+## Fertig (Batch 7, 4 Posts — veröffentlicht 23.09.2026)
+
+| Datei | Ziel-Keyword | CTA |
+|---|---|---|
+| `mcp-vs-agent-skills.md` | MCP vs Agent Skills | Live-Test |
+| `mcp-audit-checkliste.md` | MCP-Audit / MCP-Audit Checkliste | Live-Test → Audit |
+| `mcp-server-hosting.md` | MCP Server Hosting / MCP Server betreiben | Audit → Build |
+| `ki-agenten-anbinden.md` | KI-Agenten anbinden / integrieren | Live-Test |
+
+**Gesamtstand: 29 Posts.**
+
 ## Redaktionsregeln (aus dem Playbook + Report-Prinzipien)
 
 - Jeder Post endet mit genau einem CTA-Pfad (Live-Test ODER Audit ODER Build), nie allen dreien gleichwertig.
