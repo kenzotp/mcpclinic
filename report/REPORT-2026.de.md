@@ -20,13 +20,13 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 |---|---|---|---|---|
 | awork | 53/100 (C) | 🔒 OAuth | ✅ |  |
 | Clockodo | 37/100 (D) | 🔒 OAuth | ✅ |  |
+| Personio | 33/100 (D) | 🔒 OAuth | — |  |
 | seven.io | 30/100 (D) | 🔒 OAuth | — |  |
 | JTL-Software | 18/100 (F) | — | ✅ |  |
 | Xentral ERP | 18/100 (F) | — | ✅ |  |
 | easybill | 15/100 (F) | — | ✅ |  |
 | sevdesk | 12/100 (F) | — | ✅ |  |
 | PlentyONE (plentymarkets) | 12/100 (F) | — | ✅ |  |
-| Personio | 8/100 (F) | — | — |  |
 | propstack | 8/100 (F) | — | — |  |
 | Maileon | 8/100 (F) | — | — |  |
 | rexx systems | 8/100 (F) | — | — |  |
@@ -87,6 +87,19 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 - ℹ️ **Tools sichtbar (tools/list):** Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)
 - ℹ️ **Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs):** ohne Toolsliste nicht bewertbar
 - ⚠️ **MCP Server Card (Entwurf, Working Group):** kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)
+
+### Personio: 33/100 (Note D)
+
+**Recherche:** Offizieller MCP-Endpunkt auf vendor-operierter Subdomain (mcp.personio.de/mcp): antwortet mit spec-konformer Protected-Resource-Metadata (RFC 9728), Authorization-Server mcp.app.personio.com, Login über login.personio.com (Scopes openid, offline_access, mcp:access).
+
+**Eigenes MCP-Angebot:** ja (OAuth 2.1)
+
+**Dokumentations-Oberfläche:**
+
+- ❌ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** keine öffentliche Spec unter Standardpfaden gefunden
+- ✅ **Agent-Crawler-Politik (robots.txt):** ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot
+- ✅ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** https://developer.personio.de/llms.txt vorhanden
+- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
 
 ### seven.io: 30/100 (Note D)
 
@@ -174,19 +187,6 @@ Getestet wurde ausschließlich die öffentliche Oberfläche (keine Zugangsdaten,
 - ✅ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** https://raw.githubusercontent.com/plentymarkets/api-doc/master/plentymarkets/openApiV3/openApiV3.json · 1199 Pfade · plentymarkets REST-API
 - ⚠️ **Agent-Crawler-Politik (robots.txt):** keine robots.txt: Anwortverhalten für Agenten undefiniert
 - ℹ️ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** nicht vorhanden (unkritisch)
-- ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
-
-### Personio: 8/100 (Note F)
-
-**Recherche:** Entwicklerhub mit llms.txt, OAuth2 Client Credentials. Ein winziger Community-Server (1 Stern). Zugleich Hinweis: developer.personio.com hinter Vercel-Bot-Wall. Maschinenlesbare Docs sind hier durchaus Thema.
-
-**Eigenes MCP-Angebot:** nein
-
-**Dokumentations-Oberfläche:**
-
-- ❌ **Maschinenlesbare API-Beschreibung (OpenAPI/Swagger):** keine öffentliche Spec unter Standardpfaden gefunden
-- ✅ **Agent-Crawler-Politik (robots.txt):** ausdrücklich erlaubt: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, CCBot
-- ✅ **llms.txt (kosmetisch, laut Google-Studie 6/2026 ohne Effekt):** https://developer.personio.de/llms.txt vorhanden
 - ⚠️ **security.txt (Sicherheitskontakt):** nicht vorhanden
 
 ### propstack: 8/100 (Note F)

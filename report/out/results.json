@@ -647,7 +647,8 @@
             "agent": "meta-externalagent",
             "policy": "allowed"
           }
-        ]
+        ],
+        "lastStatus": 200
       },
       "llmsTxt": {
         "url": "https://developer.personio.de/llms.txt",
@@ -684,11 +685,125 @@
         }
       ]
     },
+    "mcp": {
+      "url": "https://mcp.personio.de/mcp",
+      "reachable": true,
+      "tools": [],
+      "toolCount": 0,
+      "writeToolCount": 0,
+      "auth": {
+        "authRequired": true,
+        "asMetadataUrlsProbed": [
+          "https://mcp.app.personio.com/.well-known/oauth-authorization-server"
+        ],
+        "wwwAuthenticate": "Bearer resource_metadata=\"https://mcp.personio.de/.well-known/oauth-protected-resource/mcp\"",
+        "resourceMetadataUrl": "https://mcp.personio.de/.well-known/oauth-protected-resource/mcp",
+        "resourceMetadata": {
+          "resource": "https://mcp.app.personio.com/mcp",
+          "authorization_servers": [
+            "https://mcp.app.personio.com/"
+          ],
+          "bearer_methods_supported": [
+            "header"
+          ],
+          "scopes_supported": [
+            "openid",
+            "offline_access",
+            "mcp:access"
+          ]
+        },
+        "authorizationServers": [
+          "https://mcp.app.personio.com/"
+        ],
+        "asMetadataFound": {
+          "issuer": "https://mcp.app.personio.com/",
+          "authorization_endpoint": "https://login.personio.com/authorize?organization=mcp&audience=https://mcp.personio.de",
+          "token_endpoint": "https://login.personio.com/oauth/token",
+          "jwks_uri": "https://login.personio.com/.well-known/jwks.json",
+          "revocation_endpoint": "https://login.personio.com/oauth/revoke",
+          "response_types_supported": [
+            "code"
+          ],
+          "response_modes_supported": [
+            "query",
+            "fragment",
+            "form_post"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "refresh_token"
+          ],
+          "code_challenge_methods_supported": [
+            "S256"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "none",
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "scopes_supported": [
+            "openid",
+            "profile",
+            "email",
+            "offline_access",
+            "mcp:access"
+          ]
+        }
+      },
+      "card": {
+        "present": false,
+        "note": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+      },
+      "checks": [
+        {
+          "id": "reachable",
+          "label": "Endpunkt erreichbar",
+          "status": "pass",
+          "detail": "HTTP-Antwort erhalten (Transport unklar)"
+        },
+        {
+          "id": "handshake",
+          "label": "MCP-Handshake (initialize)",
+          "status": "info",
+          "detail": "Authentifizierung erforderlich: ohne Zugangsdaten kein Handshake (aus Agent-Sicht: gut gesichert, aber Client-Einstieg prüfen)"
+        },
+        {
+          "id": "transport-current",
+          "label": "Aktueller Stand (2026-07-28, server/discover)",
+          "status": "warn",
+          "detail": "server/discover (Spez 2026-07-28) nicht beantwortet: älterer Stand oder Auth nötig"
+        },
+        {
+          "id": "auth",
+          "label": "Authentifizierung",
+          "status": "pass",
+          "detail": "OAuth-Discovery vorhanden (https://mcp.personio.de/.well-known/oauth-protected-resource/mcp) · Authorization Server: https://mcp.app.personio.com/"
+        },
+        {
+          "id": "tools",
+          "label": "Tools sichtbar (tools/list)",
+          "status": "info",
+          "detail": "Toolsliste nach Auth geschützt (aus Agent-Sicht korrekt)"
+        },
+        {
+          "id": "description-quality",
+          "label": "Tool-Beschreibungen (Qualität für Tool-Auswahl durch LLMs)",
+          "status": "info",
+          "detail": "ohne Toolsliste nicht bewertbar"
+        },
+        {
+          "id": "server-card",
+          "label": "MCP Server Card (Entwurf, Working Group)",
+          "status": "warn",
+          "detail": "kein Server-Card-Kandidat gefunden (/.well-known/mcp.json u.a.)"
+        }
+      ]
+    },
     "officialMcp": "nein",
     "researchNote": "Entwicklerhub mit llms.txt, OAuth2 Client Credentials. Ein winziger Community-Server (1 Stern). Zugleich Hinweis: developer.personio.com hinter Vercel-Bot-Wall. Maschinenlesbare Docs sind hier durchaus Thema.",
     "apiHost": "https://api.personio.de",
-    "score": 8,
-    "grade": "F"
+    "score": 33,
+    "grade": "D"
   },
   {
     "name": "Xentral ERP",
